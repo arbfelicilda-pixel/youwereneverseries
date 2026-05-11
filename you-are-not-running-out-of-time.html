@@ -49,6 +49,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .post-divider{width:40px;height:2px;background:var(--terra);margin:40px 0}
 .share-section{background:var(--parchment-dark);padding:40px 60px;text-align:center;border-top:1px solid var(--faint)}
 .share-label{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:16px}
+
+.pinterest-btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;padding:13px 28px;background:#E60023;color:#fff;text-decoration:none;transition:background 0.2s;margin-left:12px}
+.pinterest-btn:hover{background:#ad081b}
+.share-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:0}
+
 .share-btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;padding:13px 28px;background:#1877F2;color:#fff;text-decoration:none;transition:background 0.2s}
 .share-btn:hover{background:#0f5bb5}
 .back-section{padding:48px 60px;text-align:center;border-top:1px solid var(--faint)}
@@ -102,7 +107,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 
 <div class="share-section">
   <p class="share-label">If this landed — share it</p>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https://youwereneverseries.arniefelicilda.com/you-are-not-running-out-of-time.html" target="_blank" rel="noopener" class="share-btn">Share on Facebook</a>
+  <div class="share-buttons">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://youwereneverseries.arniefelicilda.com/you-are-not-running-out-of-time.html" target="_blank" rel="noopener" class="share-btn">Share on Facebook</a>
+    <a href="https://pinterest.com/pin/create/button/?url=https://youwereneverseries.arniefelicilda.com/you-are-not-running-out-of-time.html&media=https://youwereneverseries.arniefelicilda.com/you-are-not-running-out-of-time.png&description=You Are Not Running Out of Time%20—%20You%20Were%20Never%20Series%20by%20Arnie%20Rose" target="_blank" rel="noopener" class="pinterest-btn">Save to Pinterest</a>
+  </div>
 </div>
 
 <div class="back-section">
