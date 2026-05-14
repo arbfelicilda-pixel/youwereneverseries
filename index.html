@@ -88,9 +88,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 /* FEATURED BLOG BAR */
 .featured-bar{background:var(--ink);padding:0 60px}
 .featured-inner{max-width:100%;margin:0 auto;display:flex;align-items:center;gap:28px;min-height:100px}
-.featured-img{width:100px;height:100px;object-fit:cover;flex-shrink:0;display:block}
+.featured-img{width:100px;height:100px;object-fit:cover;flex-shrink:0;display:block;background:var(--ink-soft)}
 .featured-tag{font-family:var(--body);font-size:10px;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);white-space:nowrap;flex-shrink:0}
-.featured-sep{width:1px;height:60px;background:rgba(255,255,255,0.1);flex-shrink:0}
+.featured-sep{width:1px;height:60px;background:rgba(255,255,255,0.1);flex-shrink:0;display:block}
 .featured-text-wrap{display:flex;flex-direction:column;gap:6px;flex:1;padding:24px 0}
 .featured-title-bar{font-family:var(--heading);font-size:clamp(20px,2.2vw,28px);font-weight:300;color:var(--white);letter-spacing:-0.01em;line-height:1.2}
 .featured-sub{font-family:var(--body);font-size:12px;font-weight:300;color:rgba(255,255,255,0.5)}
@@ -698,13 +698,13 @@ footer{background:#080808;padding:56px 60px 36px}
   <div style="max-width:1100px;margin:0 auto">
     <p class="s-label">The Author</p>
     <div class="s-rule"></div>
-    <div style="display:grid;grid-template-columns:320px 1fr;gap:60px;align-items:start;margin-top:40px">
+    <div style="display:grid;grid-template-columns:380px 1fr;gap:80px;align-items:start">
       <div>
-        <img src="author.jpg" alt="Arnie Rose — author of the You Were Never Series" style="width:320px;height:400px;object-fit:cover;object-position:center top;display:block">
+        <img src="author.jpg" alt="Arnie Rose — author of the You Were Never Series" style="width:100%;object-fit:cover;object-position:center top;display:block">
         <p style="font-family:var(--body);font-size:10px;font-weight:300;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-top:10px">Arnie Rose, M.A.Ed.</p>
       </div>
       <div>
-        <p style="font-family:var(--heading);font-size:clamp(18px,2vw,26px);font-weight:300;line-height:1.45;color:var(--ink);margin-bottom:20px;border-left:1px solid var(--ink);padding-left:20px;letter-spacing:-0.01em">"You have been doing everything right. Nothing is moving. That is not a motivation problem. That is a structure problem."</p>
+        <p style="font-family:var(--heading);font-size:clamp(20px,2.5vw,30px);font-weight:300;line-height:1.4;color:var(--ink);margin-bottom:24px;letter-spacing:-0.01em;padding-left:20px;border-left:1px solid var(--ink)">"You have been doing everything right. Nothing is moving. That is not a motivation problem. That is a structure problem."</p>
         <p style="font-family:var(--body);font-size:13px;font-weight:300;line-height:1.85;color:var(--ink-soft);margin-bottom:14px">Arnie Rose Felicilda, M.A.Ed. is the founder of Keystone Books and the author of the You Were Never Series. She spent over ten years in supply chain leadership across the Philippines and China before burnout stopped her cold. The series came from that unraveling.</p>
         <p style="font-family:var(--body);font-size:13px;font-weight:300;line-height:1.85;color:var(--ink-soft)">The books are not about inspiration. They are about recognition — the kind that comes when someone finally names the thing you have been carrying alone.</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
