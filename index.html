@@ -71,11 +71,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .s-title{font-family:var(--heading);font-size:clamp(32px,4vw,52px);font-weight:300;color:var(--ink);line-height:1.08;letter-spacing:-0.01em}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 60px 80px;background:var(--cream);text-align:center;position:relative}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 20px 80px;background:var(--cream);text-align:center;position:relative}
 .hero-label{font-family:var(--body);font-size:10px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:32px;opacity:0;animation:fadeUp 0.8s ease 0.1s forwards}
-.hero-title{font-family:var(--heading);font-size:clamp(72px,12vw,160px);font-weight:300;line-height:0.88;letter-spacing:-0.03em;color:var(--ink);margin-bottom:12px;opacity:0;animation:fadeUp 0.8s ease 0.2s forwards}
+.hero-title{font-family:var(--heading);font-size:clamp(88px,14vw,180px);font-weight:300;line-height:0.88;letter-spacing:-0.03em;color:var(--ink);margin-bottom:12px;opacity:0;animation:fadeUp 0.8s ease 0.2s forwards}
 .hero-subtitle{font-family:var(--body);font-size:12px;font-weight:400;letter-spacing:0.5em;text-transform:uppercase;color:var(--mid);margin-bottom:40px;opacity:0;animation:fadeUp 0.8s ease 0.25s forwards}
-.hero-desc{font-family:var(--body);font-size:14px;font-weight:300;color:var(--ink-soft);max-width:560px;line-height:1.8;margin:0 auto 32px;opacity:0;animation:fadeUp 0.8s ease 0.3s forwards}
+.hero-desc{font-family:var(--body);font-size:14px;font-weight:300;color:var(--ink-soft);max-width:680px;line-height:1.8;margin:0 auto 32px;opacity:0;animation:fadeUp 0.8s ease 0.3s forwards}
 .hero-quote{font-family:var(--heading);font-size:clamp(16px,2vw,22px);font-weight:300;font-style:italic;color:var(--ink-soft);max-width:560px;margin:0 auto 12px;line-height:1.5;border-left:1px solid var(--faint);padding-left:20px;text-align:left;opacity:0;animation:fadeUp 0.8s ease 0.35s forwards}
 .hero-quote-source{font-family:var(--body);font-size:10px;font-weight:300;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);text-align:left;max-width:560px;margin:0 auto 36px;padding-left:20px;opacity:0;animation:fadeUp 0.8s ease 0.38s forwards}
 .hero-stats{display:inline-flex;border:1px solid var(--faint);margin:0 auto 40px;opacity:0;animation:fadeUp 0.8s ease 0.4s forwards}
@@ -86,8 +86,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp 0.8s ease 0.5s forwards}
 
 /* FEATURED BLOG BAR */
-.featured-bar{background:var(--ink);padding:12px 60px}
-.featured-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:20px}
+.featured-bar{background:var(--ink);padding:14px 60px}
+.featured-inner{max-width:100%;margin:0 auto;display:flex;align-items:center;gap:20px}
 .featured-tag{font-family:var(--body);font-size:10px;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);white-space:nowrap;flex-shrink:0}
 .featured-sep{width:1px;height:14px;background:rgba(255,255,255,0.15);flex-shrink:0}
 .featured-title-bar{font-family:var(--body);font-size:12px;font-weight:300;color:rgba(255,255,255,0.7);flex:1}
@@ -106,7 +106,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .question-item{padding:12px 16px;border:1px solid var(--faint);background:var(--cream)}
 .question-text{font-family:var(--body);font-size:12px;font-weight:300;color:var(--ink-soft);line-height:1.6;font-style:italic}
 .slide-center{display:flex;flex-direction:column;align-items:center}
-.slide-cover-img{width:180px;height:270px;object-fit:cover;object-position:right center;display:block;box-shadow:0 8px 32px rgba(0,0,0,0.14);transition:transform 0.3s}
+.slide-cover-img{width:240px;height:360px;object-fit:cover;object-position:right center;display:block;box-shadow:0 8px 32px rgba(0,0,0,0.14);transition:transform 0.3s}
 .slide-cover-img:hover{transform:translateY(-6px)}
 .slide-nav-under{display:flex;align-items:center;gap:12px;margin-top:20px}
 .slide-arrow{width:38px;height:38px;border:1px solid var(--faint);background:transparent;cursor:pointer;font-size:14px;color:var(--ink);transition:all 0.2s;display:flex;align-items:center;justify-content:center}
@@ -224,8 +224,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 
 /* ABOUT */
 .about-section{padding:100px 60px;background:var(--white)}
-.about-grid{display:grid;grid-template-columns:300px 1fr;gap:72px;align-items:start;margin-top:40px}
-.about-photo img{width:100%;display:block}
+.about-grid{display:grid;grid-template-columns:280px 1fr;gap:60px;align-items:start;margin-top:40px}
+.about-photo img{width:280px;height:360px;object-fit:cover;object-position:center top;display:block}
 .about-cap{font-family:var(--body);font-size:10px;font-weight:300;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-top:10px}
 .about-quote{font-family:var(--heading);font-size:clamp(18px,2vw,24px);font-weight:300;line-height:1.45;color:var(--ink);margin-bottom:20px;border-left:1px solid var(--ink);padding-left:20px;letter-spacing:-0.01em}
 .about-text p{font-family:var(--body);font-size:13px;font-weight:300;line-height:1.85;color:var(--ink-soft)}
@@ -660,12 +660,12 @@ footer{background:#080808;padding:56px 60px 36px}
     <div class="s-rule"></div>
     <p style="font-family:var(--heading);font-size:clamp(18px,2vw,24px);font-weight:300;font-style:italic;color:var(--ink-soft);max-width:600px;line-height:1.7">"Over ten years across the Philippines and China. The books were written somewhere between these two worlds."</p>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="Shanghai_Yu_GArden.jpg" alt="Shanghai Yu Garden — where Arnie Rose wrote the You Were Never Series"><p class="gallery-cap">Shanghai · Yu Garden</p></div>
+      <div class="gallery-item"><img src="shanghai-yu-garden.jpg" alt="Shanghai Yu Garden — where Arnie Rose wrote the You Were Never Series"><p class="gallery-cap">Shanghai · Yu Garden</p></div>
       <div class="gallery-item"><img src="Oriental.jpg" alt="Shanghai Oriental Pearl Tower"><p class="gallery-cap">Shanghai · Oriental Pearl Tower</p></div>
-      <div class="gallery-item"><img src="The_Bund.jpg" alt="Shanghai The Bund"><p class="gallery-cap">Shanghai · The Bund</p></div>
+      <div class="gallery-item"><img src="the-bund.jpg" alt="Shanghai The Bund"><p class="gallery-cap">Shanghai · The Bund</p></div>
       <div class="gallery-item"><img src="thebund2.jpg" alt="Shanghai The Bund waterfront"><p class="gallery-cap">Shanghai · The Bund</p></div>
-      <div class="gallery-item"><img src="shanghai_the_bund_wterfront.jpg" alt="Shanghai Bund waterfront view"><p class="gallery-cap">Shanghai · The Bund Waterfront</p></div>
-      <div class="gallery-item"><img src="by_the_sea.jpg" alt="By the sea — Arnie Rose"><p class="gallery-cap">By the Sea</p></div>
+      <div class="gallery-item"><img src="shanghai-the-bund-waterfront.jpg" alt="Shanghai Bund waterfront view"><p class="gallery-cap">Shanghai · The Bund Waterfront</p></div>
+      <div class="gallery-item"><img src="by-the-sea.jpg" alt="By the sea — Arnie Rose"><p class="gallery-cap">By the Sea</p></div>
     </div>
   </div>
 </section>
