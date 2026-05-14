@@ -86,12 +86,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp 0.8s ease 0.5s forwards}
 
 /* FEATURED BLOG BAR */
-.featured-bar{background:var(--ink);padding:14px 60px}
-.featured-inner{max-width:100%;margin:0 auto;display:flex;align-items:center;gap:20px}
+.featured-bar{background:var(--ink);padding:0 60px}
+.featured-inner{max-width:100%;margin:0 auto;display:flex;align-items:center;gap:28px}
+.featured-img{width:80px;height:80px;object-fit:cover;flex-shrink:0;display:block}
 .featured-tag{font-family:var(--body);font-size:10px;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);white-space:nowrap;flex-shrink:0}
-.featured-sep{width:1px;height:14px;background:rgba(255,255,255,0.15);flex-shrink:0}
-.featured-title-bar{font-family:var(--body);font-size:12px;font-weight:300;color:rgba(255,255,255,0.7);flex:1}
-.featured-cta{font-family:var(--body);font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);text-decoration:none;white-space:nowrap;flex-shrink:0;padding-bottom:1px;border-bottom:1px solid rgba(255,255,255,0.3)}
+.featured-sep{width:1px;height:40px;background:rgba(255,255,255,0.1);flex-shrink:0}
+.featured-text-wrap{display:flex;flex-direction:column;gap:4px;flex:1;padding:20px 0}
+.featured-title-bar{font-family:var(--heading);font-size:clamp(16px,1.8vw,22px);font-weight:300;color:var(--white);letter-spacing:-0.01em;line-height:1.2}
+.featured-sub{font-family:var(--body);font-size:11px;font-weight:300;color:rgba(255,255,255,0.4)}
+.featured-cta{font-family:var(--body);font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);text-decoration:none;white-space:nowrap;flex-shrink:0;padding:10px 20px;border:1px solid rgba(255,255,255,0.3);transition:background 0.2s}
+.featured-cta:hover{background:rgba(255,255,255,0.1)}
 
 /* SLIDESHOW */
 .slideshow-wrap{padding:100px 60px;background:var(--white)}
@@ -106,7 +110,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .question-item{padding:12px 16px;border:1px solid var(--faint);background:var(--cream)}
 .question-text{font-family:var(--body);font-size:12px;font-weight:300;color:var(--ink-soft);line-height:1.6;font-style:italic}
 .slide-center{display:flex;flex-direction:column;align-items:center}
-.slide-cover-img{width:240px;height:360px;object-fit:cover;object-position:right center;display:block;box-shadow:0 8px 32px rgba(0,0,0,0.14);transition:transform 0.3s}
+.slide-cover-img{width:280px;height:420px;object-fit:cover;object-position:right center;display:block;box-shadow:0 8px 32px rgba(0,0,0,0.14);transition:transform 0.3s}
 .slide-cover-img:hover{transform:translateY(-6px)}
 .slide-nav-under{display:flex;align-items:center;gap:12px;margin-top:20px}
 .slide-arrow{width:38px;height:38px;border:1px solid var(--faint);background:transparent;cursor:pointer;font-size:14px;color:var(--ink);transition:all 0.2s;display:flex;align-items:center;justify-content:center}
@@ -224,8 +228,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 
 /* ABOUT */
 .about-section{padding:100px 60px;background:var(--white)}
-.about-grid{display:grid;grid-template-columns:280px 1fr;gap:60px;align-items:start;margin-top:40px}
-.about-photo img{width:280px;height:360px;object-fit:cover;object-position:center top;display:block}
+.about-grid{display:grid;grid-template-columns:320px 1fr;gap:60px;align-items:start;margin-top:40px}
+.about-photo img{width:320px;height:400px;object-fit:cover;object-position:center top;display:block}
 .about-cap{font-family:var(--body);font-size:10px;font-weight:300;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-top:10px}
 .about-quote{font-family:var(--heading);font-size:clamp(18px,2vw,24px);font-weight:300;line-height:1.45;color:var(--ink);margin-bottom:20px;border-left:1px solid var(--ink);padding-left:20px;letter-spacing:-0.01em}
 .about-text p{font-family:var(--body);font-size:13px;font-weight:300;line-height:1.85;color:var(--ink-soft)}
@@ -254,11 +258,13 @@ footer{background:#080808;padding:56px 60px 36px}
   .book-slide.active{grid-template-columns:1fr 1fr;gap:32px}
   .slide-questions{display:none}
   .about-grid{grid-template-columns:1fr;gap:40px}
+  .about-photo img{width:100%;height:320px}
   .gallery-grid{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
   .blog-featured{grid-template-columns:1fr}
   .blog-featured-img{width:100%;height:200px}
-  .featured-bar{padding:12px 32px}
+  .featured-bar{padding:0 32px}
+  .featured-img{width:64px;height:64px}
 }
 @media(max-width:640px){
   nav{padding:12px 20px}
@@ -273,7 +279,8 @@ footer{background:#080808;padding:56px 60px 36px}
   .ywn-field-row{flex-wrap:wrap}
   .ywn-btn{margin-left:0;width:100%}
   .blog-scroll-wrap{margin:0 -20px;padding-left:20px;padding-right:20px}
-  .featured-bar{padding:10px 20px}
+  .featured-bar{padding:0 20px}
+  .featured-img{width:56px;height:56px}
 }
 </style>
 </head>
@@ -325,9 +332,13 @@ footer{background:#080808;padding:56px 60px 36px}
 <!-- FEATURED BLOG BAR -->
 <div class="featured-bar">
   <div class="featured-inner">
-    <span class="featured-tag">Featured This Week</span>
+    <img src="you-are-not-running-out-of-time.png" alt="Featured blog" class="featured-img">
     <span class="featured-sep"></span>
-    <span class="featured-title-bar">You Are Not Running Out of Time — the deadline you are racing does not exist.</span>
+    <span class="featured-tag">Featured This Week</span>
+    <div class="featured-text-wrap">
+      <span class="featured-title-bar">You Are Not Running Out of Time</span>
+      <span class="featured-sub">The deadline you are racing does not exist.</span>
+    </div>
     <a href="you-are-not-running-out-of-time.html" class="featured-cta">Read Now →</a>
   </div>
 </div>
