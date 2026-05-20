@@ -236,13 +236,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 
 /* ABOUT */
 .about-section{padding:100px 60px;background:var(--white)}
-.about-grid{display:grid;grid-template-columns:320px 1fr;gap:60px;align-items:start;margin-top:40px}
-.about-photo img{width:320px;height:400px;object-fit:cover;object-position:center top;display:block}
-.about-cap{font-family:var(--body);font-size:10px;font-weight:300;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-top:10px}
-.about-quote{font-family:var(--heading);font-size:clamp(18px,2vw,24px);font-weight:300;line-height:1.45;color:var(--ink);margin-bottom:20px;border-left:1px solid var(--ink);padding-left:20px;letter-spacing:-0.01em}
-.about-text p{font-family:var(--body);font-size:13px;font-weight:300;line-height:1.85;color:var(--ink-soft)}
-.about-text p+p{margin-top:14px}
-.about-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.about-inner{display:grid;grid-template-columns:380px 1fr;gap:80px;align-items:start}
+.about-photo img{width:100%;object-fit:cover;object-position:center top;display:block}
+.about-photo-cap{font-family:var(--body);font-size:10px;font-weight:300;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-top:10px}
+.about-quote{font-family:var(--heading);font-size:clamp(20px,2.5vw,30px);font-weight:300;line-height:1.4;color:var(--ink);margin-bottom:24px;letter-spacing:-0.01em;padding-left:20px;border-left:1px solid var(--ink)}
+.about-body{font-family:var(--body);font-size:13px;font-weight:300;line-height:1.85;color:var(--ink-soft)}
+.about-body p+p{margin-top:16px}
+.about-btns{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap}
 
 /* FOOTER */
 footer{background:#080808;padding:56px 60px 36px}
@@ -258,6 +258,7 @@ footer{background:#080808;padding:56px 60px 36px}
 
 /* RESPONSIVE */
 @media(max-width:1024px){
+  .about-inner{grid-template-columns:1fr;gap:40px}
   nav{padding:14px 32px}
   .nav-right .nav-link{display:none}
   .nav-hamburger{display:flex}
@@ -277,6 +278,8 @@ footer{background:#080808;padding:56px 60px 36px}
 @media(max-width:640px){
   nav{padding:12px 20px}
   .hero,.slideshow-wrap,.order-section,.quiz-section,.ywn-section,.map-section,.blog-section,.gallery-section,.about-section,.email-strip{padding:60px 20px}
+  .about-grid{grid-template-columns:1fr;gap:24px}
+  .about-photo img{width:100%;height:260px;object-fit:cover}
   footer{padding:48px 20px 32px}
   .book-slide.active{grid-template-columns:1fr}
   .slide-questions{display:none}
@@ -751,20 +754,21 @@ footer{background:#080808;padding:56px 60px 36px}
 </div>
 
 <!-- ABOUT -->
-<section id="about" style="padding:100px 60px;background:var(--white)">
-  <div style="max-width:1100px;margin:0 auto">
-    <p class="s-label">The Author</p>
-    <div class="s-rule"></div>
-    <div style="display:grid;grid-template-columns:380px 1fr;gap:80px;align-items:start">
-      <div>
-        <img src="author.jpg" alt="Arnie Rose — author of the You Were Never Series" style="width:100%;object-fit:cover;object-position:center top;display:block">
-        <p style="font-family:var(--body);font-size:10px;font-weight:300;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-top:10px">Arnie Rose, M.A.Ed.</p>
+<section class="about-section" id="about">
+  <div class="s-inner">
+    <div class="about-inner">
+      <div class="about-photo reveal">
+        <img src="author.jpg" alt="Arnie Rose, author of the You Were Never Series" loading="eager">
+        <p class="about-photo-cap">Arnie Rose, M.A.Ed.</p>
       </div>
-      <div>
-        <p style="font-family:var(--heading);font-size:clamp(20px,2.5vw,30px);font-weight:300;line-height:1.4;color:var(--ink);margin-bottom:24px;letter-spacing:-0.01em;padding-left:20px;border-left:1px solid var(--ink)">"Behavior changes when the structure underneath it becomes visible."</p>
-        <p style="font-family:var(--body);font-size:13px;font-weight:300;line-height:1.85;color:var(--ink-soft);margin-bottom:14px">Arnie Rose Felicilda, M.A.Ed., is the founder of The Keystone House and the author of the You Were Never Series. After more than a decade in supply chain leadership across the Philippines and China, her work shifted toward the behavioral patterns and invisible systems shaping how people think, work, and lead. Today she writes behavioral nonfiction and teaches supply chain management and project management for operations managers and team leads building systems inside real-world environments.</p>
-        <p style="font-family:var(--body);font-size:13px;font-weight:300;line-height:1.85;color:var(--ink-soft)"></p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
+      <div class="reveal">
+        <p class="s-label">The Author</p>
+        <div class="s-rule"></div>
+        <p class="about-quote">"Behavior changes when the structure underneath it becomes visible."</p>
+        <div class="about-body">
+          <p>Arnie Rose Felicilda, M.A.Ed., is the founder of The Keystone House and the author of the You Were Never Series. After more than a decade in supply chain leadership across the Philippines and China, her work shifted toward the behavioral patterns and invisible systems shaping how people think, work, and lead. Today she writes behavioral nonfiction and teaches supply chain management and project management for operations managers and team leads building systems inside real-world environments.</p>
+        </div>
+        <div class="about-btns">
           <a href="https://arniefelicilda.com" class="btn-fill dark" target="_blank" rel="noopener">Author Website</a>
           <a href="https://www.facebook.com/groups/901922149570968" class="btn-outline" target="_blank" rel="noopener">Reader Community</a>
         </div>
