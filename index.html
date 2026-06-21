@@ -13,10 +13,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>You Were Never Series, 6 Books by Arnie Rose | Identity, Self-Leadership &amp; Behavioral Psychology</title>
 <meta name="description" content="The You Were Never Series is a six-book collection on identity, self-leadership, and behavioral psychology. Not affirmation books. Honest books. By Arnie Rose.">
-<meta name="keywords" content="You Were Never Series, Arnie Rose, You Were Never Behind, self help books, identity books, personal development, Keystone Books, nonfiction books, slow growth">
+<meta name="keywords" content="You Were Never Series, Arnie Rose, You Were Never Behind, self help books, identity books, personal development, nonfiction books, slow growth">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Arnie Rose">
 <link rel="canonical" href="https://youwereneverseries.arniefelicilda.com">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-ywn-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-ywn-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-ywn-180.png">
 <meta property="og:title" content="You Were Never Series, 6 Books by Arnie Rose">
 <meta property="og:description" content="Six books that dismantle the lies people carry about who they are. Not affirmation books. Honest books.">
 <meta property="og:type" content="website">
@@ -30,7 +33,7 @@
 <meta name="twitter:description" content="Six books that dismantle the lies people carry about who they are.">
 <meta name="twitter:image" content="https://youwereneverseries.arniefelicilda.com/behind-cover.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BookSeries","name":"You Were Never Series","author":{"@type":"Person","name":"Arnie Rose","url":"https://arniefelicilda.com"},"numberOfItems":6,"url":"https://youwereneverseries.arniefelicilda.com","description":"A six-book series that dismantles the lies people carry about who they are and where they should be.","publisher":{"@type":"Organization","name":"Keystone Books"}}
+{"@context":"https://schema.org","@type":"BookSeries","name":"You Were Never Series","author":{"@type":"Person","name":"Arnie Rose","url":"https://arniefelicilda.com"},"numberOfItems":6,"url":"https://youwereneverseries.arniefelicilda.com","description":"A six-book series that dismantles the lies people carry about who they are and where they should be."}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -47,7 +50,7 @@ body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(249,247,242,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--faint)}
-.nav-logo{font-family:var(--heading);font-size:20px;font-weight:400;color:var(--ink);text-decoration:none;letter-spacing:0.01em}
+.nav-logo{font-family:var(--heading);font-size:21px;font-weight:400;color:var(--ink);text-decoration:none;letter-spacing:0.01em}
 .nav-right{display:flex;gap:32px;align-items:center}
 .nav-link{font-family:var(--body);font-size:11px;font-weight:400;color:var(--mid);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s}
 .nav-link:hover{color:var(--ink)}
@@ -226,14 +229,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .blog-card-title{font-family:var(--heading);font-size:19px;font-weight:300;color:var(--ink);line-height:1.2;margin-bottom:8px;letter-spacing:-0.01em}
 .blog-card-excerpt{font-family:var(--body);font-size:11px;font-weight:300;color:var(--mid);line-height:1.65;margin-top:auto}
 
-/* GALLERY */
-.gallery-section{padding:100px 60px;background:var(--cream-dark)}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
-.gallery-item{overflow:hidden}
-.gallery-item img{width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.3s;filter:grayscale(8%)}
-.gallery-item:hover img{transform:scale(1.02);filter:grayscale(0%)}
-.gallery-cap{font-family:var(--body);font-size:10px;font-weight:300;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-top:8px}
-
 /* ABOUT */
 .about-section{padding:100px 60px;background:var(--white)}
 .about-inner{display:grid;grid-template-columns:380px 1fr;gap:80px;align-items:start}
@@ -262,13 +257,12 @@ footer{background:#080808;padding:56px 60px 36px}
   nav{padding:14px 32px}
   .nav-right .nav-link{display:none}
   .nav-hamburger{display:flex}
-  .hero,.slideshow-wrap,.order-section,.quiz-section,.ywn-section,.map-section,.blog-section,.gallery-section,.about-section,.email-strip{padding:80px 32px}
+  .hero,.slideshow-wrap,.order-section,.quiz-section,.ywn-section,.map-section,.blog-section,.about-section,.email-strip{padding:80px 32px}
   footer{padding:48px 32px 32px}
   .book-slide.active{grid-template-columns:1fr 1fr;gap:32px}
   .slide-questions{display:none}
   .about-grid{grid-template-columns:1fr;gap:40px}
   .about-photo img{width:100%;height:320px}
-  .gallery-grid{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
   .blog-featured{grid-template-columns:1fr}
   .blog-featured-img{width:100%;height:200px}
@@ -277,14 +271,12 @@ footer{background:#080808;padding:56px 60px 36px}
 }
 @media(max-width:640px){
   nav{padding:12px 20px}
-  .hero,.slideshow-wrap,.order-section,.quiz-section,.ywn-section,.map-section,.blog-section,.gallery-section,.about-section,.email-strip{padding:60px 20px}
+  .hero,.slideshow-wrap,.order-section,.quiz-section,.ywn-section,.map-section,.blog-section,.about-section,.email-strip{padding:60px 20px}
   .about-grid{grid-template-columns:1fr;gap:24px}
   .about-photo img{width:100%;height:260px;object-fit:cover}
   footer{padding:48px 20px 32px}
   .book-slide.active{grid-template-columns:1fr}
   .slide-questions{display:none}
-  .gallery-grid{grid-template-columns:1fr}
-  .gallery-item img{height:200px}
   .footer-grid{grid-template-columns:1fr}
   .email-form{flex-direction:column}
   .ywn-field-row{flex-wrap:wrap}
@@ -299,14 +291,12 @@ footer{background:#080808;padding:56px 60px 36px}
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">You Were Never Series</a>
+  <a href="https://arniefelicilda.com" class="nav-logo">Arnie Rose</a>
   <div class="nav-right">
-    <a href="https://arniefelicilda.com/books.html" class="nav-link" target="_blank" rel="noopener">Books</a>
-    <a href="#quiz" class="nav-link">Quiz</a>
-    <a href="#blog" class="nav-link">Notes</a>
-    <a href="blog.html" class="nav-link">Blog Archive</a>
+    <a href="#books" class="nav-link">Books</a>
+    <a href="blog.html" class="nav-link">Blog</a>
     <a href="#about" class="nav-link">About</a>
-    <a href="https://arniefelicilda.com" class="nav-cta" target="_blank" rel="noopener">Author Site</a>
+    <a href="#free-chapter" class="nav-cta">Free Chapter</a>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -314,21 +304,18 @@ footer{background:#080808;padding:56px 60px 36px}
 </nav>
 
 <div class="nav-mobile" id="nav-mobile">
-  <a href="https://arniefelicilda.com/books.html" target="_blank" rel="noopener">Books</a>
-  <a href="#quiz">Quiz</a>
-  <a href="#blog">Notes</a>
-  <a href="blog.html">Blog Archive</a>
+  <a href="#books">Books</a>
+  <a href="blog.html">Blog</a>
   <a href="#about">About</a>
-  <a href="https://arniefelicilda.com" target="_blank" rel="noopener">Author Site</a>
-  <a href="https://www.facebook.com/groups/901922149570968" target="_blank" rel="noopener">Reader Community</a>
+  <a href="#free-chapter">Free Chapter</a>
 </div>
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <p class="hero-label">Keystone Books · Arnie Rose</p>
+  <p class="hero-label">Arnie Rose</p>
   <h1 class="hero-title">You Were<br><em>Never</em></h1>
   <p class="hero-subtitle">Series</p>
-  <p class="hero-desc">Most people spend years measuring themselves against invisible standards they never consciously chose. These six books examine the behavioral patterns, inherited assumptions, and structural narratives shaping how people think, work, lead, and evaluate themselves.</p>
+  <p class="hero-desc">Six books about identity, self-leadership, and the stories people believe about themselves.</p>
   <p class="hero-quote">"The timeline you are racing was never yours to begin with."</p>
   <p class="hero-quote-source">You Were Never Behind, Book 01</p>
   <div class="hero-stats">
@@ -338,7 +325,7 @@ footer{background:#080808;padding:56px 60px 36px}
   </div>
   <div class="hero-actions">
     <a href="#books" class="btn-fill dark">Explore the Series</a>
-    <a href="https://www.facebook.com/groups/901922149570968" class="btn-outline" target="_blank" rel="noopener">Reader Community</a>
+    <a href="#free-chapter" class="btn-outline">Read a Free Chapter</a>
   </div>
 </section>
 
@@ -388,7 +375,7 @@ footer{background:#080808;padding:56px 60px 36px}
     <div class="book-slide" data-index="1" data-color="#27AE60">
       <div class="slide-questions"><p class="questions-label">Reflect</p><div class="question-item"><p class="question-text">"What is the one thing you keep doing that produces the least result?"</p></div><div class="question-item"><p class="question-text">"Who are you proving yourself to? And do they even notice?"</p></div><div class="question-item"><p class="question-text">"What would you stop doing if effort alone was no longer the measure?"</p></div><div class="question-item"><p class="question-text">"Where have you been working hard in the wrong direction?"</p></div></div>
       <div class="slide-center">
-        <a href="https://a.co/d/07zv44Me" target="_blank" rel="noopener"><img src="ordinary.png" alt="You Were Never Ordinary by Arnie Rose — Book 02 of the You Were Never Series" class="slide-cover-img" loading="eager"></a>
+        <a href="https://a.co/d/07zv44Me" target="_blank" rel="noopener"><img src="ordinary.png" alt="You Were Never Ordinary by Arnie Rose — Book 02 of the You Were Never Series" class="slide-cover-img" loading="lazy"></a>
         <div class="slide-nav-under"><button class="slide-arrow" onclick="deckPrev()">←</button><span class="slide-counter">2 / 6</span><button class="slide-arrow" onclick="deckNext()">→</button></div>
       </div>
       <div class="slide-content">
@@ -406,7 +393,7 @@ footer{background:#080808;padding:56px 60px 36px}
     <div class="book-slide" data-index="2" data-color="#E91E8C">
       <div class="slide-questions"><p class="questions-label">Reflect</p><div class="question-item"><p class="question-text">"When did you start making yourself smaller in a room?"</p></div><div class="question-item"><p class="question-text">"What would it look like to be clearly expressed instead of just present?"</p></div><div class="question-item"><p class="question-text">"Who has been seen consistently that you want to learn from?"</p></div><div class="question-item"><p class="question-text">"What would change if the right people finally noticed you?"</p></div></div>
       <div class="slide-center">
-        <a href="https://a.co/d/0jkHsKWM" target="_blank" rel="noopener"><img src="invisible.png" alt="You Were Never Invisible by Arnie Rose — Book 03 of the You Were Never Series" class="slide-cover-img" loading="eager"></a>
+        <a href="https://a.co/d/0jkHsKWM" target="_blank" rel="noopener"><img src="invisible.png" alt="You Were Never Invisible by Arnie Rose — Book 03 of the You Were Never Series" class="slide-cover-img" loading="lazy"></a>
         <div class="slide-nav-under"><button class="slide-arrow" onclick="deckPrev()">←</button><span class="slide-counter">3 / 6</span><button class="slide-arrow" onclick="deckNext()">→</button></div>
       </div>
       <div class="slide-content">
@@ -424,7 +411,7 @@ footer{background:#080808;padding:56px 60px 36px}
     <div class="book-slide" data-index="3" data-color="#555555">
       <div class="slide-questions"><p class="questions-label">Reflect</p><div class="question-item"><p class="question-text">"Where have you been making yourself available at a cost you do not talk about?"</p></div><div class="question-item"><p class="question-text">"What are you afraid will happen if you say no?"</p></div><div class="question-item"><p class="question-text">"Who benefits most from your consistency? Is it mutual?"</p></div><div class="question-item"><p class="question-text">"What would you stop doing if you no longer feared being replaced?"</p></div></div>
       <div class="slide-center">
-        <a href="https://a.co/d/08HIhwXs" target="_blank" rel="noopener"><img src="dispensable.png" alt="You Were Never Dispensable by Arnie Rose — Book 04 of the You Were Never Series" class="slide-cover-img" loading="eager"></a>
+        <a href="https://a.co/d/08HIhwXs" target="_blank" rel="noopener"><img src="dispensable.png" alt="You Were Never Dispensable by Arnie Rose — Book 04 of the You Were Never Series" class="slide-cover-img" loading="lazy"></a>
         <div class="slide-nav-under"><button class="slide-arrow" onclick="deckPrev()">←</button><span class="slide-counter">4 / 6</span><button class="slide-arrow" onclick="deckNext()">→</button></div>
       </div>
       <div class="slide-content">
@@ -442,7 +429,7 @@ footer{background:#080808;padding:56px 60px 36px}
     <div class="book-slide" data-index="4" data-color="#E84D1C">
       <div class="slide-questions"><p class="questions-label">Reflect</p><div class="question-item"><p class="question-text">"When did you last push back on something that mattered?"</p></div><div class="question-item"><p class="question-text">"Where do you edit yourself before you even speak?"</p></div><div class="question-item"><p class="question-text">"What would you say if you were certain you would not be dismissed?"</p></div><div class="question-item"><p class="question-text">"Who are you smaller around? And why?"</p></div></div>
       <div class="slide-center">
-        <a href="https://a.co/d/0dICGMfl" target="_blank" rel="noopener"><img src="overruled.png" alt="You Were Never Overruled by Arnie Rose — Book 05 of the You Were Never Series" class="slide-cover-img" loading="eager"></a>
+        <a href="https://a.co/d/0dICGMfl" target="_blank" rel="noopener"><img src="overruled.png" alt="You Were Never Overruled by Arnie Rose — Book 05 of the You Were Never Series" class="slide-cover-img" loading="lazy"></a>
         <div class="slide-nav-under"><button class="slide-arrow" onclick="deckPrev()">←</button><span class="slide-counter">5 / 6</span><button class="slide-arrow" onclick="deckNext()">→</button></div>
       </div>
       <div class="slide-content">
@@ -460,7 +447,7 @@ footer{background:#080808;padding:56px 60px 36px}
     <div class="book-slide" data-index="5" data-color="#F0A500">
       <div class="slide-questions"><p class="questions-label">Reflect</p><div class="question-item"><p class="question-text">"What have you stayed quiet about that cost you something?"</p></div><div class="question-item"><p class="question-text">"Which conversations do you rehearse but never have?"</p></div><div class="question-item"><p class="question-text">"What would you say if you were certain the other person could handle it?"</p></div><div class="question-item"><p class="question-text">"Where have you watched your idea become someone else's sentence?"</p></div></div>
       <div class="slide-center">
-        <a href="https://a.co/d/056120mC" target="_blank" rel="noopener"><img src="mute.png" alt="You Were Never Mute by Arnie Rose — Book 06 of the You Were Never Series" class="slide-cover-img" loading="eager"></a>
+        <a href="https://a.co/d/056120mC" target="_blank" rel="noopener"><img src="mute.png" alt="You Were Never Mute by Arnie Rose — Book 06 of the You Were Never Series" class="slide-cover-img" loading="lazy"></a>
         <div class="slide-nav-under"><button class="slide-arrow" onclick="deckPrev()">←</button><span class="slide-counter">6 / 6</span><button class="slide-arrow" onclick="deckNext()">→</button></div>
       </div>
       <div class="slide-content">
@@ -484,7 +471,7 @@ footer{background:#080808;padding:56px 60px 36px}
     <p class="s-label">Reading Order</p>
     <div class="s-rule"></div>
     <h2 class="s-title">Where to start</h2>
-    <p style="font-family:var(--body);font-size:13px;font-weight:300;color:var(--mid);margin-top:8px">Each book stands alone. Together they form a complete system.</p>
+    <p style="font-family:var(--body);font-size:13px;font-weight:300;color:var(--mid);margin-top:8px">Start anywhere. Read all six for the full journey.</p>
     <div class="order-list">
       <a href="https://a.co/d/0aages6f" class="order-item" target="_blank" rel="noopener"><span class="order-num">01</span><span class="order-dot" style="background:#E8512A"></span><div class="order-info"><p>You Were Never Behind</p><p>Start here: the foundation</p></div><span class="order-arr">→</span></a>
       <a href="https://a.co/d/07zv44Me" class="order-item" target="_blank" rel="noopener"><span class="order-num">02</span><span class="order-dot" style="background:#27AE60"></span><div class="order-info"><p>You Were Never Ordinary</p><p>The leverage you already have</p></div><span class="order-arr">→</span></a>
@@ -497,7 +484,7 @@ footer{background:#080808;padding:56px 60px 36px}
 </section>
 
 <!-- EMAIL MID -->
-<div class="email-strip">
+<div class="email-strip" id="free-chapter">
   <div class="email-strip-inner reveal">
     <h3>Free: Chapter 1 of You Were Never Behind</h3>
     <p>Read the opening chapter before deciding whether the series belongs on your shelf. No pitch. Just the book.</p>
@@ -549,7 +536,7 @@ footer{background:#080808;padding:56px 60px 36px}
     <p class="s-label">You Were Never ___</p>
     <div class="s-rule"></div>
     <h2 class="s-title">Type your word.</h2>
-    <p style="font-family:var(--body);font-size:13px;font-weight:300;color:var(--mid);margin-top:8px">The series has something to say about it. Try: enough, tired, invisible, stuck, scared, ordinary, heard</p>
+    <p style="font-family:var(--body);font-size:13px;font-weight:300;color:var(--mid);margin-top:8px">Every book begins with a belief. Try: enough, tired, invisible, stuck, scared, ordinary, heard</p>
     <div class="ywn-input-wrap">
       <div class="ywn-field-row">
         <span class="ywn-prefix">I was never</span>
@@ -615,9 +602,7 @@ footer{background:#080808;padding:56px 60px 36px}
   <div class="s-inner">
     <div class="blog-header reveal">
       <div>
-        <p class="s-label">Notes from the Series</p>
-        <div class="s-rule"></div>
-        <h2 class="s-title">Self-Leadership &amp; Recognizing Yourself</h2>
+        <h2 class="s-title">Notes from the Series</h2>
       </div>
       <a href="blog.html" class="blog-see-all">Browse All 20 Posts →</a>
     </div>
@@ -724,23 +709,6 @@ footer{background:#080808;padding:56px 60px 36px}
   </div>
 </section>
 
-<!-- GALLERY -->
-<section class="gallery-section reveal">
-  <div class="s-inner">
-    <p class="s-label">China as Second Home</p>
-    <div class="s-rule"></div>
-    <p style="font-family:var(--heading);font-size:clamp(18px,2vw,24px);font-weight:300;font-style:italic;color:var(--ink-soft);max-width:600px;line-height:1.7">"Over ten years across the Philippines and China. Different systems. Different pressures. The same invisible patterns underneath both."</p>
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="shanghai-yu-garden.jpg" alt="Shanghai Yu Garden — where Arnie Rose wrote the You Were Never Series"><p class="gallery-cap">Shanghai · Yu Garden</p></div>
-      <div class="gallery-item"><img src="Oriental.jpg" alt="Shanghai Oriental Pearl Tower"><p class="gallery-cap">Shanghai · Oriental Pearl Tower</p></div>
-      <div class="gallery-item"><img src="the-bund.jpg" alt="Shanghai The Bund"><p class="gallery-cap">Shanghai · The Bund</p></div>
-      <div class="gallery-item"><img src="thebund2.jpg" alt="Shanghai The Bund waterfront"><p class="gallery-cap">Shanghai · The Bund</p></div>
-      <div class="gallery-item"><img src="shanghai-the-bund-waterfront.jpg" alt="Shanghai Bund waterfront view"><p class="gallery-cap">Shanghai · The Bund Waterfront</p></div>
-      <div class="gallery-item"><img src="by-the-sea.jpg" alt="By the sea — Arnie Rose"><p class="gallery-cap">By the Sea</p></div>
-    </div>
-  </div>
-</section>
-
 <!-- EMAIL BOTTOM -->
 <div class="email-strip">
   <div class="email-strip-inner reveal">
@@ -764,13 +732,11 @@ footer{background:#080808;padding:56px 60px 36px}
       <div class="reveal">
         <p class="s-label">The Author</p>
         <div class="s-rule"></div>
-        <p class="about-quote">"Behavior changes when the structure underneath it becomes visible."</p>
         <div class="about-body">
-          <p>Arnie Rose Felicilda, M.A.Ed., is the founder of The Keystone House and the author of the You Were Never Series. After more than a decade in supply chain leadership across the Philippines and China, her work shifted toward the behavioral patterns and invisible systems shaping how people think, work, and lead. Today she writes behavioral nonfiction and teaches supply chain management and project management for operations managers and team leads building systems inside real-world environments.</p>
+          <p>Arnie Rose is the author of the You Were Never Series, a collection of books about identity, behavior, and self-leadership. Her work explores the beliefs people inherit, the stories they tell themselves, and the decisions that shape their lives.</p>
         </div>
         <div class="about-btns">
           <a href="https://arniefelicilda.com" class="btn-fill dark" target="_blank" rel="noopener">Author Website</a>
-          <a href="https://www.facebook.com/groups/901922149570968" class="btn-outline" target="_blank" rel="noopener">Reader Community</a>
         </div>
       </div>
     </div>
@@ -782,30 +748,22 @@ footer{background:#080808;padding:56px 60px 36px}
   <div class="footer-grid">
     <div class="footer-brand">
       <p>You Were Never Series</p>
-      <span>Keystone Books · Arnie Rose</span>
-      <small>Six books about the patterns that keep people stuck.<br>One structural correction each.</small>
+      <small>Six books about identity, behavior, and self-leadership.</small>
     </div>
     <div class="footer-col">
-      <h4>The Books</h4>
-      <a href="https://a.co/d/0aages6f" target="_blank" rel="noopener">You Were Never Behind</a>
-      <a href="https://a.co/d/07zv44Me" target="_blank" rel="noopener">You Were Never Ordinary</a>
-      <a href="https://a.co/d/0jkHsKWM" target="_blank" rel="noopener">You Were Never Invisible</a>
-      <a href="https://a.co/d/08HIhwXs" target="_blank" rel="noopener">You Were Never Dispensable</a>
-      <a href="https://a.co/d/0dICGMfl" target="_blank" rel="noopener">You Were Never Overruled</a>
-      <a href="https://a.co/d/056120mC" target="_blank" rel="noopener">You Were Never Mute</a>
+      <h4>Explore</h4>
+      <a href="#books">Books</a>
+      <a href="blog.html">Blog</a>
+      <a href="#about">About</a>
+      <a href="#free-chapter">Free Chapter</a>
     </div>
     <div class="footer-col">
-      <h4>Connect</h4>
-      <a href="https://arniefelicilda.com" target="_blank" rel="noopener">Author Site</a>
-      <a href="https://www.facebook.com/groups/901922149570968" target="_blank" rel="noopener">Reader Community</a>
-      <a href="https://www.facebook.com/YouWereNeverSeries" target="_blank" rel="noopener">Facebook Page</a>
-      <a href="https://ph.pinterest.com/arniebfelicilda" target="_blank" rel="noopener">Pinterest</a>
-      <a href="https://www.instagram.com/youwereneverseries" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.threads.net/@youwereneverseries" target="_blank" rel="noopener">Threads</a>
+      <h4>Follow</h4>
+      <a href="https://www.instagram.com/youwereneverseries" target="_blank" rel="noopener">@youwereneverseries</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <span class="footer-copy">© 2026 Arnie Rose Felicilda. Keystone Books. All rights reserved.</span>
+    <span class="footer-copy">© 2026 Arnie Rose. All rights reserved.</span>
   </div>
 </footer>
 
