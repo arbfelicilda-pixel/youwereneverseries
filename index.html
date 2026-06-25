@@ -87,8 +87,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .hero-title{font-family:var(--heading);font-size:clamp(88px,14vw,180px);font-weight:300;line-height:0.88;letter-spacing:-0.03em;color:var(--ink);margin-bottom:12px;opacity:0;animation:fadeUp 0.8s ease 0.2s forwards}
 .hero-subtitle{font-family:var(--body);font-size:12px;font-weight:400;letter-spacing:0.5em;text-transform:uppercase;color:var(--mid);margin-bottom:40px;opacity:0;animation:fadeUp 0.8s ease 0.25s forwards}
 .hero-desc{font-family:var(--body);font-size:14px;font-weight:300;color:var(--ink-soft);max-width:680px;line-height:1.8;margin:0 auto 32px;opacity:0;animation:fadeUp 0.8s ease 0.3s forwards}
-.hero-quote{font-family:var(--heading);font-size:clamp(16px,2vw,22px);font-weight:300;font-style:italic;color:var(--ink-soft);max-width:560px;margin:0 auto 12px;line-height:1.5;border-left:1px solid var(--faint);padding-left:20px;text-align:left;opacity:0;animation:fadeUp 0.8s ease 0.35s forwards}
-.hero-quote-source{font-family:var(--body);font-size:10px;font-weight:300;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);text-align:left;max-width:560px;margin:0 auto 36px;padding-left:20px;opacity:0;animation:fadeUp 0.8s ease 0.38s forwards}
+.hero-quote{font-family:var(--heading);font-size:clamp(16px,2vw,22px);font-weight:300;font-style:italic;color:var(--ink-soft);max-width:560px;margin:0 auto 12px;line-height:1.5;text-align:center;opacity:0;animation:fadeUp 0.8s ease 0.35s forwards}
+.hero-quote-source{font-family:var(--body);font-size:10px;font-weight:300;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);text-align:center;max-width:560px;margin:0 auto 36px;opacity:0;animation:fadeUp 0.8s ease 0.38s forwards}
 .hero-stats{display:inline-flex;border:1px solid var(--faint);margin:0 auto 40px;opacity:0;animation:fadeUp 0.8s ease 0.4s forwards}
 .hero-stat{padding:14px 28px;border-right:1px solid var(--faint);text-align:center}
 .hero-stat:last-child{border-right:none}
@@ -99,7 +99,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 /* FEATURED BLOG BAR */
 .featured-bar{background:var(--ink);padding:0 60px}
 .featured-inner{max-width:100%;margin:0 auto;display:flex;align-items:center;gap:28px;min-height:100px}
-.featured-img{width:100px;height:100px;object-fit:cover;flex-shrink:0;display:block;background:var(--ink-soft)}
+.featured-img{width:200px;aspect-ratio:4/5;object-fit:cover;flex-shrink:0;display:block;background:var(--ink-soft)}
 .featured-tag{font-family:var(--body);font-size:10px;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);white-space:nowrap;flex-shrink:0}
 .featured-sep{width:1px;height:60px;background:rgba(255,255,255,0.1);flex-shrink:0;display:block}
 .featured-text-wrap{display:flex;flex-direction:column;gap:6px;flex:1;padding:24px 0}
@@ -204,30 +204,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .map-download-btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);border:1px solid var(--ink);padding:12px 24px;background:transparent;cursor:pointer;transition:all 0.2s}
 .map-download-btn:hover{background:var(--ink);color:var(--white)}
 
-/* BLOG SECTION — HORIZONTAL SCROLL */
+/* BLOG SECTION — STATIC GRID */
 .blog-section{padding:100px 60px;background:var(--white)}
 .blog-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px}
 .blog-see-all{font-family:var(--body);font-size:10px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding-bottom:2px;border-bottom:1px solid var(--ink)}
-.blog-featured{background:var(--cream);border:1px solid var(--faint);padding:24px;margin-bottom:32px;display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:start;text-decoration:none;color:inherit;transition:border-color 0.2s}
+.blog-featured{background:var(--cream);border:1px solid var(--faint);padding:24px;margin-bottom:48px;display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:start;text-decoration:none;color:inherit;transition:border-color 0.2s}
 .blog-featured:hover{border-color:var(--ink)}
-.blog-featured-img{width:240px;height:180px;object-fit:cover;display:block}
+.blog-featured-img{width:240px;aspect-ratio:4/5;object-fit:cover;display:block}
 .blog-featured-label{font-family:var(--body);font-size:9px;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);margin-bottom:8px}
 .blog-featured-month{font-family:var(--body);font-size:9px;font-weight:300;letter-spacing:0.1em;color:var(--mid);margin-bottom:8px}
 .blog-featured-title{font-family:var(--heading);font-size:clamp(22px,2.5vw,30px);font-weight:300;color:var(--ink);line-height:1.2;margin-bottom:10px;letter-spacing:-0.01em}
 .blog-featured-excerpt{font-family:var(--body);font-size:12px;font-weight:300;color:var(--mid);line-height:1.65}
-.blog-scroll-wrap{overflow-x:auto;margin:0 -60px;padding:0 60px 16px;scrollbar-width:thin;scrollbar-color:var(--ink) var(--faint)}
-.blog-scroll-wrap::-webkit-scrollbar{height:2px}
-.blog-scroll-wrap::-webkit-scrollbar-track{background:var(--faint)}
-.blog-scroll-wrap::-webkit-scrollbar-thumb{background:var(--ink)}
-.blog-scroll{display:flex;gap:2px;width:max-content}
-.blog-card{width:280px;flex-shrink:0;background:var(--cream);text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:transform 0.3s ease}
+.blog-recent-label{font-family:var(--body);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);margin-bottom:24px}
+.blog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.blog-card{background:var(--cream);text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:transform 0.3s ease}
 .blog-card:hover{transform:translateY(-4px)}
-.blog-card-img{width:280px;height:210px;object-fit:cover;display:block}
+.blog-card-img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
 .blog-card-body{padding:18px;flex:1;display:flex;flex-direction:column}
 .blog-card-tag{font-family:var(--body);font-size:9px;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);margin-bottom:6px}
 .blog-card-month{font-family:var(--body);font-size:9px;font-weight:300;color:var(--mid);margin-bottom:8px}
-.blog-card-title{font-family:var(--heading);font-size:19px;font-weight:300;color:var(--ink);line-height:1.2;margin-bottom:8px;letter-spacing:-0.01em}
-.blog-card-excerpt{font-family:var(--body);font-size:11px;font-weight:300;color:var(--mid);line-height:1.65;margin-top:auto}
+.blog-card-title{font-family:var(--heading);font-size:17px;font-weight:300;color:var(--ink);line-height:1.25;margin-bottom:8px;letter-spacing:-0.01em}
+.blog-card-excerpt{font-family:var(--body);font-size:11px;font-weight:300;color:var(--mid);line-height:1.6;margin-top:auto}
 
 /* ABOUT */
 .about-section{padding:100px 60px;background:var(--white)}
@@ -265,9 +262,10 @@ footer{background:#080808;padding:56px 60px 36px}
   .about-photo img{width:100%;height:320px}
   .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
   .blog-featured{grid-template-columns:1fr}
-  .blog-featured-img{width:100%;height:200px}
+  .blog-featured-img{width:100%;aspect-ratio:4/5;height:auto}
+  .blog-grid{grid-template-columns:repeat(2,1fr)}
   .featured-bar{padding:0 32px}
-  .featured-img{width:80px;height:80px}
+  .featured-img{width:140px;aspect-ratio:4/5;height:auto}
 }
 @media(max-width:640px){
   nav{padding:12px 20px}
@@ -281,9 +279,9 @@ footer{background:#080808;padding:56px 60px 36px}
   .email-form{flex-direction:column}
   .ywn-field-row{flex-wrap:wrap}
   .ywn-btn{margin-left:0;width:100%}
-  .blog-scroll-wrap{margin:0 -20px;padding-left:20px;padding-right:20px}
+  .blog-grid{grid-template-columns:1fr}
   .featured-bar{padding:0 20px}
-  .featured-img{width:70px;height:70px}
+  .featured-img{width:110px;aspect-ratio:4/5;height:auto}
 }
 </style>
 </head>
@@ -315,7 +313,7 @@ footer{background:#080808;padding:56px 60px 36px}
   <p class="hero-label">Arnie Rose</p>
   <h1 class="hero-title">You Were<br><em>Never</em></h1>
   <p class="hero-subtitle">Series</p>
-  <p class="hero-desc">Six books about identity, self-leadership, and the stories people believe about themselves.</p>
+  <p class="hero-desc">Six books about identity, self-leadership,<br>and the stories people believe about themselves.</p>
   <p class="hero-quote">"The timeline you are racing was never yours to begin with."</p>
   <p class="hero-quote-source">You Were Never Behind, Book 01</p>
   <div class="hero-stats">
@@ -332,7 +330,7 @@ footer{background:#080808;padding:56px 60px 36px}
 <!-- FEATURED BLOG BAR -->
 <div class="featured-bar">
   <div class="featured-inner">
-    <img src="you-are-not-running-out-of-time.png" alt="Featured blog" class="featured-img">
+    <img src="you-are-not-running-out-of-time-pin.jpg" alt="You Are Not Running Out of Time" class="featured-img">
     <span class="featured-sep"></span>
     <span class="featured-tag">Featured This Week</span>
     <div class="featured-text-wrap">
@@ -597,114 +595,62 @@ footer{background:#080808;padding:56px 60px 36px}
   </div>
 </section>
 
-<!-- BLOG — HORIZONTAL SCROLL -->
+<!-- BLOG — STATIC GRID -->
 <section id="blog" class="blog-section">
   <div class="s-inner">
     <div class="blog-header reveal">
       <div>
         <h2 class="s-title">Notes from the Series</h2>
       </div>
-      <a href="blog.html" class="blog-see-all">Browse All 20 Posts →</a>
+      <a href="blog.html" class="blog-see-all">Browse All 30 Posts →</a>
     </div>
 
     <!-- FEATURED BLOG -->
-    <a href="you-were-never-waiting-for-permission.html" class="blog-featured reveal">
-      <img src="permission-fb.png" alt="You Were Never Waiting for Permission — You Were Never Series by Arnie Rose" class="blog-featured-img" loading="lazy">
+    <a href="confidence-vs-self-worth.html" class="blog-featured reveal">
+      <img src="confidence-vs-self-worth-pin.jpg" alt="Confidence vs Self-Worth, from the You Were Never Series by Arnie Rose" class="blog-featured-img" loading="lazy">
       <div>
         <p class="blog-featured-label">Latest Post</p>
-        <p class="blog-featured-month">May 2026</p>
-        <p class="blog-featured-title">You Were Never Waiting for Permission</p>
-        <p class="blog-featured-excerpt">You have been ready for longer than you think. What you have been waiting for is someone to tell you that you are. That signal is not coming. Here is what to do instead.</p>
+        <p class="blog-featured-month">June 2026</p>
+        <p class="blog-featured-title">Confidence vs Self-Worth</p>
+        <p class="blog-featured-excerpt">Confidence changes. Self-worth stays. Most people spend years building one while neglecting the other.</p>
       </div>
     </a>
 
-    <!-- HORIZONTAL BLOG SCROLL -->
-    <div class="blog-scroll-wrap reveal">
-      <div class="blog-scroll">
-        <a href="6-questions-that-will-tell-you-who-you-actually-are.html" class="blog-card">
-          <img src="6questions-fb.png" alt="6 Questions That Will Tell You Who You Actually Are" class="blog-card-img" loading="lazy">
-          <div class="blog-card-body"><p class="blog-card-tag">Self-Knowledge</p><p class="blog-card-month">May 2026</p><p class="blog-card-title">6 Questions That Will Tell You Who You Actually Are</p><p class="blog-card-excerpt">Not who you want to be. Who you actually are right now.</p></div>
-        </a>
-        <a href="the-one-habit-that-is-quietly-costing-you-everything.html" class="blog-card">
-          <img src="quiethabit-fb.png" alt="The One Habit That Is Quietly Costing You Everything" class="blog-card-img" loading="lazy">
-          <div class="blog-card-body"><p class="blog-card-tag">Habits</p><p class="blog-card-month">May 2026</p><p class="blog-card-title">The One Habit That Is Quietly Costing You Everything</p><p class="blog-card-excerpt">It does not look like a problem. That is why it keeps working against you.</p></div>
-        </a>
-        <a href="you-do-not-need-to-shrink-to-be-accepted.html" class="blog-card">
-          <img src="shrink-fb.png" alt="You Do Not Need to Shrink to Be Accepted" class="blog-card-img" loading="lazy">
-          <div class="blog-card-body"><p class="blog-card-tag">Presence</p><p class="blog-card-month">May 2026</p><p class="blog-card-title">You Do Not Need to Shrink to Be Accepted</p><p class="blog-card-excerpt">The version of you that fits everywhere is not the real one.</p></div>
-        </a>
-        <a href="6-shifts-that-change-how-you-see-yourself.html" class="blog-card">
-          <img src="6shifts-fb.png" alt="6 Shifts That Change How You See Yourself" class="blog-card-img" loading="lazy">
-          <div class="blog-card-body"><p class="blog-card-tag">Perspective</p><p class="blog-card-month">May 2026</p><p class="blog-card-title">6 Shifts That Change How You See Yourself</p><p class="blog-card-excerpt">Not affirmations. Six actual shifts that change the reading.</p></div>
-        </a>
-        <a href="you-were-never-replaceable.html" class="blog-card">
-          <img src="replaceable-fb.png" alt="You Were Never Replaceable" class="blog-card-img" loading="lazy">
-          <div class="blog-card-body"><p class="blog-card-tag">Worth</p><p class="blog-card-month">May 2026</p><p class="blog-card-title">You Were Never Replaceable</p><p class="blog-card-excerpt">Being used until you were no longer useful does not mean you were replaceable.</p></div>
-        </a>
-        <a href="7-signs-you-are-growing-even-when-it-does-not-feel-like-it.html" class="blog-card">
-          <img src="7signs-fb.png" alt="7 Signs You Are Growing Even When It Does Not Feel Like It" class="blog-card-img" loading="lazy">
-          <div class="blog-card-body"><p class="blog-card-tag">Growth</p><p class="blog-card-month">May 2026</p><p class="blog-card-title">7 Signs You Are Growing Even When It Does Not Feel Like It</p><p class="blog-card-excerpt">Growth is not always loud. Sometimes it shows up in the quietest changes.</p></div>
-        </a>
-        <a href="what-you-keep-not-saying-is-costing-you-more-than-you-think.html" class="blog-card">
-          <img src="notsaying-fb.png" alt="What You Keep Not Saying Is Costing You More Than You Think" class="blog-card-img" loading="lazy">
-          <div class="blog-card-body"><p class="blog-card-tag">Voice</p><p class="blog-card-month">May 2026</p><p class="blog-card-title">What You Keep Not Saying Is Costing You More Than You Think</p><p class="blog-card-excerpt">The words you swallowed became the distance between you and everything you wanted.</p></div>
-        </a>
-        <a href="consistency-is-not-motivation-it-is-identity.html" class="blog-card">
-          <img src="consistency-fb.png" alt="Consistency Is Not Motivation. It Is Identity." class="blog-card-img" loading="lazy">
-          <div class="blog-card-body"><p class="blog-card-tag">Identity</p><p class="blog-card-month">May 2026</p><p class="blog-card-title">Consistency Is Not Motivation. It Is Identity.</p><p class="blog-card-excerpt">Waiting to feel motivated before you start is why you keep stopping.</p></div>
-        </a>
-        <a href="how-to-build-confidence-without-performing-it.html" class="blog-card">
-          <img src="confidence-fb.png" alt="How to Build Confidence Without Performing It" class="blog-card-img" loading="lazy">
-          <div class="blog-card-body"><p class="blog-card-tag">Confidence</p><p class="blog-card-month">May 2026</p><p class="blog-card-title">How to Build Confidence Without Performing It</p><p class="blog-card-excerpt">Performed confidence is exhausting. Real confidence is quiet.</p></div>
-        </a>
-        <a href="growth-is-not-always-visible.html" class="blog-card">
-          <img src="growth-is-not-always-visible.png" alt="Growth is not always visible — You Were Never Series" class="blog-card-img" loading="lazy">
-          <div class="blog-card-body"><p class="blog-card-tag">Progress</p><p class="blog-card-month">May 2026</p><p class="blog-card-title">Growth is not always visible</p><p class="blog-card-excerpt">The work you are doing now may not show for months. That is not failure.</p></div>
-        </a>
-        <a href="your-life-is-not-a-competition.html" class="blog-card">
-          <img src="your-life-is-not-a-competition.png" alt="Your life is not a competition — You Were Never Series" class="blog-card-img" loading="lazy">
-          <div class="blog-card-body"><p class="blog-card-tag">Comparison</p><p class="blog-card-month">May 2026</p><p class="blog-card-title">Your life is not a competition</p><p class="blog-card-excerpt">You are not running behind. You are running a different race on a different track.</p></div>
-        </a>
-        <a href="some-journeys-take-the-long-way-home.html" class="blog-card">
-          <img src="some-journeys-take-the-long-way-home.png" alt="Some journeys take the long way home — You Were Never Series" class="blog-card-img" loading="lazy">
-          <div class="blog-card-body"><p class="blog-card-tag">Journey</p><p class="blog-card-month">May 2026</p><p class="blog-card-title">Some journeys take the long way home</p><p class="blog-card-excerpt">Not every path is direct. The long way builds what the shortcut never could.</p></div>
-        </a>
-        <a href="not-everyone-blooms-in-the-same-season.html" class="blog-card">
-          <img src="not-everyone-blooms-in-the-same-season.png" alt="Not everyone blooms in the same season — You Were Never Series" class="blog-card-img" loading="lazy">
-          <div class="blog-card-body"><p class="blog-card-tag">Timing</p><p class="blog-card-month">May 2026</p><p class="blog-card-title">Not everyone blooms in the same season</p><p class="blog-card-excerpt">Some flowers only open after difficult weather has passed.</p></div>
-        </a>
-        <a href="you-are-allowed-to-grow-slowly.html" class="blog-card">
-          <img src="you-are-allowed-to-grow-slowly.png" alt="You are allowed to grow slowly — You Were Never Series" class="blog-card-img" loading="lazy">
-          <div class="blog-card-body"><p class="blog-card-tag">Pace</p><p class="blog-card-month">May 2026</p><p class="blog-card-title">You are allowed to grow slowly</p><p class="blog-card-excerpt">There is no rule that says you have to become impressive as fast as possible.</p></div>
-        </a>
-        <a href="healing-is-not-proof-that-you-failed.html" class="blog-card">
-          <img src="healing-is-not-proof-that-you-failed.png" alt="Healing is not proof that you failed — You Were Never Series" class="blog-card-img" loading="lazy">
-          <div class="blog-card-body"><p class="blog-card-tag">Recovery</p><p class="blog-card-month">May 2026</p><p class="blog-card-title">Healing is not proof that you failed</p><p class="blog-card-excerpt">Resting, grieving, and rebuilding are also forms of strength.</p></div>
-        </a>
-        <a href="becoming-takes-longer-than-people-admit.html" class="blog-card">
-          <img src="becoming-takes-longer-than-people-admit.png" alt="Becoming takes longer than people admit — You Were Never Series" class="blog-card-img" loading="lazy">
-          <div class="blog-card-body"><p class="blog-card-tag">Becoming</p><p class="blog-card-month">May 2026</p><p class="blog-card-title">Becoming takes longer than people admit</p><p class="blog-card-excerpt">Almost no one talks honestly about how long it took.</p></div>
-        </a>
-        <a href="your-timeline-was-never-wrong.html" class="blog-card">
-          <img src="your-timeline-was-never-wrong.png" alt="Your timeline was never wrong — You Were Never Series" class="blog-card-img" loading="lazy">
-          <div class="blog-card-body"><p class="blog-card-tag">Timeline</p><p class="blog-card-month">May 2026</p><p class="blog-card-title">Your timeline was never wrong</p><p class="blog-card-excerpt">You were not late. The timeline you are measuring yourself against was never yours.</p></div>
-        </a>
-        <a href="you-are-not-running-out-of-time.html" class="blog-card">
-          <img src="you-are-not-running-out-of-time.png" alt="You are not running out of time — You Were Never Series" class="blog-card-img" loading="lazy">
-          <div class="blog-card-body"><p class="blog-card-tag">Urgency</p><p class="blog-card-month">May 2026</p><p class="blog-card-title">You are not running out of time</p><p class="blog-card-excerpt">The clock you have been racing is not real. It was borrowed from someone else's plan.</p></div>
-        </a>
-        <a href="you-are-still-becoming.html" class="blog-card">
-          <img src="you-are-still-becoming.png" alt="You are still becoming — You Were Never Series" class="blog-card-img" loading="lazy">
-          <div class="blog-card-body"><p class="blog-card-tag">Identity</p><p class="blog-card-month">May 2026</p><p class="blog-card-title">You are still becoming</p><p class="blog-card-excerpt">Becoming does not have a deadline. It has a direction.</p></div>
-        </a>
-        <a href="blog.html" class="blog-card" style="justify-content:center;align-items:center;background:var(--ink);min-height:280px">
-          <div class="blog-card-body" style="text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px">
-            <p style="font-family:var(--body);font-size:10px;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5)">All Posts</p>
-            <p style="font-family:var(--heading);font-size:22px;font-weight:300;color:#fff;line-height:1.3">Browse all 20 notes from the series</p>
-            <span style="font-family:var(--body);font-size:10px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);border-bottom:1px solid rgba(255,255,255,0.3);padding-bottom:2px">View all →</span>
-          </div>
-        </a>
-      </div>
+    <!-- RECENT ESSAYS — STATIC GRID -->
+    <p class="blog-recent-label">Recent Essays</p>
+    <div class="blog-grid reveal">
+      <a href="decision-making-vs-motivation.html" class="blog-card">
+        <img src="decision-making-vs-motivation-pin.jpg" alt="Decision Making vs Motivation" class="blog-card-img" loading="lazy">
+        <div class="blog-card-body"><p class="blog-card-tag">Decisions</p><p class="blog-card-month">June 2026</p><p class="blog-card-title">Decision Making vs Motivation</p><p class="blog-card-excerpt">Progress depends more on decisions than motivation.</p></div>
+      </a>
+      <a href="stop-seeking-permission.html" class="blog-card">
+        <img src="stop-seeking-permission-pin.jpg" alt="Stop Seeking Permission" class="blog-card-img" loading="lazy">
+        <div class="blog-card-body"><p class="blog-card-tag">Agency</p><p class="blog-card-month">June 2026</p><p class="blog-card-title">Stop Seeking Permission</p><p class="blog-card-excerpt">The permission you want may never arrive.</p></div>
+      </a>
+      <a href="self-worth-and-achievement.html" class="blog-card">
+        <img src="self-worth-and-achievement-pin.jpg" alt="Self-Worth and Achievement" class="blog-card-img" loading="lazy">
+        <div class="blog-card-body"><p class="blog-card-tag">Worth</p><p class="blog-card-month">June 2026</p><p class="blog-card-title">Self-Worth and Achievement</p><p class="blog-card-excerpt">Achievement and self-worth are not the same thing.</p></div>
+      </a>
+      <a href="why-hardworking-people-feel-invisible.html" class="blog-card">
+        <img src="why-hardworking-people-feel-invisible-pin.jpg" alt="Why Hardworking People Feel Invisible" class="blog-card-img" loading="lazy">
+        <div class="blog-card-body"><p class="blog-card-tag">Recognition</p><p class="blog-card-month">June 2026</p><p class="blog-card-title">Why Hardworking People Feel Invisible</p><p class="blog-card-excerpt">Effort and recognition do not always arrive together.</p></div>
+      </a>
+      <a href="how-labels-shape-self-image.html" class="blog-card">
+        <img src="how-labels-shape-self-image-pin.jpg" alt="How Labels Shape Self-Image" class="blog-card-img" loading="lazy">
+        <div class="blog-card-body"><p class="blog-card-tag">Identity</p><p class="blog-card-month">June 2026</p><p class="blog-card-title">How Labels Shape Self-Image</p><p class="blog-card-excerpt">The labels you accept shape the person you become.</p></div>
+      </a>
+      <a href="psychology-of-comparing-yourself-to-others.html" class="blog-card">
+        <img src="psychology-of-comparing-yourself-to-others-pin.jpg" alt="Psychology of Comparing Yourself to Others" class="blog-card-img" loading="lazy">
+        <div class="blog-card-body"><p class="blog-card-tag">Comparison</p><p class="blog-card-month">June 2026</p><p class="blog-card-title">Psychology of Comparing Yourself to Others</p><p class="blog-card-excerpt">Why comparison feels true even when it isn't.</p></div>
+      </a>
+      <a href="why-do-people-feel-behind-in-life.html" class="blog-card">
+        <img src="why-do-people-feel-behind-in-life-pin.jpg" alt="Why Do People Feel Behind in Life" class="blog-card-img" loading="lazy">
+        <div class="blog-card-body"><p class="blog-card-tag">Timeline</p><p class="blog-card-month">June 2026</p><p class="blog-card-title">Why Do People Feel Behind in Life</p><p class="blog-card-excerpt">The feeling of being behind is rarely about time.</p></div>
+      </a>
+      <a href="12-books-about-identity-everyone-should-read.html" class="blog-card">
+        <img src="12-books-about-identity-everyone-should-read-pin.jpg" alt="12 Books About Identity Everyone Should Read" class="blog-card-img" loading="lazy">
+        <div class="blog-card-body"><p class="blog-card-tag">Books</p><p class="blog-card-month">June 2026</p><p class="blog-card-title">12 Books About Identity Everyone Should Read</p><p class="blog-card-excerpt">Twelve books about identity, belonging, and becoming.</p></div>
+      </a>
     </div>
   </div>
 </section>
