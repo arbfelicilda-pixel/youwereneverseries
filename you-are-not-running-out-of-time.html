@@ -57,7 +57,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .nav-back:hover{color:var(--terra)}
 .post-hero{padding:120px 60px 60px;max-width:760px;margin:0 auto}
 .post-eyebrow{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:var(--terra);margin-bottom:16px}
-.post-meta{font-family:var(--sans);font-size:13px;font-weight:400;color:var(--mid);margin-top:-8px;margin-bottom:8px}
+.post-meta{font-family:var(--sans);font-size:13px;font-weight:400;color:var(--mid);margin-top:16px;margin-bottom:8px}
 .author-card{display:flex;align-items:center;gap:16px;max-width:760px;margin:0 auto 40px;padding:20px 60px;border-top:1px solid var(--faint);border-bottom:1px solid var(--faint);position:relative}
 .author-card img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;cursor:pointer}
 .author-card-trigger{display:flex;align-items:center;gap:16px;cursor:pointer}
@@ -71,7 +71,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .author-card-trigger:hover+.author-card-popover,.author-card-popover:hover{display:block}
 .author-card-role{font-family:var(--body);font-size:14px;color:var(--ink-soft);line-height:1.5;margin:0}
 .post-title{font-family:var(--playfair);font-size:clamp(32px,5vw,56px);font-weight:700;line-height:1.1;color:var(--ink);margin-bottom:24px;letter-spacing:-0.02em}
-.post-image{width:100%;max-width:760px;margin:0 auto 48px;display:block}
+.post-image{width:100%;max-width:760px;margin:0 auto 48px;padding:0 60px;box-sizing:border-box;display:block}
 .post-image img{width:100%;height:auto;display:block}
 .post-body{max-width:760px;margin:0 auto;padding:0 60px 40px}
 .post-body p{font-family:var(--body);font-size:19px;line-height:1.8;color:var(--ink-soft);margin-bottom:24px}
@@ -102,7 +102,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .related-list{display:flex;flex-direction:column;gap:14px}
 .related-link{font-family:var(--body);font-size:18px;color:var(--terra-dark);text-decoration:none;border-bottom:1px solid rgba(194,113,79,0.3);padding-bottom:3px;display:inline-block}
 .related-link:hover{color:var(--terra)}
-.book-callout{max-width:760px;margin:0 auto 60px;padding:32px 36px;background:var(--parchment-dark);border-left:3px solid var(--terra)}
+.book-callout{max-width:760px;margin:0 auto 60px;padding:32px 36px;background:var(--parchment-dark);border-left:3px solid var(--terra);display:flex;gap:24px;align-items:flex-start}
+.book-callout-cover{width:110px;flex-shrink:0}
+.book-callout-cover img{width:100%;height:auto;display:block;box-shadow:0 4px 12px rgba(0,0,0,0.15)}
+.book-callout-text{flex:1}
 .book-callout p{font-family:var(--body);font-size:17px;color:var(--ink-soft);line-height:1.75;margin-bottom:12px}
 .book-callout p:last-child{margin-bottom:0}
 .book-callout a{color:var(--terra-dark);text-decoration:none;font-weight:600;border-bottom:1px solid rgba(194,113,79,0.4)}
@@ -131,7 +134,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
   nav{padding:14px 20px}
   .post-hero{padding:100px 20px 40px}
   .post-body,.faq-section,.related-section,.essential-section{padding-left:20px;padding-right:20px}
-  .book-callout{margin-left:20px;margin-right:20px;padding:24px}
+  .book-callout{margin-left:20px;margin-right:20px;padding:24px;flex-direction:column}
+  .book-callout-cover{width:90px}
   .share-section,.back-section,.email-strip{padding:36px 20px}
 }
 </style>
@@ -150,7 +154,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 
 <div class="author-card">
   <div class="author-card-trigger">
-    <img src="author-avatar.jpg" alt="Arnie Rose, author">
+    <img src="author.jpg" alt="Arnie Rose, author">
     <div class="author-card-text">
       <p class="author-card-name">Arnie Rose</p>
       <div class="author-card-links">
@@ -255,7 +259,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 </div>
 
 <div class="book-callout">
+<div class="book-callout-cover">
+  <img src="behind.png" alt="You Were Never Behind by Arnie Rose">
+</div>
+<div class="book-callout-text">
 <p>The book <a href="https://a.co/d/0aages6f" target="_blank" rel="noopener"><strong>You Were Never Behind</strong></a> is built around exactly this. The timeline you are racing was never yours. The proof is in the book. If the panic about time is something you carry daily, this is the one to read first.</p>
+</div>
 </div>
 
 <div class="faq-section">
