@@ -63,7 +63,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .start-here{padding:56px 60px 24px;max-width:1200px;margin:0 auto}
 .start-here-label{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--terra);margin-bottom:10px}
 .start-here-desc{font-family:var(--body);font-size:17px;color:var(--mid);margin-bottom:32px}
-.start-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.start-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 
 /* SECTION */
 .blog-section{padding:56px 60px;max-width:1200px;margin:0 auto}
@@ -74,14 +74,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 /* CATEGORY SECTIONS (full-width, 6-across, stacked vertically) */
 .category-section{padding:48px 60px;max-width:1200px;margin:0 auto}
 .category-section .section-header{margin-bottom:28px;padding-bottom:16px}
-.category-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
-.category-grid-compact{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,180px));gap:20px;justify-content:start}
+.category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.category-grid-compact{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,220px));gap:24px;justify-content:start}
 
-/* MORE ESSAYS LINK ROW (full-width strip below each category's 6-card row) */
+/* MORE ESSAYS LINK ROW (vertical list, full-width strip below each category's card row) */
 .more-essays{margin-top:24px;padding-top:18px;border-top:1px solid var(--faint)}
 .more-essays-label{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:0.1em;color:var(--ink);margin-bottom:12px;text-transform:none}
-.more-essays-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 28px}
-.more-essays-list li{font-family:var(--body);font-size:14.5px;line-height:1.6;padding-left:16px;position:relative}
+.more-essays-list{list-style:none;margin:0;padding:0}
+.more-essays-list li{font-family:var(--body);font-size:14.5px;line-height:1.6;margin-bottom:9px;padding-left:16px;position:relative}
 .more-essays-list li::before{content:"•";position:absolute;left:0;color:var(--terra)}
 .more-essays-list a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid transparent;transition:color 0.2s,border-color 0.2s}
 .more-essays-list a:hover{color:var(--terra);border-color:var(--terra)}
@@ -90,6 +90,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .blog-card{text-decoration:none;color:inherit;display:flex;flex-direction:column;background:var(--white);border:1px solid var(--faint);transition:border-color 0.2s,transform 0.2s}
 .blog-card:hover{border-color:var(--terra);transform:translateY(-2px)}
 .blog-card-img{width:100%;aspect-ratio:2/3;overflow:hidden;display:block;background:var(--parchment-dark)}
+.start-grid .blog-card-img,.category-grid:not(.category-grid-compact) .blog-card-img{aspect-ratio:4/5}
 .blog-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s}
 .blog-card:hover .blog-card-img img{transform:scale(1.02)}
 .blog-card-body{padding:14px 14px 16px;flex:1;display:flex;flex-direction:column}
@@ -132,8 +133,6 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
 
 /* RESPONSIVE */
 @media(max-width:1100px){
-  .start-grid{grid-template-columns:repeat(3,1fr)}
-  .category-grid{grid-template-columns:repeat(3,1fr)}
   .books-grid{grid-template-columns:repeat(3,1fr)}
 }
 @media(max-width:960px){
@@ -143,6 +142,7 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
   .blog-section,.start-here,.books-section,.category-section{padding-left:32px;padding-right:32px}
   .page-hero{padding:100px 32px 48px}
   .section-divider{margin:0 32px}
+  .category-grid{grid-template-columns:repeat(3,1fr)}
 }
 @media(max-width:640px){
   nav{padding:14px 20px}
@@ -191,7 +191,7 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
 <!-- START HERE -->
 <div class="start-here">
   <p class="start-here-label">Start Here</p>
-  <p class="start-here-desc">Six essential essays to begin with.</p>
+  <p class="start-here-desc">Four essential essays to begin with.</p>
   <div class="start-grid">
 
     <a href="https://youwereneverseries.arniefelicilda.com/your-timeline-was-never-wrong.html" class="blog-card blog-card-full">
@@ -200,15 +200,6 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
         <p class="blog-card-title">Your Timeline Was Never Wrong</p>
         <p class="blog-card-desc">You are not late. You are becoming.</p>
         <div class="blog-card-meta"><span>8 min read</span><span>Read →</span></div>
-      </div>
-    </a>
-
-    <a href="https://youwereneverseries.arniefelicilda.com/you-are-not-running-out-of-time.html" class="blog-card blog-card-full">
-      <div class="blog-card-img"><img src="you-are-not-running-out-of-time-pin.jpg" alt="You Are Not Running Out of Time" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">You Are Not Running Out of Time</p>
-        <p class="blog-card-desc">The right time is still unfolding.</p>
-        <div class="blog-card-meta"><span>7 min read</span><span>Read →</span></div>
       </div>
     </a>
 
@@ -226,15 +217,6 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
       <div class="blog-card-body">
         <p class="blog-card-title">Growth Is Not Always Visible</p>
         <p class="blog-card-desc">You are changing even when you can't see it.</p>
-        <div class="blog-card-meta"><span>7 min read</span><span>Read →</span></div>
-      </div>
-    </a>
-
-    <a href="https://youwereneverseries.arniefelicilda.com/6-questions-that-will-tell-you-who-you-actually-are.html" class="blog-card blog-card-full">
-      <div class="blog-card-img"><img src="6-questions-that-will-tell-you-who-you-actually-are-pin.jpg" alt="6 Questions That Will Tell You Who You Actually Are" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">6 Questions That Will Tell You Who You Actually Are</p>
-        <p class="blog-card-desc">Not who you want to be. Not who people expect.</p>
         <div class="blog-card-meta"><span>7 min read</span><span>Read →</span></div>
       </div>
     </a>
@@ -293,26 +275,12 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
       </div>
     </a>
 
-    <a href="https://youwereneverseries.arniefelicilda.com/you-were-never-replaceable.html" class="blog-card">
-      <div class="blog-card-img"><img src="you-were-never-replaceable-pin.jpg" alt="You Were Never Replaceable" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">You Were Never Replaceable</p>
-        <div class="blog-card-meta"><span>Read →</span></div>
-      </div>
-    </a>
-
-    <a href="https://youwereneverseries.arniefelicilda.com/psychology-of-comparing-yourself-to-others.html" class="blog-card">
-      <div class="blog-card-img"><img src="psychology-of-comparing-yourself-to-others-pin.jpg" alt="Psychology of Comparing Yourself to Others" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">Psychology of Comparing Yourself to Others</p>
-        <div class="blog-card-meta"><span>Read →</span></div>
-      </div>
-    </a>
-
   </div>
   <div class="more-essays">
     <p class="more-essays-label">More in Identity & Self-Worth</p>
     <ul class="more-essays-list">
+      <li><a href="https://youwereneverseries.arniefelicilda.com/you-were-never-replaceable.html">You Were Never Replaceable</a></li>
+      <li><a href="https://youwereneverseries.arniefelicilda.com/psychology-of-comparing-yourself-to-others.html">Psychology of Comparing Yourself to Others</a></li>
       <li><a href="https://youwereneverseries.arniefelicilda.com/how-labels-shape-self-image.html">How Labels Shape Self-Image</a></li>
       <li><a href="https://youwereneverseries.arniefelicilda.com/why-hardworking-people-feel-invisible.html">Why Hardworking People Feel Invisible</a></li>
       <li><a href="https://youwereneverseries.arniefelicilda.com/self-worth-and-achievement.html">Self-Worth and Achievement</a></li>
@@ -363,26 +331,12 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
       </div>
     </a>
 
-    <a href="https://youwereneverseries.arniefelicilda.com/healing-is-not-proof-that-you-failed.html" class="blog-card">
-      <div class="blog-card-img"><img src="healing-is-not-proof-that-you-failed-pin.jpg" alt="Healing Is Not Proof That You Failed" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">Healing Is Not Proof That You Failed</p>
-        <div class="blog-card-meta"><span>Read →</span></div>
-      </div>
-    </a>
-
-    <a href="https://youwereneverseries.arniefelicilda.com/some-journeys-take-the-long-way-home.html" class="blog-card">
-      <div class="blog-card-img"><img src="some-journeys-take-the-long-way-home-pin.jpg" alt="Some Journeys Take the Long Way Home" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">Some Journeys Take the Long Way Home</p>
-        <div class="blog-card-meta"><span>Read →</span></div>
-      </div>
-    </a>
-
   </div>
   <div class="more-essays">
     <p class="more-essays-label">More in Growth & Becoming</p>
     <ul class="more-essays-list">
+      <li><a href="https://youwereneverseries.arniefelicilda.com/healing-is-not-proof-that-you-failed.html">Healing Is Not Proof That You Failed</a></li>
+      <li><a href="https://youwereneverseries.arniefelicilda.com/some-journeys-take-the-long-way-home.html">Some Journeys Take the Long Way Home</a></li>
       <li><a href="https://youwereneverseries.arniefelicilda.com/becoming-takes-longer-than-people-admit.html">Becoming Takes Longer Than People Admit</a></li>
       <li><a href="https://youwereneverseries.arniefelicilda.com/why-do-people-feel-behind-in-life.html">Why Do People Feel Behind in Life</a></li>
       <li><a href="https://youwereneverseries.arniefelicilda.com/stop-seeking-permission.html">Stop Seeking Permission</a></li>
@@ -433,26 +387,12 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
       </div>
     </a>
 
-    <a href="https://youwereneverseries.arniefelicilda.com/how-to-build-confidence-without-performing-it.html" class="blog-card">
-      <div class="blog-card-img"><img src="how-to-build-confidence-without-performing-it-pin.jpg" alt="How to Build Confidence Without Performing It" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">How to Build Confidence Without Performing It</p>
-        <div class="blog-card-meta"><span>Read →</span></div>
-      </div>
-    </a>
-
-    <a href="https://youwereneverseries.arniefelicilda.com/the-one-habit-that-is-quietly-costing-you-everything.html" class="blog-card">
-      <div class="blog-card-img"><img src="the-one-habit-that-is-quietly-costing-you-everything-pin.jpg" alt="The One Habit That Is Quietly Costing You Everything" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">The One Habit That Is Quietly Costing You Everything</p>
-        <div class="blog-card-meta"><span>Read →</span></div>
-      </div>
-    </a>
-
   </div>
   <div class="more-essays">
     <p class="more-essays-label">More in Self-Leadership</p>
     <ul class="more-essays-list">
+      <li><a href="https://youwereneverseries.arniefelicilda.com/how-to-build-confidence-without-performing-it.html">How to Build Confidence Without Performing It</a></li>
+      <li><a href="https://youwereneverseries.arniefelicilda.com/the-one-habit-that-is-quietly-costing-you-everything.html">The One Habit That Is Quietly Costing You Everything</a></li>
       <li><a href="https://youwereneverseries.arniefelicilda.com/what-you-keep-not-saying-is-costing-you-more-than-you-think.html">What You Keep Not Saying Is Costing You More Than You Think</a></li>
       <li><a href="https://youwereneverseries.arniefelicilda.com/you-were-never-waiting-for-permission.html">You Were Never Waiting for Permission</a></li>
     </ul>
