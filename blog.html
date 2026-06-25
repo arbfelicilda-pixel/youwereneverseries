@@ -71,18 +71,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .section-title{font-family:var(--playfair);font-size:30px;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:6px}
 .section-desc{font-family:var(--body);font-size:16px;color:var(--mid);line-height:1.6}
 
-/* COLUMNS LAYOUT (3 categories side by side) */
-.categories-wrap{padding:0 60px 24px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
-.category-col .section-header{margin-bottom:30px;padding-bottom:16px}
-.category-col .section-title{font-size:24px}
-.category-col .section-desc{font-size:14px}
-.category-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+/* CATEGORY SECTIONS (full-width, 6-across, stacked vertically) */
+.category-section{padding:48px 60px;max-width:1200px;margin:0 auto}
+.category-section .section-header{margin-bottom:28px;padding-bottom:16px}
+.category-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.category-grid-compact{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,180px));gap:20px;justify-content:start}
 
-/* MORE ESSAYS LINK ROW */
+/* MORE ESSAYS LINK ROW (full-width strip below each category's 6-card row) */
 .more-essays{margin-top:24px;padding-top:18px;border-top:1px solid var(--faint)}
 .more-essays-label{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:0.1em;color:var(--ink);margin-bottom:12px;text-transform:none}
-.more-essays-list{list-style:none;margin:0;padding:0}
-.more-essays-list li{font-family:var(--body);font-size:14.5px;line-height:1.6;margin-bottom:9px;padding-left:16px;position:relative}
+.more-essays-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 28px}
+.more-essays-list li{font-family:var(--body);font-size:14.5px;line-height:1.6;padding-left:16px;position:relative}
 .more-essays-list li::before{content:"•";position:absolute;left:0;color:var(--terra)}
 .more-essays-list a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid transparent;transition:color 0.2s,border-color 0.2s}
 .more-essays-list a:hover{color:var(--terra);border-color:var(--terra)}
@@ -134,15 +133,14 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
 /* RESPONSIVE */
 @media(max-width:1100px){
   .start-grid{grid-template-columns:repeat(3,1fr)}
-  .categories-wrap{grid-template-columns:1fr}
+  .category-grid{grid-template-columns:repeat(3,1fr)}
   .books-grid{grid-template-columns:repeat(3,1fr)}
 }
 @media(max-width:960px){
   nav{padding:16px 32px}
   .nav-right .nav-link{display:none}
   .nav-hamburger{display:flex}
-  .blog-section,.start-here,.books-section{padding-left:32px;padding-right:32px}
-  .categories-wrap{padding:0 32px 24px}
+  .blog-section,.start-here,.books-section,.category-section{padding-left:32px;padding-right:32px}
   .page-hero{padding:100px 32px 48px}
   .section-divider{margin:0 32px}
 }
@@ -151,7 +149,7 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
   .start-grid{grid-template-columns:repeat(2,1fr)}
   .category-grid{grid-template-columns:repeat(2,1fr)}
   .books-grid{grid-template-columns:repeat(2,1fr)}
-  .blog-section,.start-here,.books-section{padding-left:20px;padding-right:20px}
+  .blog-section,.start-here,.books-section,.category-section{padding-left:20px;padding-right:20px}
   .page-hero{padding:96px 20px 40px}
   .section-divider{margin:0 20px}
   .email-strip{padding:48px 20px}
@@ -255,222 +253,221 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
 
 <hr class="section-divider">
 
-<!-- THREE CATEGORIES -->
-<div class="categories-wrap">
-
-  <!-- IDENTITY & SELF-WORTH -->
-  <div class="category-col">
-    <div class="section-header">
-      <h2 class="section-title">Identity & Self-Worth</h2>
-      <p class="section-desc">Essays on identity, self-worth, comparison, and self-perception.</p>
-    </div>
-    <div class="category-grid">
-
-      <a href="https://youwereneverseries.arniefelicilda.com/your-timeline-was-never-wrong.html" class="blog-card">
-        <div class="blog-card-img"><img src="your-timeline-was-never-wrong-pin.jpg" alt="Your Timeline Was Never Wrong" loading="lazy"></div>
-        <div class="blog-card-body">
-          <p class="blog-card-title">Your Timeline Was Never Wrong</p>
-          <div class="blog-card-meta"><span>Read →</span></div>
-        </div>
-      </a>
-
-      <a href="https://youwereneverseries.arniefelicilda.com/you-are-not-running-out-of-time.html" class="blog-card">
-        <div class="blog-card-img"><img src="you-are-not-running-out-of-time-pin.jpg" alt="You Are Not Running Out of Time" loading="lazy"></div>
-        <div class="blog-card-body">
-          <p class="blog-card-title">You Are Not Running Out of Time</p>
-          <div class="blog-card-meta"><span>Read →</span></div>
-        </div>
-      </a>
-
-      <a href="https://youwereneverseries.arniefelicilda.com/your-life-is-not-a-competition.html" class="blog-card">
-        <div class="blog-card-img"><img src="your-life-is-not-a-competition-pin.jpg" alt="Your Life Is Not a Competition" loading="lazy"></div>
-        <div class="blog-card-body">
-          <p class="blog-card-title">Your Life Is Not a Competition</p>
-          <div class="blog-card-meta"><span>Read →</span></div>
-        </div>
-      </a>
-
-      <a href="https://youwereneverseries.arniefelicilda.com/you-do-not-need-to-shrink-to-be-accepted.html" class="blog-card">
-        <div class="blog-card-img"><img src="you-do-not-need-to-shrink-to-be-accepted-pin.jpg" alt="You Do Not Need to Shrink to Be Accepted" loading="lazy"></div>
-        <div class="blog-card-body">
-          <p class="blog-card-title">You Do Not Need to Shrink to Be Accepted</p>
-          <div class="blog-card-meta"><span>Read →</span></div>
-        </div>
-      </a>
-
-      <a href="https://youwereneverseries.arniefelicilda.com/you-were-never-replaceable.html" class="blog-card">
-        <div class="blog-card-img"><img src="you-were-never-replaceable-pin.jpg" alt="You Were Never Replaceable" loading="lazy"></div>
-        <div class="blog-card-body">
-          <p class="blog-card-title">You Were Never Replaceable</p>
-          <div class="blog-card-meta"><span>Read →</span></div>
-        </div>
-      </a>
-
-      <a href="https://youwereneverseries.arniefelicilda.com/psychology-of-comparing-yourself-to-others.html" class="blog-card">
-        <div class="blog-card-img"><img src="psychology-of-comparing-yourself-to-others-pin.jpg" alt="Psychology of Comparing Yourself to Others" loading="lazy"></div>
-        <div class="blog-card-body">
-          <p class="blog-card-title">Psychology of Comparing Yourself to Others</p>
-          <div class="blog-card-meta"><span>Read →</span></div>
-        </div>
-      </a>
-
-    </div>
-    <div class="more-essays">
-      <p class="more-essays-label">More in Identity & Self-Worth</p>
-      <ul class="more-essays-list">
-        <li><a href="https://youwereneverseries.arniefelicilda.com/how-labels-shape-self-image.html">How Labels Shape Self-Image</a></li>
-        <li><a href="https://youwereneverseries.arniefelicilda.com/why-hardworking-people-feel-invisible.html">Why Hardworking People Feel Invisible</a></li>
-        <li><a href="https://youwereneverseries.arniefelicilda.com/self-worth-and-achievement.html">Self-Worth and Achievement</a></li>
-        <li><a href="https://youwereneverseries.arniefelicilda.com/confidence-vs-self-worth.html">Confidence vs Self-Worth</a></li>
-      </ul>
-    </div>
+<!-- IDENTITY & SELF-WORTH -->
+<section class="category-section">
+  <div class="section-header">
+    <h2 class="section-title">Identity & Self-Worth</h2>
+    <p class="section-desc">Essays on identity, self-worth, comparison, and self-perception.</p>
   </div>
+  <div class="category-grid">
 
-  <!-- GROWTH & BECOMING -->
-  <div class="category-col">
-    <div class="section-header">
-      <h2 class="section-title">Growth & Becoming</h2>
-      <p class="section-desc">Essays on pace, timing, and nonlinear growth.</p>
-    </div>
-    <div class="category-grid">
+    <a href="https://youwereneverseries.arniefelicilda.com/your-timeline-was-never-wrong.html" class="blog-card">
+      <div class="blog-card-img"><img src="your-timeline-was-never-wrong-pin.jpg" alt="Your Timeline Was Never Wrong" loading="lazy"></div>
+      <div class="blog-card-body">
+        <p class="blog-card-title">Your Timeline Was Never Wrong</p>
+        <div class="blog-card-meta"><span>Read →</span></div>
+      </div>
+    </a>
 
-      <a href="https://youwereneverseries.arniefelicilda.com/growth-is-not-always-visible.html" class="blog-card">
-        <div class="blog-card-img"><img src="growth-is-not-always-visible-pin.jpg" alt="Growth Is Not Always Visible" loading="lazy"></div>
-        <div class="blog-card-body">
-          <p class="blog-card-title">Growth Is Not Always Visible</p>
-          <div class="blog-card-meta"><span>Read →</span></div>
-        </div>
-      </a>
+    <a href="https://youwereneverseries.arniefelicilda.com/you-are-not-running-out-of-time.html" class="blog-card">
+      <div class="blog-card-img"><img src="you-are-not-running-out-of-time-pin.jpg" alt="You Are Not Running Out of Time" loading="lazy"></div>
+      <div class="blog-card-body">
+        <p class="blog-card-title">You Are Not Running Out of Time</p>
+        <div class="blog-card-meta"><span>Read →</span></div>
+      </div>
+    </a>
 
-      <a href="https://youwereneverseries.arniefelicilda.com/you-are-allowed-to-grow-slowly.html" class="blog-card">
-        <div class="blog-card-img"><img src="you-are-allowed-to-grow-slowly-pin.jpg" alt="You Are Allowed to Grow Slowly" loading="lazy"></div>
-        <div class="blog-card-body">
-          <p class="blog-card-title">You Are Allowed to Grow Slowly</p>
-          <div class="blog-card-meta"><span>Read →</span></div>
-        </div>
-      </a>
+    <a href="https://youwereneverseries.arniefelicilda.com/your-life-is-not-a-competition.html" class="blog-card">
+      <div class="blog-card-img"><img src="your-life-is-not-a-competition-pin.jpg" alt="Your Life Is Not a Competition" loading="lazy"></div>
+      <div class="blog-card-body">
+        <p class="blog-card-title">Your Life Is Not a Competition</p>
+        <div class="blog-card-meta"><span>Read →</span></div>
+      </div>
+    </a>
 
-      <a href="https://youwereneverseries.arniefelicilda.com/you-are-still-becoming.html" class="blog-card">
-        <div class="blog-card-img"><img src="you-are-still-becoming-pin.jpg" alt="You Are Still Becoming" loading="lazy"></div>
-        <div class="blog-card-body">
-          <p class="blog-card-title">You Are Still Becoming</p>
-          <div class="blog-card-meta"><span>Read →</span></div>
-        </div>
-      </a>
+    <a href="https://youwereneverseries.arniefelicilda.com/you-do-not-need-to-shrink-to-be-accepted.html" class="blog-card">
+      <div class="blog-card-img"><img src="you-do-not-need-to-shrink-to-be-accepted-pin.jpg" alt="You Do Not Need to Shrink to Be Accepted" loading="lazy"></div>
+      <div class="blog-card-body">
+        <p class="blog-card-title">You Do Not Need to Shrink to Be Accepted</p>
+        <div class="blog-card-meta"><span>Read →</span></div>
+      </div>
+    </a>
 
-      <a href="https://youwereneverseries.arniefelicilda.com/not-everyone-blooms-in-the-same-season.html" class="blog-card">
-        <div class="blog-card-img"><img src="not-everyone-blooms-in-the-same-season-pin.jpg" alt="Not Everyone Blooms in the Same Season" loading="lazy"></div>
-        <div class="blog-card-body">
-          <p class="blog-card-title">Not Everyone Blooms in the Same Season</p>
-          <div class="blog-card-meta"><span>Read →</span></div>
-        </div>
-      </a>
+    <a href="https://youwereneverseries.arniefelicilda.com/you-were-never-replaceable.html" class="blog-card">
+      <div class="blog-card-img"><img src="you-were-never-replaceable-pin.jpg" alt="You Were Never Replaceable" loading="lazy"></div>
+      <div class="blog-card-body">
+        <p class="blog-card-title">You Were Never Replaceable</p>
+        <div class="blog-card-meta"><span>Read →</span></div>
+      </div>
+    </a>
 
-      <a href="https://youwereneverseries.arniefelicilda.com/healing-is-not-proof-that-you-failed.html" class="blog-card">
-        <div class="blog-card-img"><img src="healing-is-not-proof-that-you-failed-pin.jpg" alt="Healing Is Not Proof That You Failed" loading="lazy"></div>
-        <div class="blog-card-body">
-          <p class="blog-card-title">Healing Is Not Proof That You Failed</p>
-          <div class="blog-card-meta"><span>Read →</span></div>
-        </div>
-      </a>
+    <a href="https://youwereneverseries.arniefelicilda.com/psychology-of-comparing-yourself-to-others.html" class="blog-card">
+      <div class="blog-card-img"><img src="psychology-of-comparing-yourself-to-others-pin.jpg" alt="Psychology of Comparing Yourself to Others" loading="lazy"></div>
+      <div class="blog-card-body">
+        <p class="blog-card-title">Psychology of Comparing Yourself to Others</p>
+        <div class="blog-card-meta"><span>Read →</span></div>
+      </div>
+    </a>
 
-      <a href="https://youwereneverseries.arniefelicilda.com/some-journeys-take-the-long-way-home.html" class="blog-card">
-        <div class="blog-card-img"><img src="some-journeys-take-the-long-way-home-pin.jpg" alt="Some Journeys Take the Long Way Home" loading="lazy"></div>
-        <div class="blog-card-body">
-          <p class="blog-card-title">Some Journeys Take the Long Way Home</p>
-          <div class="blog-card-meta"><span>Read →</span></div>
-        </div>
-      </a>
-
-    </div>
-    <div class="more-essays">
-      <p class="more-essays-label">More in Growth & Becoming</p>
-      <ul class="more-essays-list">
-        <li><a href="https://youwereneverseries.arniefelicilda.com/becoming-takes-longer-than-people-admit.html">Becoming Takes Longer Than People Admit</a></li>
-        <li><a href="https://youwereneverseries.arniefelicilda.com/why-do-people-feel-behind-in-life.html">Why Do People Feel Behind in Life</a></li>
-        <li><a href="https://youwereneverseries.arniefelicilda.com/stop-seeking-permission.html">Stop Seeking Permission</a></li>
-        <li><a href="https://youwereneverseries.arniefelicilda.com/decision-making-vs-motivation.html">Decision Making vs Motivation</a></li>
-      </ul>
-    </div>
   </div>
-
-  <!-- SELF-LEADERSHIP -->
-  <div class="category-col">
-    <div class="section-header">
-      <h2 class="section-title">Self-Leadership</h2>
-      <p class="section-desc">Essays on confidence, decision-making, boundaries, and personal responsibility.</p>
-    </div>
-    <div class="category-grid">
-
-      <a href="https://youwereneverseries.arniefelicilda.com/6-questions-that-will-tell-you-who-you-actually-are.html" class="blog-card">
-        <div class="blog-card-img"><img src="6-questions-that-will-tell-you-who-you-actually-are-pin.jpg" alt="6 Questions That Will Tell You Who You Actually Are" loading="lazy"></div>
-        <div class="blog-card-body">
-          <p class="blog-card-title">6 Questions That Will Tell You Who You Actually Are</p>
-          <div class="blog-card-meta"><span>Read →</span></div>
-        </div>
-      </a>
-
-      <a href="https://youwereneverseries.arniefelicilda.com/6-shifts-that-change-how-you-see-yourself.html" class="blog-card">
-        <div class="blog-card-img"><img src="6-shifts-that-change-how-you-see-yourself-pin.jpg" alt="6 Shifts That Change How You See Yourself" loading="lazy"></div>
-        <div class="blog-card-body">
-          <p class="blog-card-title">6 Shifts That Change How You See Yourself</p>
-          <div class="blog-card-meta"><span>Read →</span></div>
-        </div>
-      </a>
-
-      <a href="https://youwereneverseries.arniefelicilda.com/7-signs-you-are-growing-even-when-it-does-not-feel-like-it.html" class="blog-card">
-        <div class="blog-card-img"><img src="7-signs-you-are-growing-even-when-it-does-not-feel-like-it-pin.jpg" alt="7 Signs You Are Growing Even When It Does Not Feel Like It" loading="lazy"></div>
-        <div class="blog-card-body">
-          <p class="blog-card-title">7 Signs You Are Growing Even When It Does Not Feel Like It</p>
-          <div class="blog-card-meta"><span>Read →</span></div>
-        </div>
-      </a>
-
-      <a href="https://youwereneverseries.arniefelicilda.com/consistency-is-not-motivation-it-is-identity.html" class="blog-card">
-        <div class="blog-card-img"><img src="consistency-is-not-motivation-it-is-identity-pin.jpg" alt="Consistency Is Not Motivation. It Is Identity." loading="lazy"></div>
-        <div class="blog-card-body">
-          <p class="blog-card-title">Consistency Is Not Motivation. It Is Identity.</p>
-          <div class="blog-card-meta"><span>Read →</span></div>
-        </div>
-      </a>
-
-      <a href="https://youwereneverseries.arniefelicilda.com/how-to-build-confidence-without-performing-it.html" class="blog-card">
-        <div class="blog-card-img"><img src="how-to-build-confidence-without-performing-it-pin.jpg" alt="How to Build Confidence Without Performing It" loading="lazy"></div>
-        <div class="blog-card-body">
-          <p class="blog-card-title">How to Build Confidence Without Performing It</p>
-          <div class="blog-card-meta"><span>Read →</span></div>
-        </div>
-      </a>
-
-      <a href="https://youwereneverseries.arniefelicilda.com/the-one-habit-that-is-quietly-costing-you-everything.html" class="blog-card">
-        <div class="blog-card-img"><img src="the-one-habit-that-is-quietly-costing-you-everything-pin.jpg" alt="The One Habit That Is Quietly Costing You Everything" loading="lazy"></div>
-        <div class="blog-card-body">
-          <p class="blog-card-title">The One Habit That Is Quietly Costing You Everything</p>
-          <div class="blog-card-meta"><span>Read →</span></div>
-        </div>
-      </a>
-
-    </div>
-    <div class="more-essays">
-      <p class="more-essays-label">More in Self-Leadership</p>
-      <ul class="more-essays-list">
-        <li><a href="https://youwereneverseries.arniefelicilda.com/what-you-keep-not-saying-is-costing-you-more-than-you-think.html">What You Keep Not Saying Is Costing You More Than You Think</a></li>
-        <li><a href="https://youwereneverseries.arniefelicilda.com/you-were-never-waiting-for-permission.html">You Were Never Waiting for Permission</a></li>
-      </ul>
-    </div>
+  <div class="more-essays">
+    <p class="more-essays-label">More in Identity & Self-Worth</p>
+    <ul class="more-essays-list">
+      <li><a href="https://youwereneverseries.arniefelicilda.com/how-labels-shape-self-image.html">How Labels Shape Self-Image</a></li>
+      <li><a href="https://youwereneverseries.arniefelicilda.com/why-hardworking-people-feel-invisible.html">Why Hardworking People Feel Invisible</a></li>
+      <li><a href="https://youwereneverseries.arniefelicilda.com/self-worth-and-achievement.html">Self-Worth and Achievement</a></li>
+      <li><a href="https://youwereneverseries.arniefelicilda.com/confidence-vs-self-worth.html">Confidence vs Self-Worth</a></li>
+    </ul>
   </div>
+</section>
 
-</div>
+<hr class="section-divider">
+
+<!-- GROWTH & BECOMING -->
+<section class="category-section">
+  <div class="section-header">
+    <h2 class="section-title">Growth & Becoming</h2>
+    <p class="section-desc">Essays on pace, timing, and nonlinear growth.</p>
+  </div>
+  <div class="category-grid">
+
+    <a href="https://youwereneverseries.arniefelicilda.com/growth-is-not-always-visible.html" class="blog-card">
+      <div class="blog-card-img"><img src="growth-is-not-always-visible-pin.jpg" alt="Growth Is Not Always Visible" loading="lazy"></div>
+      <div class="blog-card-body">
+        <p class="blog-card-title">Growth Is Not Always Visible</p>
+        <div class="blog-card-meta"><span>Read →</span></div>
+      </div>
+    </a>
+
+    <a href="https://youwereneverseries.arniefelicilda.com/you-are-allowed-to-grow-slowly.html" class="blog-card">
+      <div class="blog-card-img"><img src="you-are-allowed-to-grow-slowly-pin.jpg" alt="You Are Allowed to Grow Slowly" loading="lazy"></div>
+      <div class="blog-card-body">
+        <p class="blog-card-title">You Are Allowed to Grow Slowly</p>
+        <div class="blog-card-meta"><span>Read →</span></div>
+      </div>
+    </a>
+
+    <a href="https://youwereneverseries.arniefelicilda.com/you-are-still-becoming.html" class="blog-card">
+      <div class="blog-card-img"><img src="you-are-still-becoming-pin.jpg" alt="You Are Still Becoming" loading="lazy"></div>
+      <div class="blog-card-body">
+        <p class="blog-card-title">You Are Still Becoming</p>
+        <div class="blog-card-meta"><span>Read →</span></div>
+      </div>
+    </a>
+
+    <a href="https://youwereneverseries.arniefelicilda.com/not-everyone-blooms-in-the-same-season.html" class="blog-card">
+      <div class="blog-card-img"><img src="not-everyone-blooms-in-the-same-season-pin.jpg" alt="Not Everyone Blooms in the Same Season" loading="lazy"></div>
+      <div class="blog-card-body">
+        <p class="blog-card-title">Not Everyone Blooms in the Same Season</p>
+        <div class="blog-card-meta"><span>Read →</span></div>
+      </div>
+    </a>
+
+    <a href="https://youwereneverseries.arniefelicilda.com/healing-is-not-proof-that-you-failed.html" class="blog-card">
+      <div class="blog-card-img"><img src="healing-is-not-proof-that-you-failed-pin.jpg" alt="Healing Is Not Proof That You Failed" loading="lazy"></div>
+      <div class="blog-card-body">
+        <p class="blog-card-title">Healing Is Not Proof That You Failed</p>
+        <div class="blog-card-meta"><span>Read →</span></div>
+      </div>
+    </a>
+
+    <a href="https://youwereneverseries.arniefelicilda.com/some-journeys-take-the-long-way-home.html" class="blog-card">
+      <div class="blog-card-img"><img src="some-journeys-take-the-long-way-home-pin.jpg" alt="Some Journeys Take the Long Way Home" loading="lazy"></div>
+      <div class="blog-card-body">
+        <p class="blog-card-title">Some Journeys Take the Long Way Home</p>
+        <div class="blog-card-meta"><span>Read →</span></div>
+      </div>
+    </a>
+
+  </div>
+  <div class="more-essays">
+    <p class="more-essays-label">More in Growth & Becoming</p>
+    <ul class="more-essays-list">
+      <li><a href="https://youwereneverseries.arniefelicilda.com/becoming-takes-longer-than-people-admit.html">Becoming Takes Longer Than People Admit</a></li>
+      <li><a href="https://youwereneverseries.arniefelicilda.com/why-do-people-feel-behind-in-life.html">Why Do People Feel Behind in Life</a></li>
+      <li><a href="https://youwereneverseries.arniefelicilda.com/stop-seeking-permission.html">Stop Seeking Permission</a></li>
+      <li><a href="https://youwereneverseries.arniefelicilda.com/decision-making-vs-motivation.html">Decision Making vs Motivation</a></li>
+    </ul>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- SELF-LEADERSHIP -->
+<section class="category-section">
+  <div class="section-header">
+    <h2 class="section-title">Self-Leadership</h2>
+    <p class="section-desc">Essays on confidence, decision-making, boundaries, and personal responsibility.</p>
+  </div>
+  <div class="category-grid">
+
+    <a href="https://youwereneverseries.arniefelicilda.com/6-questions-that-will-tell-you-who-you-actually-are.html" class="blog-card">
+      <div class="blog-card-img"><img src="6-questions-that-will-tell-you-who-you-actually-are-pin.jpg" alt="6 Questions That Will Tell You Who You Actually Are" loading="lazy"></div>
+      <div class="blog-card-body">
+        <p class="blog-card-title">6 Questions That Will Tell You Who You Actually Are</p>
+        <div class="blog-card-meta"><span>Read →</span></div>
+      </div>
+    </a>
+
+    <a href="https://youwereneverseries.arniefelicilda.com/6-shifts-that-change-how-you-see-yourself.html" class="blog-card">
+      <div class="blog-card-img"><img src="6-shifts-that-change-how-you-see-yourself-pin.jpg" alt="6 Shifts That Change How You See Yourself" loading="lazy"></div>
+      <div class="blog-card-body">
+        <p class="blog-card-title">6 Shifts That Change How You See Yourself</p>
+        <div class="blog-card-meta"><span>Read →</span></div>
+      </div>
+    </a>
+
+    <a href="https://youwereneverseries.arniefelicilda.com/7-signs-you-are-growing-even-when-it-does-not-feel-like-it.html" class="blog-card">
+      <div class="blog-card-img"><img src="7-signs-you-are-growing-even-when-it-does-not-feel-like-it-pin.jpg" alt="7 Signs You Are Growing Even When It Does Not Feel Like It" loading="lazy"></div>
+      <div class="blog-card-body">
+        <p class="blog-card-title">7 Signs You Are Growing Even When It Does Not Feel Like It</p>
+        <div class="blog-card-meta"><span>Read →</span></div>
+      </div>
+    </a>
+
+    <a href="https://youwereneverseries.arniefelicilda.com/consistency-is-not-motivation-it-is-identity.html" class="blog-card">
+      <div class="blog-card-img"><img src="consistency-is-not-motivation-it-is-identity-pin.jpg" alt="Consistency Is Not Motivation. It Is Identity." loading="lazy"></div>
+      <div class="blog-card-body">
+        <p class="blog-card-title">Consistency Is Not Motivation. It Is Identity.</p>
+        <div class="blog-card-meta"><span>Read →</span></div>
+      </div>
+    </a>
+
+    <a href="https://youwereneverseries.arniefelicilda.com/how-to-build-confidence-without-performing-it.html" class="blog-card">
+      <div class="blog-card-img"><img src="how-to-build-confidence-without-performing-it-pin.jpg" alt="How to Build Confidence Without Performing It" loading="lazy"></div>
+      <div class="blog-card-body">
+        <p class="blog-card-title">How to Build Confidence Without Performing It</p>
+        <div class="blog-card-meta"><span>Read →</span></div>
+      </div>
+    </a>
+
+    <a href="https://youwereneverseries.arniefelicilda.com/the-one-habit-that-is-quietly-costing-you-everything.html" class="blog-card">
+      <div class="blog-card-img"><img src="the-one-habit-that-is-quietly-costing-you-everything-pin.jpg" alt="The One Habit That Is Quietly Costing You Everything" loading="lazy"></div>
+      <div class="blog-card-body">
+        <p class="blog-card-title">The One Habit That Is Quietly Costing You Everything</p>
+        <div class="blog-card-meta"><span>Read →</span></div>
+      </div>
+    </a>
+
+  </div>
+  <div class="more-essays">
+    <p class="more-essays-label">More in Self-Leadership</p>
+    <ul class="more-essays-list">
+      <li><a href="https://youwereneverseries.arniefelicilda.com/what-you-keep-not-saying-is-costing-you-more-than-you-think.html">What You Keep Not Saying Is Costing You More Than You Think</a></li>
+      <li><a href="https://youwereneverseries.arniefelicilda.com/you-were-never-waiting-for-permission.html">You Were Never Waiting for Permission</a></li>
+    </ul>
+  </div>
+</section>
 
 <hr class="section-divider">
 
 <!-- BOOKS & READING -->
-<section class="blog-section">
+<section class="category-section">
   <div class="section-header">
     <h2 class="section-title">Books & Reading</h2>
     <p class="section-desc">Reading lists, book recommendations, and essays worth exploring further.</p>
   </div>
-  <div class="blog-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:800px">
+  <div class="category-grid category-grid-compact">
 
     <a href="https://youwereneverseries.arniefelicilda.com/10-books-that-will-change-how-you-see-yourself.html" class="blog-card blog-card-full">
       <div class="blog-card-img"><img src="10-books-that-will-change-how-you-see-yourself-pin.jpg" alt="10 Books That Will Change How You See Yourself" loading="lazy"></div>
