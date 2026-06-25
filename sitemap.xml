@@ -119,4 +119,56 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- BATCH 3 BLOGS -->
+  <url>
+    <loc>https://youwereneverseries.arniefelicilda.com/why-do-people-feel-behind-in-life.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://youwereneverseries.arniefelicilda.com/10-books-that-will-change-how-you-see-yourself.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://youwereneverseries.arniefelicilda.com/psychology-of-comparing-yourself-to-others.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://youwereneverseries.arniefelicilda.com/how-labels-shape-self-image.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://youwereneverseries.arniefelicilda.com/why-hardworking-people-feel-invisible.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://youwereneverseries.arniefelicilda.com/self-worth-and-achievement.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://youwereneverseries.arniefelicilda.com/stop-seeking-permission.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://youwereneverseries.arniefelicilda.com/decision-making-vs-motivation.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://youwereneverseries.arniefelicilda.com/12-books-about-identity-everyone-should-read.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://youwereneverseries.arniefelicilda.com/confidence-vs-self-worth.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
