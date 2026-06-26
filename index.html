@@ -214,6 +214,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .blog-featured-month{font-family:var(--body);font-size:9px;font-weight:300;letter-spacing:0.1em;color:var(--mid);margin-bottom:8px}
 .blog-featured-title{font-family:var(--heading);font-size:clamp(22px,2.5vw,30px);font-weight:300;color:var(--ink);line-height:1.2;margin-bottom:10px;letter-spacing:-0.01em}
 .blog-featured-excerpt{font-family:var(--body);font-size:12px;font-weight:300;color:var(--mid);line-height:1.65}
+.blog-featured-questions{list-style:none;margin:18px 0 0;padding:0}
+.blog-featured-questions li{font-family:var(--body);font-size:12.5px;font-weight:300;color:var(--ink-soft);line-height:1.6;margin-bottom:9px;padding-left:16px;position:relative}
+.blog-featured-questions li::before{content:"•";position:absolute;left:0;color:var(--terra)}
+.blog-featured-faq{list-style:none;margin:18px 0 0;padding:14px 0 0;border-top:1px solid var(--faint)}
+.blog-featured-faq li{font-family:var(--body);font-size:12.5px;font-weight:300;color:var(--ink-soft);line-height:1.6;margin-bottom:9px;padding-left:16px;position:relative}
+.blog-featured-faq li::before{content:"•";position:absolute;left:0;color:var(--terra)}
+.blog-featured-readmore{display:inline-block;margin-top:8px;font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px}
 .blog-recent-label{font-family:var(--body);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);margin-bottom:24px}
 .blog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
 .blog-card{background:var(--cream);text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:transform 0.3s ease}
@@ -611,6 +618,19 @@ footer{background:#080808;padding:56px 60px 36px}
         <p class="blog-featured-month">June 2026</p>
         <p class="blog-featured-title">Confidence vs Self-Worth</p>
         <p class="blog-featured-excerpt">Confidence changes. Self-worth stays. Most people spend years building one while neglecting the other.</p>
+        <ul class="blog-featured-questions">
+          <li>Do you feel confident but still feel like something is missing?</li>
+          <li>Do you only feel good about yourself after you finish something?</li>
+          <li>Does failing one thing make you feel like a failure as a person?</li>
+          <li>Do you feel like a fraud even when you're good at your job?</li>
+          <li>If you stopped achieving, would you still feel like enough?</li>
+        </ul>
+        <ul class="blog-featured-faq">
+          <li>What's the difference between confidence and self-worth?</li>
+          <li>Can you have confidence but low self-worth?</li>
+          <li>Why does self-worth last longer than confidence?</li>
+        </ul>
+        <span class="blog-featured-readmore">Read more →</span>
       </div>
     </a>
 
