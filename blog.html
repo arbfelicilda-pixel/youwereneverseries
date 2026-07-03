@@ -12,8 +12,11 @@
 <meta property="og:description" content="A collection of essays on identity, self-worth, growth, and becoming. By Arnie Rose, author of the You Were Never Series.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://youwereneverseries.arniefelicilda.com/blog.html">
-<meta property="og:image" content="https://youwereneverseries.arniefelicilda.com/behind.png">
-<meta property="og:site_name" content="You Were Never Series">
+<meta property="og:image" content="https://arniefelicilda.com/author-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://arniefelicilda.com/author-og.jpg">
 <meta name="p:domain_verify" content="ebdfbca11b480ade931b5259af8ee9cf"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=EB+Garamond:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -44,6 +47,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .nav-link:hover{color:var(--ink)}
 .nav-cta{font-family:var(--sans);font-size:13px;font-weight:500;padding:9px 20px;background:var(--ink);color:var(--parchment);text-decoration:none;transition:all 0.2s;letter-spacing:0.02em;border:1px solid var(--ink)}
 .nav-cta:hover{background:var(--terra);border-color:var(--terra);color:var(--parchment)}
+@media(max-width:900px){.nav-cta{display:none}}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
 .nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:all 0.2s}
 .nav-mobile{display:none;position:fixed;top:56px;left:0;right:0;background:var(--parchment);border-bottom:1px solid var(--faint);flex-direction:column;z-index:99;box-shadow:0 4px 16px rgba(0,0,0,0.06)}
@@ -108,11 +112,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 
 /* EMAIL */
 .email-strip{padding:56px 60px;background:var(--terra);text-align:center}
-.email-strip h3{font-family:var(--playfair);font-size:28px;font-weight:700;color:var(--parchment);margin-bottom:8px}
-.email-strip p{font-family:var(--body);font-size:16px;color:rgba(247,242,232,0.85);margin-bottom:24px}
-.email-strip form{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-.email-strip input{padding:13px 18px;font-family:Outfit,sans-serif;font-size:14px;border:none;min-width:260px;color:#1a1208;background:var(--parchment);outline:none}
-.email-strip button{padding:13px 28px;background:var(--ink);color:var(--parchment);font-family:Outfit,sans-serif;font-size:11px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;border:none;cursor:pointer}
+.email-strip h3{font-family:var(--playfair);font-size:36px;font-weight:400;color:var(--parchment);margin-bottom:12px}
+.email-strip p{font-family:var(--body);font-size:16px;color:rgba(247,242,232,0.7);margin-bottom:24px}
+.email-strip form{display:flex;gap:0;justify-content:center;flex-wrap:wrap;max-width:500px;margin:0 auto}
+.email-strip input{padding:14px 18px;font-family:var(--sans);font-size:14px;border:none;min-width:260px;color:#1a1208;background:var(--parchment);outline:none;flex:1}
+.email-strip button{padding:14px 28px;background:var(--ink);color:var(--parchment);font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;border:none;cursor:pointer;white-space:nowrap}
+.email-strip button:hover{background:#333}
+.email-privacy{font-family:var(--sans)!important;font-size:12px!important;color:rgba(247,242,232,0.35)!important;margin-top:14px!important;margin-bottom:0!important}
 
 /* BOOKS SECTION */
 .books-section{padding:56px 60px;max-width:1200px;margin:0 auto}
@@ -165,11 +171,11 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
     <a href="/#books" class="nav-link">The Books</a>
     <a href="/#about" class="nav-link">About</a>
     <a href="https://arniefelicilda.com" class="nav-link">Author Site</a>
-    <a href="#email-strip" class="nav-cta">SUBSCRIBE</a>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <a href="https://arniefelicilda.com/the-letters.html" class="nav-cta">Newsletter</a>
   </div>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <div class="nav-mobile" id="nav-mobile">
@@ -177,7 +183,7 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
   <a href="/#books">The Books</a>
   <a href="/#about">About</a>
   <a href="https://arniefelicilda.com">Author Site</a>
-  <a href="#email-strip">SUBSCRIBE</a>
+  <a href="https://arniefelicilda.com/the-letters.html">Newsletter</a>
 </div>
 
 <!-- HERO -->
@@ -432,12 +438,15 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
 
 <!-- EMAIL -->
 <div class="email-strip" id="email-strip">
-  <h3>New essays, straight to your inbox.</h3>
-  <p>Reflections on identity, self-worth, and becoming.</p>
-  <form action="https://app.kit.com/forms/9422533/subscriptions" method="post">
-    <input name="email_address" type="email" placeholder="Your email address" required>
-    <button type="submit">Join the Series</button>
+  <h3>Beyond the Page</h3>
+  <p>Where the conversation continues. For readers of the You Were Never Series.</p>
+  <form action="https://assets.mailerlite.com/jsonp/2484784/forms/191860425663448888/subscribe" method="post">
+    <input name="fields[email]" type="email" placeholder="Your email address" required>
+    <input type="hidden" name="ml-submit" value="1">
+    <input type="hidden" name="anticsrf" value="true">
+    <button type="submit">Join The Letters</button>
   </form>
+  <p class="email-privacy">No spam. Unsubscribe anytime.</p>
 </div>
 
 <!-- THE BOOKS -->
@@ -489,9 +498,30 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
 
 <!-- FOOTER -->
 <footer>
-  <a href="/" class="footer-logo">You Were Never Series</a>
-  <span class="footer-copy">© 2026 Arnie Rose. All rights reserved.</span>
-  <a href="https://arniefelicilda.com" class="footer-link">A Keystone Books publication.</a>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;width:100%;max-width:1200px;margin:0 auto">
+    <div>
+      <a href="/" class="footer-logo">You Were Never Series</a>
+      <p style="font-family:var(--sans);font-size:12px;color:var(--mid);margin-top:6px;">Author of the You Were Never Series.</p>
+      <p style="font-family:var(--sans);font-size:12px;color:var(--mid);margin-top:2px;">Books about identity, human behavior, and inner life.</p>
+    </div>
+    <div style="display:flex;gap:48px;flex-wrap:wrap">
+      <div>
+        <p style="font-family:var(--sans);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-bottom:12px">Explore</p>
+        <a href="/#books" style="display:block;font-family:var(--sans);font-size:13px;color:var(--ink-soft);text-decoration:none;margin-bottom:8px">Books</a>
+        <a href="/blog.html" style="display:block;font-family:var(--sans);font-size:13px;color:var(--ink-soft);text-decoration:none;margin-bottom:8px">Blog</a>
+        <a href="https://arniefelicilda.com/the-letters.html" style="display:block;font-family:var(--sans);font-size:13px;color:var(--ink-soft);text-decoration:none;margin-bottom:8px">Newsletter</a>
+        <a href="https://arniefelicilda.com" style="display:block;font-family:var(--sans);font-size:13px;color:var(--ink-soft);text-decoration:none">Author Site</a>
+      </div>
+      <div>
+        <p style="font-family:var(--sans);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-bottom:12px">Follow</p>
+        <a href="https://www.instagram.com/youwereneverseries" target="_blank" rel="noopener" style="display:block;font-family:var(--sans);font-size:13px;color:var(--ink-soft);text-decoration:none;margin-bottom:8px">@youwereneverseries</a>
+        <a href="https://www.instagram.com/writer.arnierose" target="_blank" rel="noopener" style="display:block;font-family:var(--sans);font-size:13px;color:var(--ink-soft);text-decoration:none">@writer.arnierose</a>
+      </div>
+    </div>
+  </div>
+  <div style="width:100%;max-width:1200px;margin:28px auto 0;padding-top:20px;border-top:1px solid var(--faint)">
+    <span class="footer-copy">© 2026 Arnie Rose. All rights reserved.</span>
+  </div>
 </footer>
 
 <script>
