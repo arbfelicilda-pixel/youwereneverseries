@@ -13,6 +13,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://youwereneverseries.arniefelicilda.com/you-are-still-becoming.html">
 <meta property="og:image" content="https://youwereneverseries.arniefelicilda.com/you-are-still-becoming.jpg">
+<!-- TEXT OVERLAY SHARE IMAGE (replace when ready): <meta property="og:image" content="https://youwereneverseries.arniefelicilda.com/you-are-still-becoming-share.jpg"> -->
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="675">
 <meta property="og:image:alt" content="Hands holding a puzzle piece, representing an identity that is still in progress">
@@ -41,7 +42,7 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --ink:#1a1208;--ink-soft:#3d3020;--parchment:#f7f2e8;--parchment-dark:#ede6d3;
+  --ink:#1a1208;--ink-soft:#3d3020;--parchment:#f7f2e8;--cream:#f7f2e8;--parchment-dark:#ede6d3;
   --terra:#c2714f;--terra-dark:#8b3a1a;--mid:#8a7a6a;--faint:#d4c9bb;
   --playfair:'Playfair Display',Georgia,serif;
   --body:'EB Garamond',Georgia,serif;
@@ -50,10 +51,22 @@
 html{scroll-behavior:smooth}
 body{background:var(--parchment);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.7;overflow-x:hidden}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(247,242,232,0.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--faint)}
-.nav-logo{font-family:var(--playfair);font-size:16px;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-logo{font-family:var(--heading);font-size:20px;font-weight:700;color:var(--ink);text-decoration:none}
 .nav-logo span{color:var(--terra);font-weight:400}
-.nav-back{font-family:var(--sans);font-size:12px;font-weight:400;letter-spacing:0.1em;color:var(--ink-soft);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color 0.2s}
-.nav-back:hover{color:var(--terra)}
+.nav-right{display:flex;gap:28px;align-items:center}
+.nav-link{font-family:var(--sans);font-size:13px;font-weight:400;color:var(--ink-soft);text-decoration:none;transition:color 0.2s;letter-spacing:0.02em}
+.nav-link:hover{color:var(--ink)}
+.nav-cta{font-family:var(--sans);font-size:13px;font-weight:500;padding:9px 20px;background:var(--ink);color:var(--cream);text-decoration:none;transition:all 0.2s;letter-spacing:0.02em;border:1px solid var(--ink)}
+.nav-cta:hover{background:var(--terra);border-color:var(--terra);color:var(--cream)}
+.nav-chapter{font-family:var(--sans);font-size:13px;font-weight:400;color:var(--terra);text-decoration:none;letter-spacing:0.02em;transition:color 0.2s;border:1px solid var(--terra);padding:7px 14px}
+.nav-chapter:hover{color:var(--terra-dark);border-color:var(--terra-dark)}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:all 0.2s}
+.nav-mobile{display:none;position:fixed;top:56px;left:0;right:0;background:var(--cream);border-bottom:1px solid var(--faint);flex-direction:column;z-index:99;box-shadow:0 4px 16px rgba(0,0,0,0.06)}
+.nav-mobile.open{display:flex}
+.nav-mobile a{font-family:var(--sans);font-size:13px;font-weight:400;letter-spacing:0.04em;color:var(--ink-soft);text-decoration:none;padding:14px 24px;border-bottom:1px solid var(--faint);transition:color 0.2s}
+.nav-mobile a:last-child{border-bottom:none}
+.nav-mobile a:hover{color:var(--terra)}
 .post-hero{padding:120px 60px 60px;max-width:760px;margin:0 auto}
 .post-eyebrow{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:var(--terra);margin-bottom:16px}
 .post-meta{font-family:var(--sans);font-size:13px;font-weight:400;color:var(--mid);margin-top:16px;margin-bottom:8px}
@@ -131,6 +144,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .email-strip button{padding:12px 24px;background:var(--ink);color:var(--parchment);font-family:Outfit,sans-serif;font-size:11px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;border:none;cursor:pointer}
 @media(max-width:700px){
   nav{padding:14px 20px}
+  .nav-right .nav-link,.nav-right .nav-cta,.nav-right .nav-chapter{display:none}
+  .nav-hamburger{display:flex}
   .post-hero{padding:100px 20px 40px}
   .post-body,.faq-section,.related-section,.essential-section{padding-left:20px;padding-right:20px}
   .post-image{padding:0 20px}
@@ -140,13 +155,47 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 }
 .observation-line{font-family:var(--playfair);font-size:23px;font-weight:400;font-style:italic;color:var(--ink);margin-bottom:14px;line-height:1.5}
 .observation-line{font-family:var(--playfair);font-size:23px;font-weight:400;font-style:italic;color:var(--ink);margin-bottom:14px;line-height:1.5}
+.mid-cta{padding:48px 60px;background:var(--ink);text-align:center}
+.mid-cta h3{font-family:var(--heading);font-size:28px;font-weight:700;color:var(--cream);margin-bottom:8px}
+.mid-cta p{font-family:var(--body);font-size:14px;color:rgba(247,242,232,0.7);margin-bottom:20px;line-height:1.6}
+.mid-cta form{display:flex;gap:0;justify-content:center;flex-wrap:wrap;max-width:440px;margin:0 auto}
+.mid-cta input{padding:12px 16px;font-family:var(--sans);font-size:14px;border:none;min-width:220px;color:#1a1208;background:var(--cream);outline:none;flex:1}
+.mid-cta button{padding:12px 22px;background:var(--terra);color:var(--cream);font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;border:none;cursor:pointer;white-space:nowrap}
+.mid-cta button:hover{background:var(--terra-dark)}
+.mid-cta-privacy{font-family:var(--sans);font-size:11px;color:rgba(247,242,232,0.35);margin-top:12px;margin-bottom:0}
+footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;background:var(--cream)}
+.footer-logo{font-family:var(--heading);font-size:16px;color:var(--ink);text-decoration:none}
+.footer-logo span{color:var(--terra)}
+.footer-copy{font-family:var(--sans);font-size:12px;color:var(--mid)}
+.footer-col-label{font-family:var(--sans);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-bottom:12px}
+.footer-col-link{display:block;font-family:var(--sans);font-size:13px;color:var(--ink-soft);text-decoration:none;margin-bottom:8px}
+.footer-col-link:hover{color:var(--terra)}
+.footer-bottom{width:100%;padding-top:20px;border-top:1px solid var(--faint);margin-top:8px}
 </style>
 </head>
 <body>
 <nav>
   <a href="/" class="nav-logo">You Were <span>Never</span> Series</a>
-  <a href="blog.html" class="nav-back">← All Notes</a>
+  <div class="nav-right">
+    <a href="/#books" class="nav-link">The Books</a>
+    <a href="https://arniefelicilda.com" class="nav-link">Author Site</a>
+    <a href="blog.html" class="nav-link">Archive</a>
+    <a href="https://arniefelicilda.com/the-letters.html" class="nav-cta">Newsletter</a>
+    <a href="#free-chapter" class="nav-chapter">FREE Chapter</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <a href="/">Home</a>
+  <a href="/#books">The Books</a>
+  <a href="https://arniefelicilda.com">Author Site</a>
+  <a href="blog.html">Archive</a>
+  <a href="https://arniefelicilda.com/the-letters.html">Newsletter</a>
+  <a href="#free-chapter">FREE Chapter</a>
+</div>
 
 <div class="post-hero">
   <p class="post-eyebrow">You Were Never Series</p>
@@ -167,7 +216,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
   </div>
   <div class="author-card-popover">
     <div class="author-card-popover-inner">
-      <p class="author-card-role">Author of @youwereneverseries. Books about identity, human behavior, and ordinary life.</p>
+      <p class="author-card-role">Author of @youwereneverseries. Books about identity, human behavior, and inner life.</p>
     </div>
   </div>
 </div>
@@ -217,6 +266,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 
 <p class="observation-line">The version still becoming is not less than the version that has arrived.</p>
 <p class="observation-line">It's the version that makes arrival possible.</p>
+
+</div>
+
+<div class="mid-cta">
+  <h3>Beyond the Pages</h3>
+  <p>Where the conversation continues. For readers of the You Were Never Series.</p>
+  <form action="https://assets.mailerlite.com/jsonp/2484784/forms/191860425663448888/subscribe" method="post">
+    <input name="fields[email]" type="email" placeholder="Your email address" required>
+    <input type="hidden" name="ml-submit" value="1">
+    <input type="hidden" name="anticsrf" value="true">
+    <button type="submit">Join The Letters</button>
+  </form>
+  <p class="mid-cta-privacy">No spam. Unsubscribe anytime.</p>
+</div>
+
+<div class="post-body">
 
 <h2>Why Becoming Feels Like It Should Have a Deadline (And Doesn't)</h2>
 
@@ -337,7 +402,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 </div>
 </div>
 
-<div class="email-strip">
+<div class="email-strip" id="free-chapter">
   <h3>Get the first chapter free.</h3>
   <p>You Were Never Behind. Chapter 1 delivered to your inbox. No pitch. No upsell.</p>
   <form action="https://app.kit.com/forms/9422533/subscriptions" method="post">
@@ -347,9 +412,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 </div>
 
 <div class="share-section">
-  <p class="share-label">If this landed, share it</p>
+  <p class="share-label">Share it</p>
   <div class="share-buttons">
     <a href="https://www.facebook.com/sharer/sharer.php?u=https://youwereneverseries.arniefelicilda.com/you-are-still-becoming.html" onclick="window.open(this.href,'fbshare','width=600,height=400');return false;" rel="noopener" class="share-btn">Share on Facebook</a>
+    <!-- PINTEREST TEXT OVERLAY (replace -pin.jpg with you-are-still-becoming-pin-share.jpg when ready) -->
     <a href="https://pinterest.com/pin/create/button/?url=https://youwereneverseries.arniefelicilda.com/you-are-still-becoming.html&media=https://youwereneverseries.arniefelicilda.com/you-are-still-becoming-pin.jpg&description=You%20Are%20Still%20Becoming%20%C2%B7%20You%20Were%20Never%20Series%20by%20Arnie%20Rose" target="_blank" rel="noopener" class="pinterest-btn">Save to Pinterest</a>
   </div>
 </div>
@@ -364,7 +430,46 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 </div>
 
 <div class="back-section">
-  <a href="blog.html" class="back-link">← Read more notes from the series</a>
+  <a href="blog.html" class="back-link">← Back to the Archive</a>
 </div>
+<footer>
+  <div>
+    <a href="/" class="footer-logo">You Were <span>Never</span> Series</a>
+    <p style="font-family:var(--sans);font-size:12px;color:var(--mid);margin-top:6px">Author of the You Were Never Series.</p>
+    <p style="font-family:var(--sans);font-size:12px;color:var(--mid);margin-top:2px">Books about identity, human behavior, and inner life.</p>
+  </div>
+  <div style="display:flex;gap:48px;flex-wrap:wrap">
+    <div>
+      <p class="footer-col-label">Explore</p>
+      <a href="/#books" class="footer-col-link">Books</a>
+      <a href="blog.html" class="footer-col-link">Archive</a>
+      <a href="https://arniefelicilda.com/the-letters.html" class="footer-col-link">Newsletter</a>
+      <a href="https://arniefelicilda.com" class="footer-col-link">Author Site</a>
+    </div>
+    <div>
+      <p class="footer-col-label">Follow</p>
+      <a href="https://www.instagram.com/youwereneverseries" target="_blank" rel="noopener" class="footer-col-link">@youwereneverseries</a>
+      <a href="https://www.instagram.com/writer.arnierose" target="_blank" rel="noopener" class="footer-col-link">@writer.arnierose</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Arnie Rose. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+var hamburger = document.getElementById('nav-hamburger');
+var mobileNav = document.getElementById('nav-mobile');
+if (hamburger) {
+  hamburger.addEventListener('click', function(){
+    mobileNav.classList.toggle('open');
+  });
+  document.querySelectorAll('.nav-mobile a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mobileNav.classList.remove('open');
+    });
+  });
+}
+</script>
 </body>
 </html>
