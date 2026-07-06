@@ -97,7 +97,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .blog-card{text-decoration:none;color:inherit;display:flex;flex-direction:column;background:var(--white);border:1px solid var(--faint);transition:border-color 0.2s,transform 0.2s}
 .blog-card:hover{border-color:var(--terra);transform:translateY(-2px)}
 .blog-card-img{width:100%;aspect-ratio:2/3;overflow:hidden;display:block;background:var(--parchment-dark)}
-.start-grid .blog-card-img,.archive-grid .blog-card-img{aspect-ratio:4/5}
+.start-grid .blog-card-img,.books-reading-grid .blog-card-img{aspect-ratio:4/5}
+.books-reading-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,220px));gap:24px;justify-content:start}
 .blog-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s}
 .blog-card:hover .blog-card-img img{transform:scale(1.02)}
 .blog-card-body{padding:14px 14px 16px;flex:1;display:flex;flex-direction:column}
@@ -217,7 +218,7 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
     <h2 class="section-title">Books &amp; Reading</h2>
     <p class="section-desc">Reading lists and book recommendations.</p>
   </div>
-  <div class="archive-grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,220px));justify-content:start">
+  <div class="books-reading-grid">
 
     <a href="https://youwereneverseries.arniefelicilda.com/10-books-that-will-change-how-you-see-yourself.html" class="blog-card blog-card-full">
       <div class="blog-card-img"><img src="10-books-that-will-change-how-you-see-yourself-pin.jpg" alt="10 Books That Will Change How You See Yourself" loading="lazy"></div>
