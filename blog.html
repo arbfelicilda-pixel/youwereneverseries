@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Archive: Check Latest Blogs by Arnie Rose</title>
-<meta name="description" content="A collection of essays on identity, self-worth, growth, and becoming. By Arnie Rose, author of the You Were Never Series.">
+<title>The Archive | Blogs by Arnie Rose</title>
+<meta name="description" content="On identity, growth, and becoming, straight to your inbox.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Arnie Rose">
 <link rel="canonical" href="https://youwereneverseries.arniefelicilda.com/blog.html">
-<meta property="og:title" content="The Archive: Check Latest Blogs by Arnie Rose">
-<meta property="og:description" content="A collection of essays on identity, self-worth, growth, and becoming. By Arnie Rose, author of the You Were Never Series.">
+<meta property="og:title" content="Subscribe | Check the Latest Blog">
+<meta property="og:description" content="On identity, growth, and becoming, straight to your inbox.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://youwereneverseries.arniefelicilda.com/blog.html">
 <meta property="og:image" content="https://youwereneverseries.arniefelicilda.com/archive-hero.jpg">
@@ -63,7 +63,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .page-desc{font-family:var(--body);font-size:19px;color:var(--mid);line-height:1.6;max-width:520px;margin:0 auto}
 .page-hero-rule{max-width:900px;margin:48px auto 0;border:none;border-top:1px solid var(--faint)}
 
-/* START HERE */
+/* FEATURED (rotates weekly) */
 .start-here{padding:56px 60px 24px;max-width:1200px;margin:0 auto}
 .start-here-label{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--terra);margin-bottom:10px}
 .start-here-desc{font-family:var(--body);font-size:17px;color:var(--mid);margin-bottom:32px}
@@ -75,33 +75,37 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .section-title{font-family:var(--playfair);font-size:30px;font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:6px}
 .section-desc{font-family:var(--body);font-size:16px;color:var(--mid);line-height:1.6}
 
-/* CATEGORY SECTIONS (full-width, 6-across, stacked vertically) */
-.category-section{padding:48px 60px;max-width:1200px;margin:0 auto}
-.category-section .section-header{margin-bottom:28px;padding-bottom:16px}
-.category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.category-grid-compact{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,220px));gap:24px;justify-content:start}
+/* ARCHIVE (flat, reverse-chron, grouped by month, horizontal scroll per month) */
+.archive-section{padding:16px 60px 8px;max-width:1200px;margin:0 auto}
+.month-group{margin-bottom:48px}
+.month-heading{font-family:var(--playfair);font-size:22px;font-weight:700;color:var(--ink);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--faint)}
 
-/* MORE ESSAYS LINK ROW (vertical list, full-width strip below each category's card row) */
-.more-essays{margin-top:24px;padding-top:18px;border-top:1px solid var(--faint)}
-.more-essays-label{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:0.1em;color:var(--ink);margin-bottom:12px;text-transform:none}
-.more-essays-list{list-style:none;margin:0;padding:0}
-.more-essays-list li{font-family:var(--body);font-size:14.5px;line-height:1.6;margin-bottom:9px;padding-left:16px;position:relative}
-.more-essays-list li::before{content:"•";position:absolute;left:0;color:var(--terra)}
-.more-essays-list a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid transparent;transition:color 0.2s,border-color 0.2s}
-.more-essays-list a:hover{color:var(--terra);border-color:var(--terra)}
+.carousel-wrap{position:relative}
+.carousel-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:8px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.carousel-track::-webkit-scrollbar{display:none}
+.carousel-track .blog-card{flex:0 0 220px;scroll-snap-align:start}
+.carousel-arrow{position:absolute;top:calc(50% - 30px);width:36px;height:36px;border-radius:50%;background:var(--white);border:1px solid var(--faint);color:var(--ink);font-family:var(--sans);font-size:16px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;z-index:5;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+.carousel-arrow:hover{background:var(--ink);color:var(--parchment);border-color:var(--ink)}
+.carousel-arrow.prev{left:-18px}
+.carousel-arrow.next{right:-18px}
+@media(max-width:640px){
+  .carousel-arrow{display:none}
+  .carousel-track .blog-card{flex:0 0 160px}
+}
 
-/* CARD (no-description variant used in category grids) */
+/* CARD */
 .blog-card{text-decoration:none;color:inherit;display:flex;flex-direction:column;background:var(--white);border:1px solid var(--faint);transition:border-color 0.2s,transform 0.2s}
 .blog-card:hover{border-color:var(--terra);transform:translateY(-2px)}
 .blog-card-img{width:100%;aspect-ratio:2/3;overflow:hidden;display:block;background:var(--parchment-dark)}
-.start-grid .blog-card-img,.category-grid .blog-card-img{aspect-ratio:4/5}
+.start-grid .blog-card-img,.archive-grid .blog-card-img{aspect-ratio:4/5}
 .blog-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s}
 .blog-card:hover .blog-card-img img{transform:scale(1.02)}
 .blog-card-body{padding:14px 14px 16px;flex:1;display:flex;flex-direction:column}
-.blog-card-title{font-family:var(--playfair);font-size:15.5px;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:10px;flex:1}
-.blog-card-meta{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--terra);display:flex;align-items:center;justify-content:flex-end}
+.blog-card-title{font-family:var(--playfair);font-size:15.5px;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:10px;flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.blog-card-meta{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--terra);display:flex;align-items:center;justify-content:space-between}
+.blog-card-date{color:var(--mid);letter-spacing:0.05em}
 
-/* CARD-FULL (Start Here + Books & Reading: keeps description + read time) */
+/* CARD-FULL (Featured + Books & Reading: keeps description) */
 .blog-card-full .blog-card-body{padding:16px 16px 18px}
 .blog-card-full .blog-card-title{font-size:16px;flex:none;margin-bottom:8px}
 .blog-card-full .blog-card-desc{font-family:var(--body);font-size:13px;color:var(--mid);line-height:1.5;flex:1;margin-bottom:12px}
@@ -145,17 +149,15 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
   nav{padding:16px 32px}
   .nav-right .nav-link{display:none}
   .nav-hamburger{display:flex}
-  .blog-section,.start-here,.books-section,.category-section{padding-left:32px;padding-right:32px}
+  .blog-section,.start-here,.books-section,.archive-section{padding-left:32px;padding-right:32px}
   .page-hero{padding:100px 32px 48px}
   .section-divider{margin:0 32px}
-  .category-grid{grid-template-columns:repeat(3,1fr)}
 }
 @media(max-width:640px){
   nav{padding:14px 20px}
   .start-grid{grid-template-columns:repeat(2,1fr)}
-  .category-grid{grid-template-columns:repeat(2,1fr)}
   .books-grid{grid-template-columns:repeat(2,1fr)}
-  .blog-section,.start-here,.books-section,.category-section{padding-left:20px;padding-right:20px}
+  .blog-section,.start-here,.books-section,.archive-section{padding-left:20px;padding-right:20px}
   .page-hero{padding:96px 20px 40px}
   .section-divider{margin:0 20px}
   .email-strip{padding:48px 20px}
@@ -194,233 +196,35 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
 </div>
 <hr class="page-hero-rule">
 
-<!-- START HERE -->
+<!-- FEATURED (rotates weekly, pulled from an evergreen pool) -->
 <div class="start-here">
   <p class="start-here-label">Start Here</p>
-  <p class="start-here-desc">Four essential essays to begin with.</p>
-  <div class="start-grid">
-
-    <a href="https://youwereneverseries.arniefelicilda.com/your-timeline-was-never-wrong.html" class="blog-card blog-card-full">
-      <div class="blog-card-img"><img src="your-timeline-was-never-wrong-pin.jpg" alt="Your Timeline Was Never Wrong" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">Your Timeline Was Never Wrong</p>
-        <p class="blog-card-desc">You are not late. You are becoming.</p>
-        <div class="blog-card-meta"><span>8 min read</span><span>Read →</span></div>
-      </div>
-    </a>
-
-    <a href="https://youwereneverseries.arniefelicilda.com/you-were-never-replaceable.html" class="blog-card blog-card-full">
-      <div class="blog-card-img"><img src="you-were-never-replaceable-pin.jpg" alt="You Were Never Replaceable" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">You Were Never Replaceable</p>
-        <p class="blog-card-desc">Bring your whole self. You're needed.</p>
-        <div class="blog-card-meta"><span>5 min read</span><span>Read →</span></div>
-      </div>
-    </a>
-
-    <a href="https://youwereneverseries.arniefelicilda.com/growth-is-not-always-visible.html" class="blog-card blog-card-full">
-      <div class="blog-card-img"><img src="growth-is-not-always-visible-pin.jpg" alt="Growth Is Not Always Visible" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">Growth Is Not Always Visible</p>
-        <p class="blog-card-desc">You are changing even when you can't see it.</p>
-        <div class="blog-card-meta"><span>7 min read</span><span>Read →</span></div>
-      </div>
-    </a>
-
-    <a href="https://youwereneverseries.arniefelicilda.com/you-were-never-waiting-for-permission.html" class="blog-card blog-card-full">
-      <div class="blog-card-img"><img src="you-were-never-waiting-for-permission-pin.jpg" alt="You Were Never Waiting for Permission" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">You Were Never Waiting for Permission</p>
-        <p class="blog-card-desc">Your life does not begin when they approve.</p>
-        <div class="blog-card-meta"><span>6 min read</span><span>Read →</span></div>
-      </div>
-    </a>
-
-  </div>
+  <div class="start-grid" id="featured-grid"></div>
 </div>
 
 <hr class="section-divider">
 
-<!-- IDENTITY & SELF-WORTH -->
-<section class="category-section">
-  <div class="section-header">
-    <h2 class="section-title">Identity & Self-Worth</h2>
-    <p class="section-desc">Essays on identity, self-worth, comparison, and self-perception.</p>
-  </div>
-  <div class="category-grid">
-
-    <a href="https://youwereneverseries.arniefelicilda.com/your-timeline-was-never-wrong.html" class="blog-card">
-      <div class="blog-card-img"><img src="your-timeline-was-never-wrong-pin.jpg" alt="Your Timeline Was Never Wrong" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">Your Timeline Was Never Wrong</p>
-        <div class="blog-card-meta"><span>Read →</span></div>
-      </div>
-    </a>
-
-    <a href="https://youwereneverseries.arniefelicilda.com/you-are-not-running-out-of-time.html" class="blog-card">
-      <div class="blog-card-img"><img src="you-are-not-running-out-of-time-pin.jpg" alt="You Are Not Running Out of Time" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">You Are Not Running Out of Time</p>
-        <div class="blog-card-meta"><span>Read →</span></div>
-      </div>
-    </a>
-
-    <a href="https://youwereneverseries.arniefelicilda.com/your-life-is-not-a-competition.html" class="blog-card">
-      <div class="blog-card-img"><img src="your-life-is-not-a-competition-pin.jpg" alt="Your Life Is Not a Competition" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">Your Life Is Not a Competition</p>
-        <div class="blog-card-meta"><span>Read →</span></div>
-      </div>
-    </a>
-
-    <a href="https://youwereneverseries.arniefelicilda.com/you-do-not-need-to-shrink-to-be-accepted.html" class="blog-card">
-      <div class="blog-card-img"><img src="you-do-not-need-to-shrink-to-be-accepted-pin.jpg" alt="You Do Not Need to Shrink to Be Accepted" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">You Do Not Need to Shrink to Be Accepted</p>
-        <div class="blog-card-meta"><span>Read →</span></div>
-      </div>
-    </a>
-
-  </div>
-  <div class="more-essays">
-    <p class="more-essays-label">More in Identity & Self-Worth</p>
-    <ul class="more-essays-list">
-      <li><a href="https://youwereneverseries.arniefelicilda.com/you-were-never-replaceable.html">You Were Never Replaceable</a></li>
-      <li><a href="https://youwereneverseries.arniefelicilda.com/psychology-of-comparing-yourself-to-others.html">Psychology of Comparing Yourself to Others</a></li>
-      <li><a href="https://youwereneverseries.arniefelicilda.com/how-labels-shape-self-image.html">How Labels Shape Self-Image</a></li>
-      <li><a href="https://youwereneverseries.arniefelicilda.com/why-hardworking-people-feel-invisible.html">Why Hardworking People Feel Invisible</a></li>
-      <li><a href="https://youwereneverseries.arniefelicilda.com/self-worth-and-achievement.html">Self-Worth and Achievement</a></li>
-      <li><a href="https://youwereneverseries.arniefelicilda.com/confidence-vs-self-worth.html">Confidence vs Self-Worth</a></li>
-    </ul>
-  </div>
-</section>
-
-<hr class="section-divider">
-
-<!-- GROWTH & BECOMING -->
-<section class="category-section">
-  <div class="section-header">
-    <h2 class="section-title">Growth & Becoming</h2>
-    <p class="section-desc">Essays on pace, timing, and nonlinear growth.</p>
-  </div>
-  <div class="category-grid">
-
-    <a href="https://youwereneverseries.arniefelicilda.com/growth-is-not-always-visible.html" class="blog-card">
-      <div class="blog-card-img"><img src="growth-is-not-always-visible-pin.jpg" alt="Growth Is Not Always Visible" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">Growth Is Not Always Visible</p>
-        <div class="blog-card-meta"><span>Read →</span></div>
-      </div>
-    </a>
-
-    <a href="https://youwereneverseries.arniefelicilda.com/you-are-allowed-to-grow-slowly.html" class="blog-card">
-      <div class="blog-card-img"><img src="you-are-allowed-to-grow-slowly-pin.jpg" alt="You Are Allowed to Grow Slowly" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">You Are Allowed to Grow Slowly</p>
-        <div class="blog-card-meta"><span>Read →</span></div>
-      </div>
-    </a>
-
-    <a href="https://youwereneverseries.arniefelicilda.com/you-are-still-becoming.html" class="blog-card">
-      <div class="blog-card-img"><img src="you-are-still-becoming-pin.jpg" alt="You Are Still Becoming" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">You Are Still Becoming</p>
-        <div class="blog-card-meta"><span>Read →</span></div>
-      </div>
-    </a>
-
-    <a href="https://youwereneverseries.arniefelicilda.com/not-everyone-blooms-in-the-same-season.html" class="blog-card">
-      <div class="blog-card-img"><img src="not-everyone-blooms-in-the-same-season-pin.jpg" alt="Not Everyone Blooms in the Same Season" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">Not Everyone Blooms in the Same Season</p>
-        <div class="blog-card-meta"><span>Read →</span></div>
-      </div>
-    </a>
-
-  </div>
-  <div class="more-essays">
-    <p class="more-essays-label">More in Growth & Becoming</p>
-    <ul class="more-essays-list">
-      <li><a href="https://youwereneverseries.arniefelicilda.com/healing-is-not-proof-that-you-failed.html">Healing Is Not Proof That You Failed</a></li>
-      <li><a href="https://youwereneverseries.arniefelicilda.com/some-journeys-take-the-long-way-home.html">Some Journeys Take the Long Way Home</a></li>
-      <li><a href="https://youwereneverseries.arniefelicilda.com/becoming-takes-longer-than-people-admit.html">Becoming Takes Longer Than People Admit</a></li>
-      <li><a href="https://youwereneverseries.arniefelicilda.com/why-do-people-feel-behind-in-life.html">Why Do People Feel Behind in Life</a></li>
-      <li><a href="https://youwereneverseries.arniefelicilda.com/stop-seeking-permission.html">Stop Seeking Permission</a></li>
-      <li><a href="https://youwereneverseries.arniefelicilda.com/decision-making-vs-motivation.html">Decision Making vs Motivation</a></li>
-    </ul>
-  </div>
-</section>
-
-<hr class="section-divider">
-
-<!-- SELF-LEADERSHIP -->
-<section class="category-section">
-  <div class="section-header">
-    <h2 class="section-title">Self-Leadership</h2>
-    <p class="section-desc">Essays on confidence, decision-making, boundaries, and personal responsibility.</p>
-  </div>
-  <div class="category-grid">
-
-    <a href="https://youwereneverseries.arniefelicilda.com/6-questions-that-will-tell-you-who-you-actually-are.html" class="blog-card">
-      <div class="blog-card-img"><img src="6-questions-that-will-tell-you-who-you-actually-are-pin.jpg" alt="6 Questions That Will Tell You Who You Actually Are" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">6 Questions That Will Tell You Who You Actually Are</p>
-        <div class="blog-card-meta"><span>Read →</span></div>
-      </div>
-    </a>
-
-    <a href="https://youwereneverseries.arniefelicilda.com/6-shifts-that-change-how-you-see-yourself.html" class="blog-card">
-      <div class="blog-card-img"><img src="6-shifts-that-change-how-you-see-yourself-pin.jpg" alt="6 Shifts That Change How You See Yourself" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">6 Shifts That Change How You See Yourself</p>
-        <div class="blog-card-meta"><span>Read →</span></div>
-      </div>
-    </a>
-
-    <a href="https://youwereneverseries.arniefelicilda.com/7-signs-you-are-growing-even-when-it-does-not-feel-like-it.html" class="blog-card">
-      <div class="blog-card-img"><img src="7-signs-you-are-growing-even-when-it-does-not-feel-like-it-pin.jpg" alt="7 Signs You Are Growing Even When It Does Not Feel Like It" loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">7 Signs You Are Growing Even When It Does Not Feel Like It</p>
-        <div class="blog-card-meta"><span>Read →</span></div>
-      </div>
-    </a>
-
-    <a href="https://youwereneverseries.arniefelicilda.com/consistency-is-not-motivation-it-is-identity.html" class="blog-card">
-      <div class="blog-card-img"><img src="consistency-is-not-motivation-it-is-identity-pin.jpg" alt="Consistency Is Not Motivation. It Is Identity." loading="lazy"></div>
-      <div class="blog-card-body">
-        <p class="blog-card-title">Consistency Is Not Motivation. It Is Identity.</p>
-        <div class="blog-card-meta"><span>Read →</span></div>
-      </div>
-    </a>
-
-  </div>
-  <div class="more-essays">
-    <p class="more-essays-label">More in Self-Leadership</p>
-    <ul class="more-essays-list">
-      <li><a href="https://youwereneverseries.arniefelicilda.com/how-to-build-confidence-without-performing-it.html">How to Build Confidence Without Performing It</a></li>
-      <li><a href="https://youwereneverseries.arniefelicilda.com/the-one-habit-that-is-quietly-costing-you-everything.html">The One Habit That Is Quietly Costing You Everything</a></li>
-      <li><a href="https://youwereneverseries.arniefelicilda.com/what-you-keep-not-saying-is-costing-you-more-than-you-think.html">What You Keep Not Saying Is Costing You More Than You Think</a></li>
-      <li><a href="https://youwereneverseries.arniefelicilda.com/you-were-never-waiting-for-permission.html">You Were Never Waiting for Permission</a></li>
-    </ul>
-  </div>
+<!-- ARCHIVE -->
+<section class="archive-section">
+  <div id="archive-list"></div>
 </section>
 
 <hr class="section-divider">
 
 <!-- BOOKS & READING -->
-<section class="category-section">
+<section class="blog-section">
   <div class="section-header">
-    <h2 class="section-title">Books & Reading</h2>
-    <p class="section-desc">Reading lists, book recommendations, and essays worth exploring further.</p>
+    <h2 class="section-title">Books &amp; Reading</h2>
+    <p class="section-desc">Reading lists and book recommendations.</p>
   </div>
-  <div class="category-grid category-grid-compact">
+  <div class="archive-grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,220px));justify-content:start">
 
     <a href="https://youwereneverseries.arniefelicilda.com/10-books-that-will-change-how-you-see-yourself.html" class="blog-card blog-card-full">
       <div class="blog-card-img"><img src="10-books-that-will-change-how-you-see-yourself-pin.jpg" alt="10 Books That Will Change How You See Yourself" loading="lazy"></div>
       <div class="blog-card-body">
         <p class="blog-card-title">10 Books That Will Change How You See Yourself</p>
         <p class="blog-card-desc">Ten books that challenge how you see yourself.</p>
-        <div class="blog-card-meta"><span>8 min</span><span>Read →</span></div>
+        <div class="blog-card-meta"><span>10 min read</span><span>Read →</span></div>
       </div>
     </a>
 
@@ -429,7 +233,7 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
       <div class="blog-card-body">
         <p class="blog-card-title">12 Books About Identity Everyone Should Read</p>
         <p class="blog-card-desc">Twelve books about identity, belonging, and becoming.</p>
-        <div class="blog-card-meta"><span>7 min</span><span>Read →</span></div>
+        <div class="blog-card-meta"><span>10 min read</span><span>Read →</span></div>
       </div>
     </a>
 
@@ -535,6 +339,141 @@ document.querySelectorAll('.nav-mobile a').forEach(function(a){
     mobileNav.classList.remove('open');
   });
 });
+
+/* ---------- ARCHIVE DATA (newest first) ----------
+   minRead is computed from actual post word counts where the post file
+   was available to check. Marked (est.) where the file wasn't available
+   to verify — confirm actual length before final publish. */
+var BASE_URL = 'https://youwereneverseries.arniefelicilda.com/';
+var posts = [
+  {slug:'confidence-vs-self-worth', title:'Confidence vs Self-Worth', date:'2026-06-28', minRead:7},
+  {slug:'12-books-about-identity-everyone-should-read', title:'12 Books About Identity Everyone Should Read', date:'2026-06-25', minRead:10},
+  {slug:'decision-making-vs-motivation', title:'Decision Making vs Motivation', date:'2026-06-22', minRead:9},
+  {slug:'stop-seeking-permission', title:'Stop Seeking Permission', date:'2026-06-19', minRead:7},
+  {slug:'self-worth-and-achievement', title:'Self-Worth and Achievement', date:'2026-06-16', minRead:8},
+  {slug:'why-hardworking-people-feel-invisible', title:'Why Hardworking People Feel Invisible', date:'2026-06-13', minRead:9},
+  {slug:'how-labels-shape-self-image', title:'How Labels Shape Self-Image', date:'2026-06-10', minRead:8},
+  {slug:'psychology-of-comparing-yourself-to-others', title:'Psychology of Comparing Yourself to Others', date:'2026-06-07', minRead:9},
+  {slug:'10-books-that-will-change-how-you-see-yourself', title:'10 Books That Will Change How You See Yourself', date:'2026-06-04', minRead:10},
+  {slug:'why-do-people-feel-behind-in-life', title:'Why Do People Feel Behind in Life', date:'2026-06-01', minRead:10},
+  {slug:'you-were-never-waiting-for-permission', title:'You Were Never Waiting for Permission', date:'2026-05-28', minRead:9},
+  {slug:'you-were-never-replaceable', title:'You Were Never Replaceable', date:'2026-05-25', minRead:8},
+  {slug:'you-do-not-need-to-shrink-to-be-accepted', title:'You Do Not Need to Shrink to Be Accepted', date:'2026-05-22', minRead:8},
+  {slug:'what-you-keep-not-saying-is-costing-you-more-than-you-think', title:'What You Keep Not Saying Is Costing You More Than You Think', date:'2026-05-19', minRead:8},
+  {slug:'the-one-habit-that-is-quietly-costing-you-everything', title:'The One Habit That Is Quietly Costing You Everything', date:'2026-05-16', minRead:8},
+  {slug:'how-to-build-confidence-without-performing-it', title:'How to Build Confidence Without Performing It', date:'2026-05-13', minRead:8},
+  {slug:'consistency-is-not-motivation-it-is-identity', title:'Consistency Is Not Motivation. It Is Identity.', date:'2026-05-10', minRead:8},
+  {slug:'7-signs-you-are-growing-even-when-it-does-not-feel-like-it', title:'7 Signs You Are Growing Even When It Does Not Feel Like It', date:'2026-05-07', minRead:8},
+  {slug:'6-shifts-that-change-how-you-see-yourself', title:'6 Shifts That Change How You See Yourself', date:'2026-05-04', minRead:9},
+  {slug:'6-questions-that-will-tell-you-who-you-actually-are', title:'6 Questions That Will Tell You Who You Actually Are', date:'2026-05-01', minRead:9},
+  {slug:'becoming-takes-longer-than-people-admit', title:'Becoming Takes Longer Than People Admit', date:'2026-04-28', minRead:10},
+  {slug:'some-journeys-take-the-long-way-home', title:'Some Journeys Take the Long Way Home', date:'2026-04-25', minRead:8},
+  {slug:'your-life-is-not-a-competition', title:'Your Life Is Not a Competition', date:'2026-04-22', minRead:8},
+  {slug:'healing-is-not-proof-that-you-failed', title:'Healing Is Not Proof That You Failed', date:'2026-04-19', minRead:9},
+  {slug:'not-everyone-blooms-in-the-same-season', title:'Not Everyone Blooms in the Same Season', date:'2026-04-16', minRead:8},
+  {slug:'you-are-still-becoming', title:'You Are Still Becoming', date:'2026-04-13', minRead:8},
+  {slug:'you-are-allowed-to-grow-slowly', title:'You Are Allowed to Grow Slowly', date:'2026-04-10', minRead:8},
+  {slug:'growth-is-not-always-visible', title:'Growth Is Not Always Visible', date:'2026-04-07', minRead:8},
+  {slug:'you-are-not-running-out-of-time', title:'You Are Not Running Out of Time', date:'2026-04-04', minRead:7},
+  {slug:'your-timeline-was-never-wrong', title:'Your Timeline Was Never Wrong', date:'2026-04-01', minRead:8}
+];
+
+/* Evergreen pool eligible for weekly featured rotation
+   (excludes the two book-list posts, which are read-once, not re-featured) */
+var evergreenSlugs = [
+  'your-timeline-was-never-wrong','you-were-never-replaceable','growth-is-not-always-visible',
+  'you-were-never-waiting-for-permission','you-are-not-running-out-of-time','your-life-is-not-a-competition',
+  'you-do-not-need-to-shrink-to-be-accepted','you-are-allowed-to-grow-slowly','you-are-still-becoming',
+  'not-everyone-blooms-in-the-same-season','healing-is-not-proof-that-you-failed','some-journeys-take-the-long-way-home',
+  'becoming-takes-longer-than-people-admit','why-do-people-feel-behind-in-life','stop-seeking-permission',
+  'consistency-is-not-motivation-it-is-identity'
+];
+
+var MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+function monthKey(dateStr){
+  var d = new Date(dateStr + 'T00:00:00');
+  return d.getFullYear() + '-' + d.getMonth();
+}
+function monthLabel(dateStr){
+  var d = new Date(dateStr + 'T00:00:00');
+  return MONTH_NAMES[d.getMonth()] + ' ' + d.getFullYear();
+}
+
+function cardHTML(post){
+  var url = BASE_URL + post.slug + '.html';
+  var img = post.slug + '-pin.jpg';
+  var readLabel = post.minRead + ' min read';
+  return '<a href="' + url + '" class="blog-card">' +
+    '<div class="blog-card-img"><img src="' + img + '" alt="' + post.title + '" loading="lazy"></div>' +
+    '<div class="blog-card-body">' +
+      '<p class="blog-card-title">' + post.title + '</p>' +
+      '<div class="blog-card-meta"><span>' + readLabel + '</span><span>Read →</span></div>' +
+    '</div></a>';
+}
+
+/* Group posts by month, newest month first, each post newest-first within its month */
+var months = [];
+var monthMap = {};
+posts.forEach(function(p){
+  var key = monthKey(p.date);
+  if(!monthMap[key]){
+    monthMap[key] = {label: monthLabel(p.date), items: []};
+    months.push(monthMap[key]);
+  }
+  monthMap[key].items.push(p);
+});
+
+var listEl = document.getElementById('archive-list');
+months.forEach(function(m, idx){
+  var wrap = document.createElement('div');
+  wrap.className = 'month-group';
+  var trackId = 'track-' + idx;
+  wrap.innerHTML =
+    '<h3 class="month-heading">' + m.label + '</h3>' +
+    '<div class="carousel-wrap">' +
+      '<button class="carousel-arrow prev" data-target="' + trackId + '" data-dir="-1" aria-label="Scroll left">‹</button>' +
+      '<div class="carousel-track" id="' + trackId + '">' + m.items.map(cardHTML).join('') + '</div>' +
+      '<button class="carousel-arrow next" data-target="' + trackId + '" data-dir="1" aria-label="Scroll right">›</button>' +
+    '</div>';
+  listEl.appendChild(wrap);
+});
+
+document.querySelectorAll('.carousel-arrow').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var track = document.getElementById(btn.getAttribute('data-target'));
+    var dir = parseInt(btn.getAttribute('data-dir'), 10);
+    track.scrollBy({left: dir * (240 + 20) * 2, behavior: 'smooth'});
+  });
+});
+
+/* ---------- FEATURED: rotates automatically every week ---------- */
+function seededShuffle(arr, seed){
+  var a = arr.slice(), m = a.length, t, i, s = seed;
+  while(m){
+    s = (s * 9301 + 49297) % 233280;
+    i = Math.floor((s / 233280) * m--);
+    t = a[m]; a[m] = a[i]; a[i] = t;
+  }
+  return a;
+}
+var weekNumber = Math.floor(Date.now() / 604800000);
+var featuredSlugs = seededShuffle(evergreenSlugs, weekNumber).slice(0, 4);
+var postBySlug = {};
+posts.forEach(function(p){ postBySlug[p.slug] = p; });
+
+var featuredGrid = document.getElementById('featured-grid');
+featuredGrid.innerHTML = featuredSlugs.map(function(slug){
+  var p = postBySlug[slug];
+  var url = BASE_URL + p.slug + '.html';
+  var img = p.slug + '-pin.jpg';
+  return '<a href="' + url + '" class="blog-card blog-card-full">' +
+    '<div class="blog-card-img"><img src="' + img + '" alt="' + p.title + '" loading="lazy"></div>' +
+    '<div class="blog-card-body">' +
+      '<p class="blog-card-title">' + p.title + '</p>' +
+      '<div class="blog-card-meta"><span>' + p.minRead + ' min read</span><span>Read →</span></div>' +
+    '</div></a>';
+}).join('');
 </script>
 </body>
 </html>
