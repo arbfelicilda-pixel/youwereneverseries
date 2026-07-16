@@ -39,16 +39,23 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=EB+Garamond:wght@400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
 <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--white:#FFFFFF;--cream:#f7f2e8;--cream-dark:#ede6d3;--ink:#1a1208;--ink-soft:#3d3020;--mid:#8a7a6a;--faint:#d4c9bb;--terra:#c2714f;--terra-dark:#8b3a1a;--heading:'Playfair Display',Georgia,serif;--body:'EB Garamond',Georgia,serif;--sans:'Outfit',sans-serif;}
+:root{--white:#FFFFFF;--cream:#f7f2e8;--cream-dark:#ede6d3;--ink:#1a1208;--ink-soft:#3d3020;--mid:#8a7a6a;--faint:#d4c9bb;--terra:#5A1F2A;--terra-dark:#3d1520;--burgundy:#5A1F2A;--burgundy-soft:#7A2F3D;--link-terra:#8b3a1a;--heading:'Playfair Display',Georgia,serif;--body:'EB Garamond',Georgia,serif;--sans:'Outfit',sans-serif;}
 html{scroll-behavior:smooth}
 body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.7;overflow-x:hidden}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(249,247,242,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--faint)}
 .nav-logo{font-family:var(--heading);font-size:20px;font-weight:700;color:var(--ink);text-decoration:none}
 .nav-logo span{color:var(--terra);font-weight:400}
 .nav-right{display:flex;gap:28px;align-items:center}
-.nav-link{font-family:var(--sans);font-size:13px;font-weight:400;color:var(--ink-soft);text-decoration:none;transition:color 0.2s;letter-spacing:0.02em}
+.nav-link{font-family:var(--sans);font-size:11px;font-weight:400;color:var(--ink-soft);text-decoration:none;transition:color 0.2s;letter-spacing:0.08em;text-transform:uppercase}
 .nav-link:hover{color:var(--ink)}
-.nav-cta{font-family:var(--sans);font-size:13px;font-weight:500;padding:9px 20px;background:var(--ink);color:var(--cream);text-decoration:none;transition:all 0.2s;letter-spacing:0.02em;border:1px solid var(--ink)}
+.nav-cta{font-family:var(--sans);font-size:11px;font-weight:500;padding:9px 20px;background:var(--burgundy);color:var(--cream);text-decoration:none;transition:all 0.2s;letter-spacing:0.08em;text-transform:uppercase;border:1px solid var(--burgundy)}
+.nav-dropdown{position:relative}
+.nav-dropdown-trigger{background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:11px;font-weight:400;color:var(--ink-soft);letter-spacing:0.08em;text-transform:uppercase;padding:0}
+.nav-dropdown-trigger:hover{color:var(--ink)}
+.nav-dropdown-menu{display:none;position:absolute;top:28px;left:50%;transform:translateX(-50%);background:var(--cream);border:1px solid var(--faint);box-shadow:0 8px 24px rgba(0,0,0,0.1);min-width:200px;padding:8px 0;z-index:50}
+.nav-dropdown-menu.open{display:block}
+.nav-dropdown-menu a{display:block;padding:12px 20px;font-family:var(--sans);font-size:12px;letter-spacing:0.04em;text-transform:none;color:var(--ink-soft);text-decoration:none;transition:color 0.2s}
+.nav-dropdown-menu a:hover{color:var(--terra);background:var(--parchment-dark)}
 .nav-cta:hover{background:var(--terra);border-color:var(--terra);color:var(--cream)}
 .nav-chapter{font-family:var(--sans);font-size:13px;font-weight:400;color:var(--terra);text-decoration:none;letter-spacing:0.02em;transition:color 0.2s;border:1px solid var(--terra);padding:7px 14px}
 .nav-chapter:hover{color:var(--terra-dark);border-color:var(--terra-dark)}
@@ -56,18 +63,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:all 0.2s}
 .nav-mobile{display:none;position:fixed;top:56px;left:0;right:0;background:var(--cream);border-bottom:1px solid var(--faint);flex-direction:column;z-index:99;box-shadow:0 4px 16px rgba(0,0,0,0.06)}
 .nav-mobile.open{display:flex}
-.nav-mobile a{font-family:var(--sans);font-size:13px;font-weight:400;letter-spacing:0.04em;color:var(--ink-soft);text-decoration:none;padding:14px 24px;border-bottom:1px solid var(--faint);transition:color 0.2s}
+.nav-mobile a{font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;padding:14px 24px;border-bottom:1px solid var(--faint);transition:color 0.2s}
 .nav-mobile a:last-child{border-bottom:none}
 .nav-mobile a:hover{color:var(--terra)}
-.post-hero{padding:120px 60px 48px;max-width:760px;margin:0 auto}
+.post-hero{padding:120px 60px 48px;max-width:900px;margin:0 auto}
 .post-eyebrow{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:var(--terra);margin-bottom:16px}
 .post-month{font-family:var(--sans);font-size:13px;font-weight:400;color:var(--mid);margin-bottom:8px;margin-top:24px}
 .post-title{font-family:var(--heading);font-size:clamp(32px,5vw,56px);font-weight:700;line-height:1.1;color:var(--ink);margin-bottom:0;letter-spacing:-0.02em}
 .post-rule{width:32px;height:1px;background:var(--ink);margin:28px 0}
 .post-desc{font-family:var(--body);font-size:18px;color:var(--ink-soft);line-height:1.7;max-width:560px}
-.post-image{width:100%;max-width:760px;margin:0 auto;padding:0 60px;box-sizing:border-box;display:block}
+.post-image{width:100%;max-width:900px;margin:0 auto;padding:0 60px;box-sizing:border-box;display:block}
 .post-image img{width:100%;height:auto;display:block}
-.post-body{max-width:760px;margin:0 auto;padding:48px 60px 80px}
+.post-body{max-width:900px;margin:0 auto;padding:48px 60px 80px}
 .post-body h2{font-family:var(--heading);font-size:clamp(24px,3vw,32px);font-weight:700;color:var(--ink);line-height:1.2;margin:48px 0 20px;letter-spacing:-0.01em}
 .post-body p{font-family:var(--body);font-size:19px;line-height:1.8;color:var(--ink-soft);margin-bottom:24px}
 .post-body p:first-child{font-size:21px;font-weight:400;color:var(--ink)}
@@ -101,7 +108,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .email-strip button:hover{background:#000}
 .back-section{padding:40px 60px;text-align:center;background:var(--cream)}
 .back-link{font-family:var(--sans);font-size:13px;font-weight:400;letter-spacing:0.08em;color:var(--terra);text-decoration:none;border-bottom:1px solid rgba(194,113,79,0.35);padding-bottom:2px}
-.faq-section{max-width:760px;margin:0 auto;padding:0 60px 40px}
+.faq-section{max-width:900px;margin:0 auto;padding:0 60px 40px}
 .faq-item{margin-bottom:24px;border-bottom:1px solid var(--faint);padding-bottom:20px}
 .faq-item:last-child{border-bottom:none}
 .faq-q{font-family:var(--heading);font-size:19px;font-weight:700;color:var(--ink);margin-bottom:10px}
@@ -143,29 +150,29 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .pinterest-btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;padding:13px 24px;text-decoration:none;transition:opacity 0.2s;background:#E60023;color:#fff}
 .pinterest-btn:hover{opacity:0.85}
 @media(max-width:700px){nav{padding:14px 20px}
-  .nav-right .nav-link,.nav-right .nav-cta,.nav-right .nav-chapter{display:none}
+  .nav-right .nav-link{display:none}
   .nav-hamburger{display:flex}.post-hero{padding:90px 20px 36px}.post-body,.faq-section{padding:36px 20px 60px}.post-image{padding:0 20px}.share-section,.back-section,.email-strip{padding:36px 20px}.email-strip form{flex-direction:column}.book-cta{flex-direction:column}.book-cta-cover{width:100%;max-width:140px}.related-grid{grid-template-columns:1fr}.related-card img{height:200px}}
-.author-card{display:flex;align-items:center;gap:16px;max-width:760px;margin:0 auto 40px;padding:20px 60px;border-top:1px solid var(--faint);border-bottom:1px solid var(--faint);position:relative}
+.author-card{display:flex;align-items:center;gap:16px;max-width:900px;margin:0 auto 40px;padding:20px 60px;border-top:1px solid var(--faint);border-bottom:1px solid var(--faint);position:relative}
 .author-card img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;cursor:pointer}
 .author-card-trigger{display:flex;align-items:center;gap:16px;cursor:pointer}
 .author-card-text{display:flex;flex-direction:column;gap:4px}
 .author-card-name{font-family:var(--heading);font-size:16px;font-weight:700;color:var(--ink)}
 .author-card-links{display:flex;gap:14px}
-.author-card-links a{font-family:var(--body);font-size:12px;font-weight:500;letter-spacing:0.04em;color:var(--terra-dark);text-decoration:none;border-bottom:1px solid rgba(194,113,79,0.4)}
+.author-card-links a{font-family:var(--body);font-size:12px;font-weight:500;letter-spacing:0.04em;color:var(--link-terra);text-decoration:none;border-bottom:1px solid rgba(194,113,79,0.4)}
 .author-card-links a:hover{color:var(--terra)}
 .author-card-popover{display:none;position:absolute;top:100%;left:60px;padding-top:8px;z-index:50;width:280px}
 .author-card-popover-inner{background:var(--cream);border:1px solid var(--faint);box-shadow:0 8px 24px rgba(0,0,0,0.08);padding:18px 20px;border-radius:4px}
 .author-card-trigger:hover+.author-card-popover,.author-card-popover:hover{display:block}
 .author-card-role{font-family:var(--body);font-size:14px;color:var(--ink-soft);line-height:1.5;margin:0}
-.essential-section{max-width:760px;margin:0 auto;padding:40px 60px 60px;border-top:1px solid var(--faint)}
+.essential-section{max-width:900px;margin:0 auto;padding:40px 60px 60px;border-top:1px solid var(--faint)}
 .essential-label{font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:20px}
-.essential-grid{display:flex;flex-direction:row-reverse;gap:16px;overflow-x:auto;padding-bottom:4px}
+.essential-grid{display:flex;flex-direction:row;gap:16px;overflow-x:auto;padding-bottom:4px}
 .essential-card{flex:0 0 110px;text-decoration:none;display:flex;flex-direction:column;gap:8px}
 .essential-card-img{width:110px;height:165px;border-radius:4px;overflow:hidden;background:var(--cream-dark)}
 .essential-card-img img{width:100%;height:100%;object-fit:contain;display:block}
 .essential-card-title{font-family:var(--body);font-size:13px;line-height:1.4;color:var(--ink);text-align:left}
-.essential-card:hover .essential-card-title{color:var(--terra-dark)}
-.post-nav{display:flex;justify-content:space-between;gap:24px;max-width:760px;margin:0 auto;padding:40px 60px;border-top:1px solid var(--faint)}
+.essential-card:hover .essential-card-title{color:var(--link-terra)}
+.post-nav{display:flex;justify-content:space-between;gap:24px;max-width:900px;margin:0 auto;padding:40px 60px;border-top:1px solid var(--faint)}
 .post-nav-item{flex:1;text-decoration:none;display:flex;flex-direction:column}
 .post-nav-item.next{text-align:right;align-items:flex-end}
 .post-nav-item.prev{text-align:left;align-items:flex-start}
@@ -194,10 +201,19 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
   <a href="/" class="nav-logo">You Were <span>Never</span> Series</a>
   <div class="nav-right">
     <a href="/#books" class="nav-link">The Books</a>
-    <a href="https://arniefelicilda.com" class="nav-link">Author Site</a>
-    <a href="blog.html" class="nav-link">Archive</a>
+    <a href="https://arniefelicilda.com/contact.html" target="_blank" rel="noopener" class="nav-link">Contact</a>
+    <a href="https://arniefelicilda.com/archive.html" target="_blank" rel="noopener" class="nav-link">Archive</a>
+    <a href="https://arniefelicilda.com/the-gentle-art-of-dying-upside-down.html" target="_blank" rel="noopener" class="nav-link">New Release</a>
+    <div class="nav-dropdown">
+      <button class="nav-link nav-dropdown-trigger" id="explore-more-trigger">Explore More &#9662;</button>
+      <div class="nav-dropdown-menu" id="explore-more-menu">
+        <a href="https://arniefelicilda.com" target="_blank" rel="noopener">Author Site</a>
+        <a href="https://arniefelicilda.com/literary-collections.html" target="_blank" rel="noopener">Literary Collection</a>
+        <a href="https://arniefelicilda.com/collaborations.html" target="_blank" rel="noopener">Collaborations</a>
+        <a href="https://arniefelicilda.com/editorial-services.html" target="_blank" rel="noopener">Editorial Services</a>
+      </div>
+    </div>
     <a href="https://arniefelicilda.com/the-letters.html" class="nav-cta">Newsletter</a>
-    <a href="#free-chapter" class="nav-chapter">FREE Chapter</a>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -207,10 +223,14 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
 <div class="nav-mobile" id="nav-mobile">
   <a href="/">Home</a>
   <a href="/#books">The Books</a>
-  <a href="https://arniefelicilda.com">Author Site</a>
-  <a href="blog.html">Archive</a>
+  <a href="https://arniefelicilda.com/contact.html" target="_blank" rel="noopener">Contact</a>
+  <a href="https://arniefelicilda.com/archive.html" target="_blank" rel="noopener">Archive</a>
+  <a href="https://arniefelicilda.com/the-gentle-art-of-dying-upside-down.html" target="_blank" rel="noopener">New Release</a>
+  <a href="https://arniefelicilda.com" target="_blank" rel="noopener">Author Site</a>
+  <a href="https://arniefelicilda.com/literary-collections.html" target="_blank" rel="noopener">Literary Collection</a>
+  <a href="https://arniefelicilda.com/collaborations.html" target="_blank" rel="noopener">Collaborations</a>
+  <a href="https://arniefelicilda.com/editorial-services.html" target="_blank" rel="noopener">Editorial Services</a>
   <a href="https://arniefelicilda.com/the-letters.html">Newsletter</a>
-  <a href="#free-chapter">FREE Chapter</a>
 </div>
 <div class="post-hero">
   <p class="post-eyebrow">Self-Leadership · You Were Never Series</p>
@@ -240,6 +260,7 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
 <div class="post-body">
 <p>These are not affirmations. You do not say them in a mirror. They are not things you repeat until you believe them. They are structural changes in how you interpret what happens to you and what it means about who you are. Each one takes time. Each one is real.</p>
 <p>The difference between someone who keeps repeating the same painful patterns and someone who eventually breaks out of them is usually not effort. It is interpretation. How you read what happens to you determines what you do next. These six shifts change the reading.</p>
+
 <div class="post-divider"></div>
 <h2>Why interpretation matters more than motivation</h2>
 <p>Motivation is unstable. It goes up when things are new and drops when the work gets repetitive or results slow down. Interpretation is more durable. When you change the meaning you assign to what happens to you, you change what you do with it. That is structural in a way that motivation is not.</p>
@@ -251,6 +272,7 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
 <h2>Why Self-Image Is Hard to Change</h2>
 <p>Self-image resists change because it was rarely built through conscious decision in the first place. Most of it formed early, absorbed from comments, comparisons, and roles you fell into before you were old enough to evaluate whether any of it was accurate. By the time you're an adult trying to change it deliberately, you're not editing a belief you chose. You're trying to overwrite something that feels less like an opinion and more like a fact about reality, which is a fundamentally harder thing to argue with.</p>
 <p>It's also hard to change because self-image reinforces itself. Once you believe you are a certain way, you notice the evidence that fits and overlook the evidence that doesn't, which makes the existing image feel more true over time, not less. Changing it requires actively interrupting that confirmation loop, not just deciding to think differently for a moment.</p>
+
 <h2>The 6 Shifts</h2>
 <div class="shift-block">
   <strong>1. From "I am behind" to "I am on a different timeline"</strong>
@@ -286,17 +308,6 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
 </div>
 </div>
 
-<div class="mid-cta">
-  <h3>Beyond the Pages</h3>
-  <p>Where the conversation continues. For readers of the You Were Never Series.</p>
-  <form action="https://assets.mailerlite.com/jsonp/2484784/forms/191860425663448888/subscribe" method="post">
-    <input name="fields[email]" type="email" placeholder="Your email address" required>
-    <input type="hidden" name="ml-submit" value="1">
-    <input type="hidden" name="anticsrf" value="true">
-    <button type="submit">Join The Letters</button>
-  </form>
-  <p class="mid-cta-privacy">No spam. Unsubscribe anytime.</p>
-</div>
 
 <div class="post-body">
 
@@ -385,14 +396,27 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
 <p class="faq-a">A mindset shift is often treated as a one-time decision. An interpretation shift is a practice, something you apply repeatedly to specific situations until it replaces the old automatic reading.</p>
 </div>
 </div>
-<div class="email-strip" id="free-chapter">
-  <h3>Get the first chapter free.</h3>
-  <p>You Were Never Behind. Delivered to your inbox.</p>
-  <form action="https://app.kit.com/forms/9422533/subscriptions" method="post">
-    <input name="email_address" type="email" placeholder="Your email address" required>
-    <button type="submit">Send Me Chapter 1</button>
+<div class="email-strip" id="beyond-the-pages">
+  <h3>Beyond the Pages</h3>
+  <p>Join the weekly newsletter. Early access on original writing: The Blind Spot Series, Ode to Home: Letters of the Living, and Beyond the Page.</p>
+  <form action="https://assets.mailerlite.com/jsonp/2484784/subscribe" method="post">
+    <input name="fields[email]" type="email" placeholder="Your email address" required>
+    <input type="hidden" name="ml-submit" value="1">
+    <input type="hidden" name="anticsrf" value="true">
+    <button type="submit">Join The Letters</button>
   </form>
 </div>
+
+<div style="max-width:900px; margin:56px auto 0; padding:32px 60px; text-align:center;">
+  <a href="https://arniefelicilda.com/the-gentle-art-of-dying-upside-down.html" style="display:inline-block; padding:16px 32px; background:var(--terra); color:var(--cream); font-family:var(--sans); font-size:12px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; margin-bottom:28px;">Explore The Gentle Art of Dying Upside Down</a>
+  <div style="max-width:280px; margin:0 auto;">
+    <a href="https://arniefelicilda.com/the-gentle-art-of-dying-upside-down.html">
+      <img src="https://arniefelicilda.com/mockup-2-stacked.jpg" alt="The Gentle Art of Dying Upside Down by Arnie Rose" style="width:100%; height:auto; display:block; box-shadow:0 8px 28px rgba(0,0,0,0.12);">
+    </a>
+  </div>
+</div>
+
+
 <div class="share-section">
   <p class="share-label">Share it</p>
   <div class="share-buttons">
@@ -410,12 +434,12 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
   </a>
 </div>
 <div class="back-section">
-  <a href="blog.html" class="back-link">← Back to the Archive</a>
+  <a href="https://arniefelicilda.com/archive.html" target="_blank" rel="noopener" class="back-link">← Back to the Archive</a>
 </div>
 <footer>
   <div>
-    <a href="/" class="footer-logo">You Were <span>Never</span> Series</a>
-    <p style="font-family:var(--sans);font-size:12px;color:var(--mid);margin-top:6px">Author of the You Were Never Series.</p>
+    <a href="/" class="footer-logo">Arnie Rose</a>
+    <p style="font-family:var(--sans);font-size:12px;color:var(--mid);margin-top:6px">Author of The Gentle Art of Dying Upside Down and the You Were Never series.</p>
     <p style="font-family:var(--sans);font-size:12px;color:var(--mid);margin-top:2px">Books about identity, human behavior, and inner life.</p>
   </div>
   <div style="display:flex;gap:48px;flex-wrap:wrap">
@@ -438,6 +462,18 @@ footer{padding:40px 60px;border-top:1px solid var(--faint);display:flex;justify-
 </footer>
 
 <script>
+var exploreMoreTrigger = document.getElementById('explore-more-trigger');
+var exploreMoreMenu = document.getElementById('explore-more-menu');
+if (exploreMoreTrigger) {
+  exploreMoreTrigger.addEventListener('click', function(e){
+    e.stopPropagation();
+    exploreMoreMenu.classList.toggle('open');
+  });
+  document.addEventListener('click', function(){
+    exploreMoreMenu.classList.remove('open');
+  });
+}
+
 var hamburger = document.getElementById('nav-hamburger');
 var mobileNav = document.getElementById('nav-mobile');
 if (hamburger) {
