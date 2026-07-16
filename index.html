@@ -36,14 +36,16 @@
 {"@context":"https://schema.org","@type":"BookSeries","name":"You Were Never Series","author":{"@type":"Person","name":"Arnie Rose","url":"https://arniefelicilda.com"},"numberOfItems":6,"url":"https://youwereneverseries.arniefelicilda.com","description":"A six-book series that dismantles the lies people carry about who they are and where they should be."}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Mono:wght@300;400;500&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --white:#FFFFFF;--cream:#F9F7F2;--cream-dark:#F0EDE6;
   --ink:#0D0D0D;--ink-soft:#4A4A4A;--mid:#999;--faint:#E2DED8;
+  --terra:#C26A5E;--burgundy:#5A1F2A;
   --heading:'Cormorant Garamond',Georgia,serif;
   --body:'IBM Plex Mono',monospace;
+  --sans:'Outfit',sans-serif;
 }
 html{scroll-behavior:smooth}
 body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6;overflow-x:hidden}
@@ -52,12 +54,19 @@ body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(249,247,242,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--faint)}
 .nav-logo{font-family:var(--heading);font-size:21px;font-weight:400;color:var(--ink);text-decoration:none;letter-spacing:0.01em}
 .nav-right{display:flex;gap:32px;align-items:center}
-.nav-link{font-family:var(--body);font-size:11px;font-weight:400;color:var(--mid);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s}
+.nav-link{font-family:var(--sans);font-size:11px;font-weight:400;color:var(--ink-soft);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s}
 .nav-link:hover{color:var(--ink)}
-.nav-cta{font-family:var(--body);font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:9px 18px;border:1px solid var(--ink);color:var(--ink);text-decoration:none;transition:all 0.2s}
+.nav-cta{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:9px 20px;background:#5A1F2A;color:var(--white);text-decoration:none;transition:all 0.2s;border:1px solid #5A1F2A}
+.nav-dropdown{position:relative}
+.nav-dropdown-trigger{background:none;border:none;cursor:pointer;font-family:var(--body);font-size:11px;font-weight:500;color:var(--ink-soft);letter-spacing:0.08em;text-transform:uppercase;padding:0}
+.nav-dropdown-trigger:hover{color:var(--ink)}
+.nav-dropdown-menu{display:none;position:absolute;top:28px;left:50%;transform:translateX(-50%);background:var(--white);border:1px solid var(--faint);box-shadow:0 8px 24px rgba(0,0,0,0.1);min-width:200px;padding:8px 0;z-index:50}
+.nav-dropdown-menu.open{display:block}
+.nav-dropdown-menu a{display:block;padding:12px 20px;font-family:var(--body);font-size:12px;letter-spacing:0.02em;text-transform:none;color:var(--ink-soft);text-decoration:none;transition:color 0.2s}
+.nav-dropdown-menu a:hover{color:var(--terra);background:var(--cream-dark)}
 .nav-cta:hover{background:var(--ink);color:var(--white)}
-.nav-cta--dark{background:var(--ink);color:var(--white);border-color:var(--ink)}
-.nav-cta--dark:hover{background:#333}
+.nav-cta--dark{background:var(--burgundy);color:var(--white);border-color:var(--burgundy)}
+.nav-cta--dark:hover{background:#4A1922}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
 .nav-hamburger span{display:block;width:20px;height:1px;background:var(--ink)}
 .nav-mobile{display:none;position:fixed;top:54px;left:0;right:0;background:var(--cream);border-bottom:1px solid var(--faint);flex-direction:column;z-index:99}
@@ -85,7 +94,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 
 /* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 20px 80px;background:var(--cream);text-align:center;position:relative}
-.hero-label{font-family:var(--body);font-size:10px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:32px;opacity:0;animation:fadeUp 0.8s ease 0.1s forwards}
+.hero-label{font-family:var(--body);font-size:12px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:32px;opacity:0;animation:fadeUp 0.8s ease 0.1s forwards}
 .hero-title{font-family:var(--heading);font-size:clamp(88px,14vw,180px);font-weight:300;line-height:0.88;letter-spacing:-0.03em;color:var(--ink);margin-bottom:12px;opacity:0;animation:fadeUp 0.8s ease 0.2s forwards}
 .hero-subtitle{font-family:var(--body);font-size:12px;font-weight:400;letter-spacing:0.5em;text-transform:uppercase;color:var(--mid);margin-bottom:40px;opacity:0;animation:fadeUp 0.8s ease 0.25s forwards}
 .hero-desc{font-family:var(--body);font-size:14px;font-weight:300;color:var(--ink-soft);max-width:680px;line-height:1.8;margin:0 auto 32px;opacity:0;animation:fadeUp 0.8s ease 0.3s forwards}
@@ -224,8 +233,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .blog-featured-faq li::before{content:"•";position:absolute;left:0;color:var(--terra)}
 .blog-featured-readmore{display:inline-block;margin-top:8px;font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px}
 .blog-recent-label{font-family:var(--body);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);margin-bottom:24px}
-.blog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
-.blog-card{background:var(--cream);text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:transform 0.3s ease}
+.blog-grid{display:flex;flex-direction:row;overflow-x:auto;gap:28px;padding-bottom:8px;scroll-snap-type:x proximity}
+.blog-card{background:var(--cream);text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:transform 0.3s ease;flex:0 0 260px;scroll-snap-align:start}
 .blog-card:hover{transform:translateY(-4px)}
 .blog-card-img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
 .blog-card-body{padding:18px;flex:1;display:flex;flex-direction:column}
@@ -235,8 +244,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 60px;display:fl
 .blog-card-excerpt{font-family:var(--body);font-size:11px;font-weight:300;color:var(--mid);line-height:1.6;margin-top:auto}
 
 /* ABOUT */
-.about-section{padding:100px 60px;background:var(--white)}
-.about-inner{display:grid;grid-template-columns:380px 1fr;gap:80px;align-items:start}
+.about-section{padding:100px 60px 0;background:var(--white)}
+.about-inner{display:grid;grid-template-columns:380px 1fr;gap:80px;align-items:center}
 .about-photo img{width:100%;object-fit:cover;object-position:center top;display:block}
 .about-photo-cap{font-family:var(--body);font-size:10px;font-weight:300;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-top:10px}
 .about-quote{font-family:var(--heading);font-size:clamp(20px,2.5vw,30px);font-weight:300;line-height:1.4;color:var(--ink);margin-bottom:24px;letter-spacing:-0.01em;padding-left:20px;border-left:1px solid var(--ink)}
@@ -261,7 +270,6 @@ footer{background:#080808;padding:56px 60px 36px}
   .about-inner{grid-template-columns:1fr;gap:40px}
   nav{padding:14px 32px}
   .nav-right .nav-link{display:none}
-  .nav-right .nav-cta{display:none}
   .nav-hamburger{display:flex}
   .hero,.slideshow-wrap,.order-section,.quiz-section,.ywn-section,.map-section,.blog-section,.about-section,.email-strip{padding:80px 32px}
   footer{padding:48px 32px 32px}
@@ -272,7 +280,6 @@ footer{background:#080808;padding:56px 60px 36px}
   .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
   .blog-featured{grid-template-columns:1fr}
   .blog-featured-img{width:100%;aspect-ratio:4/5;height:auto}
-  .blog-grid{grid-template-columns:repeat(2,1fr)}
   .featured-bar{padding:0 32px}
   .featured-img{width:140px;aspect-ratio:4/5;height:auto}
 }
@@ -288,7 +295,6 @@ footer{background:#080808;padding:56px 60px 36px}
   .email-form{flex-direction:column}
   .ywn-field-row{flex-wrap:wrap}
   .ywn-btn{margin-left:0;width:100%}
-  .blog-grid{grid-template-columns:1fr}
   .featured-bar{padding:0 20px}
   .featured-img{width:110px;aspect-ratio:4/5;height:auto}
 }
@@ -300,11 +306,13 @@ footer{background:#080808;padding:56px 60px 36px}
 <nav>
   <a href="https://arniefelicilda.com" class="nav-logo">Arnie Rose</a>
   <div class="nav-right">
-    <a href="https://arniefelicilda.com/books.html" target="_blank" rel="noopener" class="nav-link">Books</a>
-    <a href="blog.html" class="nav-link">Blog</a>
-    <a href="#about" class="nav-link">About</a>
-    <a href="https://arniefelicilda.com/the-letters.html" class="nav-cta nav-cta--dark">Newsletter</a>
-    <a href="#free-chapter" class="nav-cta">Free Chapter</a>
+    <a href="https://arniefelicilda.com/#books" target="_blank" rel="noopener" class="nav-link">The Books</a>
+    <a href="https://arniefelicilda.com/literary-collections.html" target="_blank" rel="noopener" class="nav-link">Literary Collection</a>
+    <a href="https://arniefelicilda.com/collaborations.html" target="_blank" rel="noopener" class="nav-link">Collaborations</a>
+    <a href="https://arniefelicilda.com/about.html" target="_blank" rel="noopener" class="nav-link">About</a>
+    <a href="https://arniefelicilda.com/contact.html" target="_blank" rel="noopener" class="nav-link">Contact</a>
+    <a href="https://arniefelicilda.com/editorial-services.html" target="_blank" rel="noopener" class="nav-link">Editorial Services</a>
+    <a href="https://arniefelicilda.com/the-letters.html" class="nav-cta">Newsletter</a>
   </div>
   <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -312,11 +320,13 @@ footer{background:#080808;padding:56px 60px 36px}
 </nav>
 
 <div class="nav-mobile" id="nav-mobile">
-  <a href="https://arniefelicilda.com/books.html" target="_blank" rel="noopener">Books</a>
-  <a href="blog.html">Blog</a>
-  <a href="#about">About</a>
+  <a href="https://arniefelicilda.com/#books" target="_blank" rel="noopener">The Books</a>
+  <a href="https://arniefelicilda.com/literary-collections.html" target="_blank" rel="noopener">Literary Collection</a>
+  <a href="https://arniefelicilda.com/collaborations.html" target="_blank" rel="noopener">Collaborations</a>
+  <a href="https://arniefelicilda.com/about.html" target="_blank" rel="noopener">About</a>
+  <a href="https://arniefelicilda.com/contact.html" target="_blank" rel="noopener">Contact</a>
+  <a href="https://arniefelicilda.com/editorial-services.html" target="_blank" rel="noopener">Editorial Services</a>
   <a href="https://arniefelicilda.com/the-letters.html">Newsletter</a>
-  <a href="#free-chapter">Free Chapter</a>
 </div>
 
 <!-- HERO -->
@@ -334,7 +344,7 @@ footer{background:#080808;padding:56px 60px 36px}
   </div>
   <div class="hero-actions">
     <a href="#books" class="btn-fill dark">Explore the Series</a>
-    <a href="#free-chapter" class="btn-outline">Read a Free Chapter</a>
+    <a href="https://byarnierose.substack.com" target="_blank" rel="noopener" class="btn-outline">Read on Substack</a>
   </div>
 </section>
 
@@ -375,7 +385,7 @@ footer{background:#080808;padding:56px 60px 36px}
         <p class="slide-subtitle">Stop Measuring Your Life Against a Timeline That Was Never Yours.</p>
         <blockquote class="slide-tagline">"You work harder than most people around you. And still, they move faster."</blockquote>
         <div class="slide-sample"><p class="sample-label">Book Preview</p><p class="sample-text">You have been measuring a real life against a curated fiction and calling the distance failure. The timeline you are racing was never yours. This book will not make you feel better. It will make you see clearly.</p></div>
-        <div class="slide-chapters"><p class="chapters-label">Inside this book</p><ul><li>You Compare Yourself to People Who Don't Know You Exist</li><li>You're Chasing a Timeline That Was Never Yours</li><li>You Keep Saying Yes So You Feel Needed</li><li>You Keep Waiting for Someone to Tell You You're Enough</li><li>You Keep Skipping the Hard Part</li><li>You Call It Doubt, But It's Avoidance</li><li>Your Pace Isn't the Problem. Your Choices Are.</li></ul></div>
+        <div class="slide-chapters"><p class="chapters-label">Inside this book</p><ul><li>You're Chasing a Timeline That Was Never Yours</li><li>You Keep Waiting for Someone to Tell You You're Enough</li><li>Your Pace Isn't the Problem. Your Choices Are.</li></ul></div>
         <a href="https://a.co/d/0aages6f" class="slide-buy" style="color:#E8512A;border-color:rgba(232,81,42,0.3)" target="_blank" rel="noopener">Buy on Amazon →</a>
       </div>
     </div>
@@ -393,7 +403,7 @@ footer{background:#080808;padding:56px 60px 36px}
         <p class="slide-subtitle">The Hidden Advantage You Already Have and How to Finally Use It.</p>
         <blockquote class="slide-tagline">"You have been working harder than almost everyone around you. The results do not match the effort."</blockquote>
         <div class="slide-sample"><p class="sample-label">Book Preview</p><p class="sample-text">The problem was never your effort. It was your placement. Capable people spend years applying real effort in the wrong direction and calling it discipline.</p></div>
-        <div class="slide-chapters"><p class="chapters-label">Inside this book</p><ul><li>You Were Working Hard. The Work Was in the Wrong Place.</li><li>One Change in the Right Place Moved Three Weeks of Work.</li><li>You React Before You Have a Chance to Decide.</li><li>The Ceiling You Built Before You Knew It.</li><li>You Know What to Do. You Do Something Else Instead.</li><li>You Are Proving Yourself to People Who Already Decided.</li><li>You Were Never Missing the Skill. You Were Missing the Combination.</li></ul></div>
+        <div class="slide-chapters"><p class="chapters-label">Inside this book</p><ul><li>You Were Working Hard. The Work Was in the Wrong Place.</li><li>The Ceiling You Built Before You Knew It.</li><li>You Were Never Missing the Skill. You Were Missing the Combination.</li></ul></div>
         <a href="https://a.co/d/07zv44Me" class="slide-buy" style="color:#27AE60;border-color:rgba(39,174,96,0.3)" target="_blank" rel="noopener">Buy on Amazon →</a>
       </div>
     </div>
@@ -411,7 +421,7 @@ footer{background:#080808;padding:56px 60px 36px}
         <p class="slide-subtitle">Fix the Signal. Not the Worth.</p>
         <blockquote class="slide-tagline">"You were not invisible. You were never recognized. Those are different problems."</blockquote>
         <div class="slide-sample"><p class="sample-label">Book Preview</p><p class="sample-text">Recognition is not random. The people who get consistently seen are the most clearly expressed. You were showing up. The room just was not registering the signal correctly.</p></div>
-        <div class="slide-chapters"><p class="chapters-label">Inside this book</p><ul><li>You Were Never Invisible. You Were Never Recognized.</li><li>Being Loud Gets Attention. Being Clear Gets Remembered.</li><li>You Have Been Muting the Signal Without Knowing It.</li><li>The Room Responds to Clarity, Not to Effort.</li><li>You Have Been Waiting to Be Discovered Instead of Expressed.</li></ul></div>
+        <div class="slide-chapters"><p class="chapters-label">Inside this book</p><ul><li>You Were Never Invisible. You Were Never Recognized.</li><li>Being Loud Gets Attention. Being Clear Gets Remembered.</li><li>You Have Been Waiting to Be Discovered Instead of Expressed.</li></ul></div>
         <a href="https://a.co/d/0jkHsKWM" class="slide-buy" style="color:#E91E8C;border-color:rgba(233,30,140,0.3)" target="_blank" rel="noopener">Buy on Amazon →</a>
       </div>
     </div>
@@ -429,7 +439,7 @@ footer{background:#080808;padding:56px 60px 36px}
         <p class="slide-subtitle">Stop Performing. Start Building.</p>
         <blockquote class="slide-tagline">"The fear of being replaced is making you perform instead of build."</blockquote>
         <div class="slide-sample"><p class="sample-label">Book Preview</p><p class="sample-text">You have been making yourself needed in ways that exhaust you. That is not indispensability. That is performance. The mask works until it does not.</p></div>
-        <div class="slide-chapters"><p class="chapters-label">Inside this book</p><ul><li>You Have Been Performing Steadiness While Carrying Weight No One Sees.</li><li>The Fear of Being Replaced Is the Trap, Not the Reality.</li><li>You Said Yes Again Because You Were Afraid of What No Would Cost.</li><li>You Were Never Dispensable. You Were Just Not Yet Built Right.</li></ul></div>
+        <div class="slide-chapters"><p class="chapters-label">Inside this book</p><ul><li>The Fear of Being Replaced Is the Trap, Not the Reality.</li><li>You Said Yes Again Because You Were Afraid of What No Would Cost.</li><li>You Were Never Dispensable. You Were Just Not Yet Built Right.</li></ul></div>
         <a href="https://a.co/d/08HIhwXs" class="slide-buy" style="color:#555555;border-color:rgba(85,85,85,0.3)" target="_blank" rel="noopener">Buy on Amazon →</a>
       </div>
     </div>
@@ -447,7 +457,7 @@ footer{background:#080808;padding:56px 60px 36px}
         <p class="slide-subtitle">Hold Your Ground in Any Room.</p>
         <blockquote class="slide-tagline">"You started overruling yourself before anyone else got the chance."</blockquote>
         <div class="slide-sample"><p class="sample-label">Book Preview</p><p class="sample-text">Being overruled is a procedural outcome. It is not a verdict on the idea. You enter the room already smaller than you need to be. That is a pattern, not a fact.</p></div>
-        <div class="slide-chapters"><p class="chapters-label">Inside this book</p><ul><li>You Were Never Overruled. You Overruled Yourself First.</li><li>The Room Dismissed Your Idea. The Idea Was Not Wrong.</li><li>You Started Editing Before You Spoke.</li><li>The Pattern That Keeps You Small in Every Room.</li><li>How to Hold Your Ground Without Burning It Down.</li></ul></div>
+        <div class="slide-chapters"><p class="chapters-label">Inside this book</p><ul><li>You Were Never Overruled. You Overruled Yourself First.</li><li>You Started Editing Before You Spoke.</li><li>How to Hold Your Ground Without Burning It Down.</li></ul></div>
         <a href="https://a.co/d/0dICGMfl" class="slide-buy" style="color:#E84D1C;border-color:rgba(232,77,28,0.3)" target="_blank" rel="noopener">Buy on Amazon →</a>
       </div>
     </div>
@@ -465,7 +475,7 @@ footer{background:#080808;padding:56px 60px 36px}
         <p class="slide-subtitle">Say What You Keep Not Saying.</p>
         <blockquote class="slide-tagline">"The words were there. You just did not spend them."</blockquote>
         <div class="slide-sample"><p class="sample-label">Book Preview</p><p class="sample-text">You were never mute. You were just walking into every conversation unarmed. Not anymore. The right words placed correctly change every conversation.</p></div>
-        <div class="slide-chapters"><p class="chapters-label">Inside this book</p><ul><li>You Stayed Quiet When You Had the Answer.</li><li>You Rehearse Conversations More Than You Actually Have Them.</li><li>You Said Yes Because You Were Afraid of Being Seen as Difficult.</li><li>You Watched Your Idea Become Someone Else's Sentence.</li><li>55 Conversations You Keep Avoiding. How to Have Them.</li></ul></div>
+        <div class="slide-chapters"><p class="chapters-label">Inside this book</p><ul><li>You Stayed Quiet When You Had the Answer.</li><li>You Watched Your Idea Become Someone Else's Sentence.</li><li>55 Conversations You Keep Avoiding. How to Have Them.</li></ul></div>
         <a href="https://a.co/d/056120mC" class="slide-buy" style="color:#F0A500;border-color:rgba(240,165,0,0.3)" target="_blank" rel="noopener">Buy on Amazon →</a>
       </div>
     </div>
@@ -492,14 +502,15 @@ footer{background:#080808;padding:56px 60px 36px}
 </section>
 
 <!-- EMAIL MID -->
-<div class="email-strip" id="free-chapter">
-  <div class="email-strip-inner reveal">
-    <h3>Free: Chapter 1 of You Were Never Behind</h3>
-    <p>Chapter 1 is free. Read it. This book was written for you.</p>
-    <form action="https://app.kit.com/forms/9422533/subscriptions" method="post" class="email-form">
-      <input name="email_address" type="email" placeholder="Your email address" required>
-      <button type="submit">Send Me Chapter 1</button>
-    </form>
+<div class="email-strip" id="subscribe">
+  <div class="email-strip-inner reveal" style="display:flex; align-items:center; gap:32px; text-align:left; max-width:640px; margin:0 auto;">
+    <img src="https://arniefelicilda.com/choose-the-right-decision-substack-cover.jpg" alt="Choose the Right Decision or Make Every Decision Right, on Substack" style="width:100px; height:auto; flex-shrink:0; display:block; box-shadow:0 8px 24px rgba(0,0,0,0.3);">
+    <div>
+      <h3 style="text-align:left;">Read The Blind Spot on Substack</h3>
+      <p style="text-align:left;">Essays on identity, change, and the decisions that quietly shape a life.</p>
+      <a href="https://open.substack.com/pub/byarnierose/p/choose-the-right-decision-or-make?r=8p719n&utm_campaign=post&utm_medium=web" target="_blank" rel="noopener" style="display:block; font-family:var(--body); font-size:13px; color:rgba(255,255,255,0.6); margin-bottom:16px; text-decoration:underline;">Read More &rarr;</a>
+      <a href="https://byarnierose.substack.com" target="_blank" rel="noopener" style="display:inline-block; padding:12px 24px; background:#FFFFFF; color:var(--ink); font-family:var(--body); font-size:11px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none;">Subscribe on Substack</a>
+    </div>
   </div>
 </div>
 
@@ -612,7 +623,7 @@ footer{background:#080808;padding:56px 60px 36px}
       <div>
         <h2 class="s-title">Notes from the Series</h2>
       </div>
-      <a href="blog.html" class="blog-see-all">Browse All 30 Posts →</a>
+      <a href="https://arniefelicilda.com/archive.html" target="_blank" rel="noopener" class="blog-see-all">Browse All 30 Posts →</a>
     </div>
 
     <!-- FEATURED BLOG -->
@@ -630,17 +641,12 @@ footer{background:#080808;padding:56px 60px 36px}
           <li>Do you feel like a fraud even when you're good at your job?</li>
           <li>If you stopped achieving, would you still feel like enough?</li>
         </ul>
-        <ul class="blog-featured-faq">
-          <li>What's the difference between confidence and self-worth?</li>
-          <li>Can you have confidence but low self-worth?</li>
-          <li>Why does self-worth last longer than confidence?</li>
-        </ul>
         <span class="blog-featured-readmore">Read more →</span>
       </div>
     </a>
 
     <!-- RECENT ESSAYS — STATIC GRID -->
-    <p class="blog-recent-label">Recent Essays</p>
+    <p class="blog-recent-label">Recent Blogs</p>
     <div class="blog-grid reveal">
       <a href="decision-making-vs-motivation.html" class="blog-card">
         <img src="decision-making-vs-motivation-pin.jpg" alt="Decision Making vs Motivation" class="blog-card-img" loading="lazy">
@@ -681,11 +687,13 @@ footer{background:#080808;padding:56px 60px 36px}
 <!-- EMAIL BOTTOM -->
 <div class="email-strip">
   <div class="email-strip-inner reveal">
-    <h3>Stay in the series.</h3>
-    <p>New releases, reader notes, and a free chapter from Book 1.</p>
-    <form action="https://app.kit.com/forms/9422533/subscriptions" method="post" class="email-form">
-      <input name="email_address" type="email" placeholder="Your email address" required>
-      <button type="submit">Send me Chapter 1</button>
+    <h3>Beyond the Pages</h3>
+    <p>Join the weekly newsletter. Early access on original writing: The Blind Spot Series, Ode to Home: Letters of the Living, and Beyond the Page.</p>
+    <form action="https://assets.mailerlite.com/jsonp/2484784/forms/191860425663448888/subscribe" method="post" class="email-form">
+      <input name="fields[email]" type="email" placeholder="Your email address" required>
+      <input type="hidden" name="ml-submit" value="1">
+      <input type="hidden" name="anticsrf" value="true">
+      <button type="submit">Join The Letters</button>
     </form>
   </div>
 </div>
@@ -702,7 +710,7 @@ footer{background:#080808;padding:56px 60px 36px}
         <p class="s-label">The Author</p>
         <div class="s-rule"></div>
         <div class="about-body">
-          <p>Arnie Rose is the author of the You Were Never Series, a collection of books about identity, human behavior, and self leadership. Her work explores the beliefs people inherit, the stories they tell themselves, and the decisions that shape their lives.</p>
+          <p>Arnie Rose is the author of the You Were Never series, The Gentle Art of Dying Upside Down, and I Hate Being Human. Writing about identity, change, decisions, and what it means to be human.</p>
         </div>
         <div class="about-btns">
           <a href="https://arniefelicilda.com" class="btn-fill dark" target="_blank" rel="noopener">Author Website</a>
@@ -716,23 +724,27 @@ footer{background:#080808;padding:56px 60px 36px}
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <p>You Were Never Series</p>
-      <small>Books about identity, human behavior, and inner life.</small>
+      <p>Arnie Rose</p>
+      <small>Author of The Gentle Art of Dying Upside Down and the You Were Never series.<br>Books about identity, human behavior, and inner life.</small>
     </div>
     <div class="footer-col">
       <h4>Explore</h4>
       <a href="https://arniefelicilda.com/books.html" target="_blank" rel="noopener">Books</a>
-      <a href="blog.html">Blog</a>
-      <a href="#about">About</a>
+      <a href="https://arniefelicilda.com/archive.html" target="_blank" rel="noopener">Blog</a>
+      <a href="https://arniefelicilda.com/literary-collection.html" target="_blank" rel="noopener">Literary Collection</a>
+      <a href="https://arniefelicilda.com/collaborations.html" target="_blank" rel="noopener">Collaborations</a>
+      <a href="https://arniefelicilda.com/contact.html" target="_blank" rel="noopener">Contact</a>
       <a href="https://arniefelicilda.com/the-letters.html">Newsletter</a>
-      <a href="#free-chapter">Free Chapter</a>
+      <a href="https://byarnierose.substack.com" target="_blank" rel="noopener">Subscribe on Substack</a>
     </div>
     <div class="footer-col">
       <h4>Follow</h4>
+      <a href="https://www.instagram.com/writer.arnierose" target="_blank" rel="noopener">@writer.arnierose</a>
       <a href="https://www.instagram.com/youwereneverseries" target="_blank" rel="noopener">@youwereneverseries</a>
     </div>
   </div>
-  <div class="footer-bottom">
+  <div class="footer-bottom" style="display:flex;flex-direction:column;gap:20px;align-items:center">
+    <iframe src="https://byarnierose.substack.com/embed" width="480" height="150" style="border:1px solid var(--faint); background:white; max-width:100%;" frameborder="0" scrolling="no"></iframe>
     <span class="footer-copy">© 2026 Arnie Rose. All rights reserved.</span>
   </div>
 </footer>
@@ -802,7 +814,6 @@ var wordMap={
   "stuck":{book:"You Were Never Behind",passage:"You have been measuring a real life against a curated fiction and calling the distance failure.",url:"https://a.co/d/0aages6f"},
   "tired":{book:"You Were Never Dispensable",passage:"You have been performing steadiness while carrying weight no one else can see. That exhaustion is real.",url:"https://a.co/d/08HIhwXs"},
   "ordinary":{book:"You Were Never Ordinary",passage:"The problem was never your effort. It was placement.",url:"https://a.co/d/07zv44Me"},
-  "enough":{book:"You Were Never Behind",passage:"You did not fall behind. You believed a conclusion you never questioned.",url:"https://a.co/d/0aages6f"},
   "invisible":{book:"You Were Never Invisible",passage:"You were not invisible. You were never recognized. Those are different problems with different solutions.",url:"https://a.co/d/0jkHsKWM"},
   "seen":{book:"You Were Never Invisible",passage:"Recognition is not random. The people who get consistently seen are the most clearly expressed.",url:"https://a.co/d/0jkHsKWM"},
   "noticed":{book:"You Were Never Invisible",passage:"Being loud gets attention. Being clear gets remembered.",url:"https://a.co/d/0jkHsKWM"},
