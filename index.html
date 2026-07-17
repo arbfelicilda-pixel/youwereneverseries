@@ -513,7 +513,7 @@ footer{background:#080808;padding:56px 60px 36px}
 <!-- EMAIL MID -->
 <div class="email-strip" id="subscribe">
   <div class="email-strip-inner reveal" style="display:flex; align-items:center; gap:32px; text-align:left; max-width:640px; margin:0 auto;">
-    <img src="https://arniefelicilda.com/choose-the-right-decision-substack-cover.jpg" alt="Choose the Right Decision or Make Every Decision Right, on Substack" style="width:170px; height:auto; flex-shrink:0; display:block; box-shadow:0 8px 24px rgba(0,0,0,0.3);">
+    <img src="https://arniefelicilda.com/choose-the-right-decision-substack-cover.jpg" alt="Choose the Right Decision or Make Every Decision Right, on Substack" style="width:230px; height:auto; flex-shrink:0; display:block; box-shadow:0 8px 24px rgba(0,0,0,0.3);">
     <div>
       <h3 style="text-align:left;">Read The Blind Spot on Substack</h3>
       <p style="text-align:left;">Essays on identity, change, and the decisions that quietly shape a life.</p>
@@ -759,6 +759,19 @@ footer{background:#080808;padding:56px 60px 36px}
 </footer>
 
 <script>
+// EXPLORE MORE DROPDOWN
+var exploreMoreTrigger = document.getElementById('explore-more-trigger');
+var exploreMoreMenu = document.getElementById('explore-more-menu');
+if (exploreMoreTrigger) {
+  exploreMoreTrigger.addEventListener('click', function(e){
+    e.stopPropagation();
+    exploreMoreMenu.classList.toggle('open');
+  });
+  document.addEventListener('click', function(){
+    exploreMoreMenu.classList.remove('open');
+  });
+}
+
 // HAMBURGER
 var hamburger=document.getElementById('nav-hamburger');
 var mobileNav=document.getElementById('nav-mobile');
